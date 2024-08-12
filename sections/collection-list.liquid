@@ -76,7 +76,10 @@
               card_collection: block.settings.collection,
               media_aspect_ratio: section.settings.image_ratio,
               columns: columns,
-              placeholder_image: placeholder_image
+              placeholder_image: placeholder_image,
+              show_items: section.settings.show_item_count,
+              background_color: block.settings.background_color,
+              background_image: block.settings.background_image
             %}
           </li>
         {%- endfor -%}
@@ -265,6 +268,12 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "checkbox",
+      "id": "show_item_count",
+      "label": "t:sections.collection-list.settings.show_item",
+      "default": true
     }
   ],
   "blocks": [
@@ -276,6 +285,16 @@
           "type": "collection",
           "id": "collection",
           "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "t:sections.collection-list.settings.background_image.label"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "t:sections.collection-list.settings.background_color.label"
         }
       ]
     }
