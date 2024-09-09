@@ -376,6 +376,10 @@
   }
 }
 
+.footer-block-logo {
+  max-width: 100%;
+}
+
 .footer-block-image {
   display: flex;
 }

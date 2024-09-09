@@ -74,19 +74,46 @@
                   data-cascade
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
-              >
-                {%- if block.settings.heading != blank -%}
-                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
-                {%- endif -%}
+                >
 
                 {%- case block.type -%}
                   {%- when '@app' -%}
                     {% render block %}
                   {%- when 'text' -%}
+                  {%- if settings.logo != blank -%}
+                    <img
+                    srcset="{{ settings.logo | image_url: width: settings.logo_width }}, {{ settings.logo | image_url: width: image_size_2x }} 2x"
+                    src="{{ settings.logo | image_url: width: 760 }}"
+                    alt="{{ settings.logo.alt | escape }}"
+                    loading="lazy"
+                    width="{{ settings.logo.width }}"
+                    height="{{ settings.logo.height }}"
+                    class="footer-block-logo"
+                  >
+                {%- endif -%}
                     <div class="footer-block__details-content rte">
                       {{ block.settings.subtext }}
                     </div>
+                    <div
+                    class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                    {% if settings.animations_reveal_on_scroll %}
+                      data-cascade
+                    {% endif %}
+                  >
+                    {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
+                      <div class="footer__follow-on-shop">
+                        {{ shop | login_button: action: 'follow' }}
+                      </div>
+                    {%- endif -%}
+          
+                    {%- if section.settings.show_social and has_social_icons -%}
+                      {%- render 'social-icons', class: 'footer__list-social' -%}
+                    {%- endif -%}
+                  </div>
                   {%- when 'link_list' -%}
+                  {%- if block.settings.heading != blank -%}
+                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
+                {%- endif -%}
                     {%- if block.settings.menu != blank -%}
                       <ul class="footer-block__details-content list-unstyled">
                         {%- for link in block.settings.menu.links -%}
@@ -156,16 +183,7 @@
                 {%- endcase -%}
               </div>
             {%- endfor -%}
-          </div>
-        {%- endif -%}
-
-        <div
-          class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-            data-cascade
-          {% endif %}
-        >
-          {%- if section.settings.newsletter_enable -%}
+            {%- if section.settings.newsletter_enable -%}
             <div class="footer-block__newsletter">
               {%- if section.settings.newsletter_heading != blank -%}
                 <h2 class="footer-block__heading inline-richtext">{{ section.settings.newsletter_heading }}</h2>
@@ -235,17 +253,8 @@
               {%- endform -%}
             </div>
           {%- endif -%}
-
-          {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
-            <div class="footer__follow-on-shop">
-              {{ shop | login_button: action: 'follow' }}
-            </div>
-          {%- endif -%}
-
-          {%- if section.settings.show_social and has_social_icons -%}
-            {%- render 'social-icons', class: 'footer__list-social' -%}
-          {%- endif -%}
-        </div>
+          </div>
+        {%- endif -%}
       </div>
     {%- endunless -%}
   {%- endif -%}
