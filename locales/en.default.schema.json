@@ -668,6 +668,50 @@
         "name": "Collection list"
       }
     },
+    "collections-with-image": {
+      "name": "Collections With Image",
+      "settings": {
+        "show_image": {
+          "label": "Show Featured Image",
+        }
+      },
+      "blocks": {
+        "type":"collection",
+        "name": "Collection",
+        "settings": {
+          "title": {
+            "label": "Title"
+          },
+          "description": {
+          "label": "Description",
+          "color": "Description Color"
+          },
+          "buttons": {
+            "label":"Button Label",
+            "url":"Button Link"
+          },
+          "collection": {
+            "label": "Collection"
+          },
+          "background_image": {
+            "label":"Background Image"
+          },
+          "color":{
+            "background": {
+            "label": "Background Color"
+            },
+          },
+          "alignmemnt": {
+            "name":"Alignment",
+            "left": "Left",
+            "right": "Right"
+          }
+        },
+      },
+      "presets": {
+        "name": "Collections With Image"
+      }
+    },
     "contact-form": {
       "name": "Contact Form",
       "presets": {
