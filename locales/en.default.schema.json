@@ -668,6 +668,35 @@
         "name": "Collection list"
       }
     },
+    "image-video-grid": {
+      "name": "Image Video Grid",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "sub_heading": {
+          "label": "Sub Heading"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "background_color": {
+          "label": "Background Color"
+        }
+      },
+      "blocks": {
+        "type":"block",
+        "name": "block",
+        "settings": {
+          "video": {
+            "label": "Video"
+          }
+        }
+      },
+      "presets": {
+        "name": "Image Video Grid"
+      }
+    },
     "contact-form": {
       "name": "Contact Form",
       "presets": {
