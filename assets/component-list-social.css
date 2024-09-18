@@ -1,6 +1,7 @@
 .list-social {
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
   justify-content: flex-end;
 }
 
@@ -10,15 +11,10 @@
   }
 }
 
-.list-social__item .icon {
-  height: 2.2rem;
-  width: 2.2rem;
-}
 
 .list-social__link {
   align-items: center;
   display: flex;
-  padding: 1.1rem;
   color: rgb(var(--color-foreground));
 }
 
