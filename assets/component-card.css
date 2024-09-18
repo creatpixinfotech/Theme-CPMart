@@ -5,6 +5,20 @@
   text-decoration: none;
 }
 
+.collection-list__item .card-wrapper {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+@media screen and (max-width:990px) {
+  .collection-list__item .card-wrapper {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
 .card {
   text-decoration: none;
   text-align: var(--text-alignment);
@@ -117,6 +131,12 @@
   width: 100%;
 }
 
+.collection-list__item .card__inner {
+  max-width: 10rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
 .card--media .card__inner .card__content {
   position: relative;
   padding: calc(var(--image-padding) + 1rem);
@@ -139,7 +159,13 @@
   padding: 1.3rem 1rem;
 }
 
-.card:not(.ratio) > .card__content {
+.collection-list__item .card__information {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 4.2rem;
+}
+
+.card:not(.ratio)>.card__content {
   grid-template-rows: max-content minmax(0, 1fr) max-content auto;
 }
 
@@ -214,6 +240,11 @@
 }
 
 @media screen and (max-width: 749px) {
+  .collection-list__item .card__inner {
+    margin: 0 auto;
+    margin-top: 0;
+  }
+
   .grid--2-col-tablet-down .card__content quick-add-bulk .quantity__button {
     width: calc(3.5rem / var(--font-body-scale));
   }
@@ -246,6 +277,14 @@
 
   .grid--2-col-tablet-down .card__content quick-add-bulk .quantity {
     width: auto;
+  }
+
+  .collection-list__item .card__information {
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+    line-height: 0;
   }
 }
 
@@ -303,6 +342,32 @@
 .card__heading {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.collection-list__item .card__heading {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.445;
+  letter-spacing: -.01em;
+}
+
+.collection-list__item .card__items {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.445;
+}
+
+@media only screen and (max-width: 750px) {
+  .collection-list__item .card__heading {
+    font-size: 1.6rem;
+    letter-spacing: -.05em;
+  }
+
+  .collection-list__item .card__items {
+    font-size: 1.2rem;
+    letter-spacing: -.01rem;
+  }
+
 }
 
 .card__heading:last-child {
