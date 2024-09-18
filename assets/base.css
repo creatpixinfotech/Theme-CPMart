@@ -74,7 +74,13 @@
   --shadow-visible: var(--media-shadow-visible);
 }
 
-/* base */
+@font-face {
+  font-family: 'jost';
+  src: url("{{'Jost-Regular.woff2' | file_url }}") format('woff2'),
+  url("{{'Jost-Regular.woff' | file_url }}") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .page-width {
   max-width: var(--page-width);
@@ -632,6 +638,19 @@ h3 .icon-arrow,
 
 .animate-arrow:hover .icon-arrow path {
   transform: translateX(-0.05rem);
+}
+
+.svg-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+.svg-wrapper>svg {
+  height: 100%;
+  width: 100%;
 }
 
 /* base-details-summary */
@@ -1660,7 +1679,6 @@ details[open] > .share-button__fallback {
   width: 100%;
 }
 
-/* Select */
 
 .select .icon-caret,
 .customer select + svg {
@@ -1762,7 +1780,7 @@ details[open] > .share-button__fallback {
   height: 4.4rem;
   justify-content: center;
   overflow: hidden;
-  padding: 0;
+  padding: 1rem 2rem;
   position: absolute;
   right: 0;
   top: 0;
