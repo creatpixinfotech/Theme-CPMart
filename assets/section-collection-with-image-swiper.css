@@ -1,0 +1,23 @@
+.collection-with-image-swiper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.collection-with-image-swiper .image-section {
+  position: relative;
+}
+
+.collection-with-image-swiper .image-section .image-content {
+  position: absolute;
+  top: 2rem;
+  color: white;
+}
+
+.collection-with-image-swiper .collection_product_card {
+  display: flex;
+  height: fit-content !important;
+}
+
+.collection-with-image-swiper .js-collection-swiper {
+  width: 100%;
+}

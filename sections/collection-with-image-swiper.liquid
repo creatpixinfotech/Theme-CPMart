@@ -1,0 +1,174 @@
+{{ 'section-collection-with-image-swiper.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'collection-with-image-swiper.js' | asset_url }}" defer="defer"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer="defer"></script>
+
+<div class="gradient isolate" style="background-color: {{ section.settings.background_color }};">
+  <div class="page-width">
+    <div class="collection-with-image-swiper">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'image' %}
+            <div class="image-section">
+              <img
+                srcset="
+                  {%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                  {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                  {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+                  {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                  {%- if block.settings.image.width >= 940 -%}{{ block.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+                  {%- if block.settings.image.width >= 1066 -%}{{ block.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                  {{ block.settings.image | image_url }} {{ block.settings.image.width }}w
+                "
+                src="{{ block.settings.image | image_url: width: 533 }}"
+                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                alt="{{ block.settings.image.alt | escape }}"
+                class="motion-reduce"
+                {% unless lazy_load == false %}
+                  loading="lazy"
+                {% endunless %}
+                width="450"
+                height="587"
+              >
+              <div class="image-content">
+                {% if block.settings.heading %}
+                  <div class="collection-list__heading">{{ block.settings.heading }}</div>
+                {% endif %}
+                {% if block.settings.description %}
+                  <div class="collection-list__description">{{ block.settings.description }}</div>
+                {% endif %}
+
+                {% if block.settings.btn_link %}
+                  <a href="{{ block.settings.btn_link }}">
+                    {{ block.settings.btn_text }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          {% when 'collections' %}
+            <div class="js-collection-swiper swiper">
+              <div class="collection__heading">
+                {{ block.settings.collection_heading }}
+              </div>
+              <div class="swiper-wrapper">
+                {% assign product_counter = 0 %}
+                {% for product in block.settings.collection.products %}
+                  {% if product_counter == 0 %}
+                    <div class="swiper-slide">
+                  {% endif %}
+
+                  <div class="collection_product_card">
+                    <div class="product_image">
+                      <img
+                        srcset="
+                          {%- if product.featured_image.width >= 165 -%}{{ product.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
+                          {%- if product.featured_image.width >= 360 -%}{{ product.featured_image | image_url: width: 360 }} 360w,{%- endif -%}
+                          {%- if product.featured_image.width >= 533 -%}{{ product.featured_image | image_url: width: 533 }} 533w,{%- endif -%}
+                          {%- if product.featured_image.width >= 720 -%}{{ product.featured_image | image_url: width: 720 }} 720w,{%- endif -%}
+                          {%- if product.featured_image.width >= 940 -%}{{ product.featured_image | image_url: width: 940 }} 940w,{%- endif -%}
+                          {%- if product.featured_image.width >= 1066 -%}{{ product.featured_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                          {{ product.featured_image | image_url }} {{ product.featured_image.width }}w
+                        "
+                        src="{{ product.featured_image | image_url: width: 533 }}"
+                        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                        alt="{{ product.featured_image.alt | escape }}"
+                        class="motion-reduce"
+                        {% unless lazy_load == false %}
+                          loading="lazy"
+                        {% endunless %}
+                        width="100"
+                        height="100"
+                      >
+                    </div>
+                    <div class="product_content">
+                      <div class="product_title">{{ product.title }}</div>
+                      <div class="product_stars"></div>
+                      <div class="product_price">
+                        <span>{{ product.price | money_with_currency }}</span>
+                        <span>{{ product.compare_at_price | money_with_currency }}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {% assign product_counter = product_counter | plus: 1 %}
+
+                  {% if product_counter == 3 or forloop.last %}
+                    </div>
+                    {% assign product_counter = 0 %}
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "collection Image Swiper",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button Link"
+        }
+      ]
+    },
+    {
+      "type": "collections",
+      "name": "collections",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "collection_heading",
+          "label": "Collection Heading"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection with Image Swiper"
+    }
+  ]
+}
+{% endschema %}
