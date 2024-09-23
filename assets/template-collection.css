@@ -97,3 +97,30 @@
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
 }
+
+.collection .collection-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collection .collection-header .collection-active {
+  text-decoration: underline;
+}
+
+.collection .heading-left {
+  text-align: left;
+}
+
+.collection .heading-right {
+  text-align: right;
+}
+
+.collection .heading-center {
+  text-align: center;
+}
+
+.collection .collection-flex {
+  display: flex;
+  justify-content: space-between;
+}
