@@ -108,66 +108,66 @@
 
 {% schema %}
 {
-  "name": "collection Image Swiper",
+  "name": "t:sections.collection_with_image_swiper.name",
   "settings": [
     {
       "type": "color",
       "id": "background_color",
-      "label": "Background Color"
+      "label": "t:sections.collection_with_image_swiper.settings.background_color.label"
     }
   ],
   "blocks": [
     {
       "type": "image",
-      "name": "image",
+      "name": "t:sections.collection_with_image_swiper.blocks.image.name",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Image"
+          "label": "t:sections.collection_with_image_swiper.blocks.image.settings.image.label"
         },
         {
           "type": "richtext",
           "id": "heading",
-          "label": "Heading"
+          "label": "t:sections.collection_with_image_swiper.blocks.image.settings.heading.label"
         },
         {
           "type": "richtext",
           "id": "description",
-          "label": "Description"
+          "label": "t:sections.collection_with_image_swiper.blocks.image.settings.description.label"
         },
         {
           "type": "text",
           "id": "btn_text",
-          "label": "Button Text"
+          "label": "t:sections.collection_with_image_swiper.blocks.image.settings.button_text.label"
         },
         {
           "type": "url",
           "id": "btn_link",
-          "label": "Button Link"
+          "label": "t:sections.collection_with_image_swiper.blocks.image.settings.url.label"
         }
       ]
     },
     {
       "type": "collections",
-      "name": "collections",
+      "name": "t:sections.collection_with_image_swiper.blocks.collections.name",
       "settings": [
         {
           "type": "richtext",
           "id": "collection_heading",
-          "label": "Collection Heading"
+          "label": "t:sections.collection_with_image_swiper.blocks.collections.settings.heading.label"
         },
         {
           "type": "collection",
           "id": "collection",
-          "label": "Collection"
+          "label": "t:sections.collection_with_image_swiper.blocks.collections.settings.collection.label"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Collection with Image Swiper"
+      "name": "t:sections.collection_with_image_swiper.presets.name"
     }
   ]
 }

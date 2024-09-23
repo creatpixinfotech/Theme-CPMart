@@ -735,6 +735,18 @@
           "label": "Heading",
           "default": "Featured collection"
         },
+        "heading_alignments": {
+          "label": "Heading alignments",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          }  
+        },
         "description": {
           "label": "Description"
         },
@@ -975,6 +987,50 @@
       },
       "presets": {
         "name": "Featured product"
+      }
+    },
+    "collection_with_image_swiper" : {
+      "name": "Collection with image swiper",
+      "settings": {
+        "background_color": {
+          "label": "Background color",
+        },
+      },
+      "blocks": {
+        "image": {
+          "name": "Image",
+          "settings": {
+            "image": {
+              "label": "Image",
+            },
+            "heading": {
+              "label": "Heading",
+            },
+            "description": {
+              "label": "Description",
+            },
+            "button_text": {
+              "label": "Button text",
+            },
+            "url": {
+              "label": "URL",
+            },
+          },
+        },
+        "collections": {
+          "name": "Collections",
+          "settings": {
+            "heading": {
+              "label": "Collection Heading",
+            },
+            "collection": {
+              "label": "Collection",
+            },
+          }
+        }
+      },
+      "presets": {
+        "name": "Collection with image swiper"
       }
     },
     "footer": {
