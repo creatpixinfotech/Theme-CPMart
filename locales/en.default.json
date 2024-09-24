@@ -247,6 +247,9 @@
     "cart": {
       "cart": "Cart"
     },
+    "wishlist": {
+      "wishlist": "Wishlist"
+    },
     "contact": {
       "form": {
         "title": "Contact form",
