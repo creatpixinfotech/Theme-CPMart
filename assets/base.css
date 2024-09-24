@@ -75,14 +75,6 @@
   --shadow-visible: var(--media-shadow-visible);
 }
 
-@font-face {
-  font-family: 'jost';
-  src: url("{{'Jost-Regular.woff2' | file_url }}") format('woff2'),
-    url("{{'Jost-Regular.woff' | file_url }}") format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
