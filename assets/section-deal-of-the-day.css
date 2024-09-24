@@ -1,0 +1,32 @@
+.deal-of-the-day .header-left {
+  text-align: left;
+}
+
+.deal-of-the-day .header-center {
+  text-align: center;
+}
+
+.deal-of-the-day .header-right {
+  text-align: right;
+}
+
+.deal-of-the-day .section-content {
+  display: flex;
+}
+
+.deal-of-the-day .section-content-row {
+  flex-direction: row;
+}
+
+.deal-of-the-day .section-content-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.deal-of-the-day .collection-timer {
+  display: flex;
+}
+
+.deal-of-the-day .collection-time {
+  display: flex;
+  flex-direction: column;
+}
