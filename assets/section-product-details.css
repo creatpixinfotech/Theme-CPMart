@@ -1,0 +1,7 @@
+.product-details .product-details_description .descriptions {
+  display: none;
+}
+
+.product-details .product-details_description .descriptions.active {
+  display: block;
+}
