@@ -1,6 +1,9 @@
 .collection-with-image-swiper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+  padding: 8rem 0;
+  gap: 3rem;
+  align-items: center;
 }
 
 .collection-with-image-swiper .image-section {
@@ -9,15 +12,195 @@
 
 .collection-with-image-swiper .image-section .image-content {
   position: absolute;
-  top: 2rem;
+  top: 0;
   color: white;
 }
 
 .collection-with-image-swiper .collection_product_card {
   display: flex;
-  height: fit-content !important;
+  gap: 2rem;
+  align-items: center;
+}
+
+.product_image {
+  line-height: 0;
 }
 
 .collection-with-image-swiper .js-collection-swiper {
   width: 100%;
+}
+
+.collection-with-image-swiper .collection__heading {
+  font-family: 'Jost';
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.445;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.collection-with-image-swiper .collection__heading p {
+  margin: 0;
+}
+
+.collection-with-image-swiper .swiper-pagination {
+  position: unset;
+}
+
+.collection-with-image-swiper .js-collection-swiper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.collection-with-image-swiper .swiper-pagination-lock {
+  display: block;
+}
+
+.collection_product_card .product_title {
+  font-family: 'Jost';
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.445;
+  color: #253D4E;
+  text-decoration: none;
+}
+
+.product_price .price-on-sale {
+  font-family: 'Jost';
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.445;
+  color: #3BB77E;
+}
+
+.product_price .price-original {
+  font-family: 'Jost';
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.445;
+  text-align: left;
+  color: #AAA9A3;
+  text-decoration: line-through;
+}
+
+.product_content .product_price {
+  display: flex;
+  gap: .8rem;
+  align-items: flex-end;
+}
+
+.collection_product_card .product_content {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+
+.js-collection-swiper .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: #3BB77E;
+}
+
+.js-collection-swiper .swiper-wrapper .swiper-slide {
+  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-content .collection-list__heading {
+  font-family: 'Jost';
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.445;
+  letter-spacing: 0;
+  margin-bottom: 1rem;
+}
+
+.image-content .collection-list__heading p {
+  margin: 0;
+}
+
+.collection-with-image-swiper .swiper-pagination-progressbar.swiper-pagination-horizontal {
+  height: .5rem;
+}
+
+.collection-with-image-swiper .image-section {
+  max-width: 45rem;
+  width: 100%;
+  line-height: 0;
+  justify-self: center;
+}
+
+.collection-with-image-swiper .image-section img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.collection-with-image-swiper .image-content {
+  max-width: 25.9rem;
+  padding: 9rem 0 0 3rem;
+  width: 100%;
+}
+
+.collection-with-image-swiper .collection-list__description {
+  font-family: 'Jost';
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.445;
+  margin-bottom: 3rem;
+  letter-spacing: 0;
+}
+
+.collection-with-image-swiper .collection-list__description p {
+  margin: 0;
+}
+
+@media screen and (max-width:749px) {
+  .collection-with-image-swiper .collection__heading {
+    font-size: 1.8rem;
+  }
+
+  .collection_product_card .product_title {
+    font-size: 1.4rem;
+  }
+
+  .product_price .price-on-sale {
+    font-size: 1.6rem;
+  }
+
+  .product_price .price-original {
+    font-size: 1.2rem;
+  }
+
+  .js-collection-swiper .swiper-wrapper .swiper-slide {
+    gap: 1.5rem;
+  }
+
+  .collection-with-image-swiper {
+    gap: 1.5rem;
+    padding: 4rem 0;
+  }
+
+  .collection-with-image-swiper .js-collection-swiper {
+    gap: 1rem;
+  }
+
+  .image-content .collection-list__heading {
+    font-size: 2.4rem;
+  }
+
+  .collection-with-image-swiper .collection-list__description {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .collection-with-image-swiper .image-content {
+    padding-left: 1.5rem;
+  }
+
+  .collection-with-image-swiper .collection_product_card {
+    gap: 1rem;
+  }
 }
