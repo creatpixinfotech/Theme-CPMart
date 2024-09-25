@@ -74,15 +74,28 @@
   --shadow-opacity: var(--media-shadow-opacity);
   --shadow-visible: var(--media-shadow-visible);
 }
-
-@font-face {
+.button-primary {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  background-color: #64b496;
+  padding:1.1rem 1.5rem;
+  border-radius: .6rem;
   font-family: 'jost';
-  src: url("{{'Jost-Regular.woff2' | file_url }}") format('woff2'),
-    url("{{'Jost-Regular.woff' | file_url }}") format('woff');
-  font-weight: normal;
-  font-style: normal;
+  max-width: 13rem;
+  font-size: 1.6rem;
+  line-height: 1.445;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: normal;
+  transition: all .3s ease-in-out;
 }
-
+.button-primary:hover {
+  background-color:orange;
+  max-width:14rem;
+  justify-content: space-between;
+}
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
