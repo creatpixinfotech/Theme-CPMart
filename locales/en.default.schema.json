@@ -393,7 +393,9 @@
       "padding": {
         "section_padding_heading": "Section padding",
         "padding_top": "Top padding",
-        "padding_bottom": "Bottom padding"
+        "padding_bottom": "Bottom padding",
+        "padding_top_mobile": "Top padding Mobile",
+        "padding_bottom_mobile": "Bottom padding Mobile"
       },
       "spacing": "Spacing",
       "colors": {
@@ -445,6 +447,18 @@
         },
         "label": "Image shape",
         "info": "Standard-styled cards have no borders when an image shape is active."
+      },
+      "card_layout": {
+        "label": "Select Card Layout",
+        "options__1": {
+          "label": "Layout 1"
+        },
+        "options__2": {
+          "label": "Layout 2"
+        },
+        "options__3": {
+          "label": "Layout 3"
+        }
       }
     },
     "announcement-bar": {
@@ -824,6 +838,31 @@
         },
         "swipe_on_mobile": {
           "label": "Enable swipe on mobile"
+        },
+        "heading_alignments": {
+          "label": "Heading Alignment",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          }
+        },
+        "show_collection_with_title": {
+          "label": "Show collection title",          
+        },
+      },
+      "blocks": {
+        "collection": {
+          "name": "collection",
+          "settings": {
+            "collection": {
+              "label": "Collection"
+            }
+          }
         }
       },
       "presets": {

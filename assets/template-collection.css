@@ -30,6 +30,10 @@
   }
 }
 
+.collection {
+  background-color: #F8F9FF;
+}
+
 .collection .loading-overlay {
   top: 0;
   right: 0;
