@@ -1,0 +1,93 @@
+{{ 'image-collage.css' | asset_url | stylesheet_tag }}
+
+<div class="image-collage page-width">
+  <div class="left-content">
+    <div class="sub-title">{{ section.settings['sub-title'] }}</div>
+    <div class="title">{{ section.settings.title }}</div>
+    <div class="image-section">
+      <img
+        srcset="{{ section.settings.image | image_url: width: section.settings.image.width }}, {{ section.settings.image | image_url: width: section.settings.image.width }} 2x"
+        src="{{ section.settings.image | image_url: width: 760 }}"
+        alt="{{ section.settings.image.alt | escape }}"
+        loading="lazy"
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.height }}"
+      >
+    </div>
+  </div>
+  <div class="right-content">
+    <div class="image-block">
+      {% for block in section.blocks %}
+        <figure>
+          <img
+            srcset="{{ block.settings.image | image_url: width: block.settings.image.width }}, {{ block.settings.image | image_url: width: block.settings.image.width }} 2x"
+            src="{{ block.settings.image | image_url: width: 760 }}"
+            alt="{{ block.settings.image.alt | escape }}"
+            loading="lazy"
+            width="{{ block.settings.image.width }}"
+            height="{{ block.settings.image.height }}"
+          >
+        </figure>
+      {% endfor %}
+    </div>
+    <div class="description">{{ section.settings.description }}</div>
+    <a href="{{ section.settings.link }}">{{ section.settings.button_text }}</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.image_collage.name",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sub-title",
+      "label": "t:sections.image_collage.settings.subtitle.label"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "t:sections.image_collage.settings.title.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image_collage.settings.image.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:sections.image_collage.settings.description.label"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "t:sections.image_collage.settings.button_text.label"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:sections.image_collage.settings.button_link.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "t:sections.image_collage.blocks.image.name",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.image_collage.blocks.image.settings.image.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.image_collage.presets.name"
+    }
+  ]
+}
+{% endschema %}
