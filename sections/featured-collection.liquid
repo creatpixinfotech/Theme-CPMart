@@ -130,7 +130,8 @@
                   show_rating: section.settings.show_rating,
                   skip_styles: skip_card_product_styles,
                   section_id: section.id,
-                  quick_add: section.settings.quick_add
+                  quick_add: section.settings.quick_add,
+                  card_layout: section.settings.card_layout
                 %}
               </li>
             {% endfor %}
@@ -154,7 +155,8 @@
                 show_rating: section.settings.show_rating,
                 skip_styles: skip_card_product_styles,
                 section_id: section.id,
-                quick_add: section.settings.quick_add
+                quick_add: section.settings.quick_add,
+                card_layout: section.settings.card_layout
               %}
             </li>
             {%- assign skip_card_product_styles = true -%}
@@ -181,7 +183,8 @@
                   show_vendor: section.settings.show_vendor,
                   media_aspect_ratio: section.settings.image_ratio,
                   image_shape: section.settings.image_shape,
-                  placeholder_image: placeholder_image
+                  placeholder_image: placeholder_image,
+                  card_layout: section.settings.card_layout
                 %}
               </li>
             {%- endfor -%}
@@ -490,6 +493,26 @@
       "default": false,
       "label": "t:sections.featured-collection.settings.show_rating.label",
       "info": "t:sections.featured-collection.settings.show_rating.info"
+    },
+    {
+      "type": "select",
+      "id": "card_layout",
+      "default": "layout-1",
+      "label": "t:sections.all.card_layout.label",
+      "options": [
+        {
+          "value": "layout-1",
+          "label": "t:sections.all.card_layout.options__1.label"
+        },
+        {
+          "value": "layout-2",
+          "label": "t:sections.all.card_layout.options__2.label"
+        },
+        {
+          "value": "layout-3",
+          "label": "t:sections.all.card_layout.options__3.label"
+        }
+      ]
     },
     {
       "type": "select",

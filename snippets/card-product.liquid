@@ -40,7 +40,7 @@
       assign ratio = 1
     endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover">
+  <div class="card-wrapper product-card-wrapper underline-links-hover {{ card_layout }}">
     <div
       class="
         card card--{{ settings.card_style }}
@@ -371,7 +371,7 @@
                         >
                           <span class="add-to-cart">
                             {%- if card_product.selected_or_first_available_variant.available -%}
-                              {% render 'icon-cart' %}
+                            {{- 'icon-bag.svg' | inline_asset_content -}}
                               {{ 'products.product.add' | t }}
                             {%- else -%}
                               {{ 'products.product.sold_out' | t }}
