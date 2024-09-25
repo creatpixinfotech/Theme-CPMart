@@ -975,6 +975,17 @@
         "name": "Featured product"
       }
     },
+    "product_details" : {
+      "name" : "Product Details",
+      "settings" : {
+        "background_color" : {
+          "label": "Background color"
+        }
+      },
+      "presets" : {
+        "name": "Product Details"
+      }
+    },
     "footer": {
       "name": "Footer",
       "blocks": {
