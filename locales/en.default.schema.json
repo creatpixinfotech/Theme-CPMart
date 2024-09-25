@@ -1779,6 +1779,26 @@
         }
       }
     },
+    "title-with-links": {
+      "name": "Title with Links",
+      "blocks":{
+        "type":"Block",
+        "name":"Block",
+        "settings":{
+          "bg_image":"Background Image",
+          "title":"Title",
+          "link":{
+            "button_link":"Button Link"
+          },
+          "label":{
+            "button_label":"Button Label"
+          }
+        }
+      },
+      "presets":{
+        "name":"Title with Links"
+      }
+    },
     "main-cart-items": {
       "name": "Items"
     },

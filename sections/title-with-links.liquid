@@ -1,0 +1,53 @@
+<section class="title-with-links">
+  <div class="title-with-links__wrapper">
+    {% for block in section.blocks %}
+      <div style="background-image:url('{{ block.settings.bg_img |  image_url }}')">
+        <div class="title-with-links__overlay"></div>
+        <div>
+          <div class="title-with-links__title">{{ block.settings.title }}</div>
+          <a class="button-primary" href="{{ block.settings.btn_url }}">{{ block.settings.btn_label }}</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.title-with-links.name",
+  "blocks": [
+    {
+      "type": "t:sections.title-with-links.blocks.type",
+      "name": "t:sections.title-with-links.blocks.name",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "bg_img",
+          "label": "t:sections.title-with-links.blocks.settings.bg_image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.title-with-links.blocks.settings.title"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "t:sections.title-with-links.blocks.settings.link.button_link"
+        },
+        {
+          "type": "text",
+          "id": "btn_label",
+          "label": "t:sections.title-with-links.blocks.settings.label.button_label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.title-with-links.presets.name"
+    }
+  ]
+}
+{% endschema %}
