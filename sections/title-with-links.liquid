@@ -1,4 +1,7 @@
-<section class="title-with-links">
+<section
+  class="title-with-links"
+  style="padding-block-start: {{ section.settings.padding_top }};padding-block-end:{{ section.settings.padding_bottom }};background-color:{{ section.settings.bg_color }}"
+>
   <div class="title-with-links__wrapper">
     {% for block in section.blocks %}
       <div style="background-image:url('{{ block.settings.bg_img |  image_url }}')">
@@ -15,6 +18,33 @@
 {% schema %}
 {
   "name": "t:sections.title-with-links.name",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "step": 2,
+      "min": 0,
+      "max": 100,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "step": 2,
+      "min": 0,
+      "max": 100,
+      "unit": "px",
+      "default": 16
+    }
+  ],
   "blocks": [
     {
       "type": "t:sections.title-with-links.blocks.type",
