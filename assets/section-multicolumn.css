@@ -231,3 +231,109 @@
     display: list-item;
   }
 }
+
+.multicolumn-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2.7rem;
+}
+
+.multicolumn-list .multicolumn-card {
+  height: 100%;
+}
+
+.multicolumn-list .multicolumn-list__item {
+  flex: 1;
+}
+
+.multicolumn-list .multicolumn-list__item .multicolumn-card__image-wrapper {
+  max-width: 6rem;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0;
+  margin: 0;
+  flex: 22%;
+}
+
+.multicolumn-list__item .multicolumn-card__image-wrapper .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.multicolumn-list .multicolumn-list__item .multicolumn-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 2.7rem 2rem 1.5rem;
+  background-color: #F4F6FA;
+  border-radius: .6rem;
+}
+
+.multicolumn-list .media--portrait {
+  padding-bottom: 100%;
+}
+
+.multicolumn .grid .multicolumn-list__item {
+  max-width: 26rem;
+  width: 100%;
+}
+
+.multicolumn .grid .multicolumn-list__item .multicolumn-card .multicolumn-card__info {
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.multicolumn-card__info .inline-richtext {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.445;
+  color: #242424;
+  letter-spacing: 0;
+}
+
+.multicolumn-card__info .rte {
+  margin: 0;
+}
+
+.multicolumn-card__info .rte p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.445;
+  color: #ADADAD;
+  letter-spacing: 0;
+}
+
+.section-template--17275584905372__multicolumn_TDphBQ-padding .grid {
+  justify-content: space-between;
+}
+
+@media screen and (max-width:1200px) {
+  .multicolumn-list .multicolumn-list__item .multicolumn-card {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width:989px) {
+  .multicolumn-list .multicolumn-list__item .multicolumn-card {
+    flex-direction: row;
+    padding: 1.2rem;
+  }
+
+  .multicolumn .multicolumn-list {
+    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  }
+
+  .multicolumn .grid .multicolumn-list__item {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width:749px) {
+  .multicolumn-list {
+    gap: 1.5rem;
+  }
+}
