@@ -1,9 +1,11 @@
+{{ 'section-image-video-grid.css' | asset_url | stylesheet_tag }}
+
 <section class="image-video-grid" id="image-video-grid" style="background-color: {{ section.settings.bg_color }};">
   <div class="page-width image-video-grid__wrapper">
     <div class="image-video-grid__content-wrapper">
       <div class="image-video-grid__title_wrapper">
         <div class="image-video-grid__title">{{ section.settings.title }}</div>
-        <span>
+        <span class="image-video-grid__icon-line">
           {%- if section.settings.title != blank %}{% render 'icon_line' %}{% endif -%}
         </span>
       </div>
@@ -19,13 +21,14 @@
       style="grid-template-columns: repeat({% if section.blocks.size > 3 %} 3 {% else %} {{ section.blocks.size }} {% endif %}, 1fr);"
     >
       {% for block in section.blocks %}
+      {% if block.settings.choose_media === "video" %}
         <div class="videos-card">
           <div class="video-overlay"></div>
-          <span onclick="videoToggle('{{ block.settings.videos.id }}')">{% render 'icon-play_button' %}</span>
+          <span  class="image-play-button" onclick="videoToggle('{{ block.settings.videos.id }}')">{% render 'icon-play_button' %}</span>
           {{
             block.settings.videos
             | video_tag:
-              autoplay: false,
+              autoplay: true,
               loop: 'loop',
               muted: true,
               alt: 'video',
@@ -35,8 +38,28 @@
               id: block.settings.videos.id
           }}
         </div>
+        {% else %}
+        <div class="image-card">
+        {{
+          block.settings.images 
+          | image_url: width: 100, height: 100
+          | image_tag:
+            alt: 'image',
+            class: 'images',
+            id: block.settings.images.id
+        }}
+        </div>
+        {% endif %}
       {% endfor %}
     </div>
+  </div>
+
+
+  <div class="video-fullscreen" id="video-fullscreen">
+  <div class="video-contener">
+  <video id="fullscreen-video" controls></video>
+  <span class="fullscreen-close" onclick="closeFullscreen()"> {{- 'icon-close.svg' | inline_asset_content -}}</span>
+  </div>
   </div>
 </section>
 
@@ -76,6 +99,27 @@
           "type": "video",
           "id": "videos",
           "label": "t:sections.image-video-grid.blocks.settings.video.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "images",
+          "label": "t:sections.image-video-grid.blocks.settings.image.label"
+        },
+        {
+          "type": "select",
+          "id": "choose_media",
+          "label": "Choose Media",
+          "options": [
+            {
+              "value": "video",
+              "label": "video"
+            },
+            {
+              "value": "image",
+              "label": "image"
+            }
+          ],
+          "default": "video"
         }
       ]
     }

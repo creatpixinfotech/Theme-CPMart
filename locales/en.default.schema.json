@@ -692,6 +692,9 @@
         "settings": {
           "video": {
             "label": "Video"
+          },
+          "image":{
+            "label": "Image"
           }
         }
       },
