@@ -440,6 +440,7 @@
 .card-wrapper.layout-2 .card {
   border-radius: 1.2rem;
   background-color: #fff;
+  overflow: hidden;
 }
 
 .card-wrapper.layout-2 .card__inner {
@@ -503,4 +504,8 @@
   .card-wrapper.layout-3 .card__content-info {
     padding: 1rem;
   }
+}
+
+.card .card__content-info {
+  height: 100%;
 }
