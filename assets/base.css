@@ -1784,7 +1784,7 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .select .icon-caret,
-.customer select+svg {
+.customer select + svg {
   height: 0.6rem;
   width: 1rem;
   pointer-events: none;
