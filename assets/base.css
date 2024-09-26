@@ -375,6 +375,65 @@ h6,
   margin-block-end: 1.67em;
 }
 
+.heading-xl {
+  font-size: 5.2rem;
+  line-height: 1.2;
+}
+.heading-l {
+  font-size: 3.2rem;
+  line-height: 1.2;
+}
+.heading-m {
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
+
+.heading-s {
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+.text-xl {
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.text-l {
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.text-m {
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.text-s {
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.text-bolder {
+  font-weight: 700;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-semibold {
+  font-weight: 500;
+}
+
+.text-thin {
+  font-weight: 400;
+}
+
+.font-jost {
+  font-family: 'jost';
+}
+
+
 blockquote {
   font-style: italic;
   color: rgba(var(--color-foreground), 0.75);
