@@ -4,3 +4,174 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+.productlist-with-image .collection-list {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media screen and (max-width:750px) {
+  .productlist-with-image .collection-list {
+    gap: 1rem;
+  }
+}
+@media screen and (min-width:990px) {
+  .productlist-with-image .collection-list {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.productlist-with-image .collection-list__wrapper .collection-list__banner-image .hero__media{
+  width: 100%;
+  height: 100%;
+  border-radius: 1.2rem;
+}
+.productlist-with-image .collection-list{
+  position: relative;
+}
+@media screen and (min-width:990px){
+  .productlist-with-image .collection-list::before{
+    content: " ";
+    width: 7.8rem;
+    height: 10rem;
+    position: absolute;
+    background-image: url(/cdn/shop/files/leaf_img.png?v=1725968143);
+    left: -8rem;
+    bottom: 0;
+    transform: rotate(-16deg);
+    background-repeat: no-repeat;
+  }
+}
+.productlist-with-image .collection-list__banner{
+  margin: 0;
+  position: relative;
+  padding-bottom:180%;
+  height: 100%;
+}
+.collection-list__banner .collection-list__banner-image{
+  display: flex;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.collection-list .collection-list__wrapper{
+  border-radius: 1.2rem;
+  position: relative;
+}
+.productlist-with-image .section-title p{
+  margin-top: 0;
+  margin-bottom: 4rem;
+   font-size: 3.2rem;
+   font-weight: 700;
+   line-height: 1.445;
+   font-family: 'Jost';
+   color: #253D4E;
+}
+.productlist-with-image .collection-list__content-wrapper{
+    position: absolute;
+    padding-top:3rem;
+    padding-inline:1rem;
+    color: white;
+    z-index: 5;
+    width: 100%;
+}
+@media screen and (min-width:1440px){
+  .productlist-with-image .collection-list__content-wrapper{
+    padding-top:9rem;
+    padding-inline:3rem;
+  }
+}
+.productlist-with-image .collection-list__sub-heading{
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.445;
+  font-family: 'Jost';
+}
+@media screen and (max-width:1024px){
+  .productlist-with-image .collection-list__sub-heading{
+    font-size: 2rem;
+  }
+}
+.productlist-with-image .collection-list__sub-heading p{
+  margin: 0;
+}
+.productlist-with-image .collection-list__description{
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.445;
+  font-family: 'jost';
+}
+@media screen and (max-width:749px){
+  .productlist-with-image .section-title p{
+    margin-bottom: 2rem;
+  }
+  .productlist-with-image .collection-list__description{
+    font-size: 1.2rem;
+  }
+}
+.productlist-with-image .collection-list__description p{
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+.productlist-with-image .collection-list .card--card{
+  border: 1px solid #3BB77E;
+  overflow: hidden;
+}
+.productlist-with-image .collection-list .card__inner{
+    background-color: #ECFFEC;
+}
+.productlist-with-image .card__media .motion-reduce{
+  padding: 3.75rem;
+}
+.productlist-with-image .card--media .card__inner .card__content{
+  padding: 0;
+}
+.productlist-with-image .card__information .card__heading{
+  font-family: 'jost';
+  line-height: 1.445;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+@media screen and (max-width:749px) {
+  .productlist-with-image .card__information .card__heading{
+    font-size: 1.2rem;
+  }
+  .productlist-with-image .card__information{
+    font-size: 1.2rem;
+    padding: 0;
+  }
+}
+.productlist-with-image .card__information .price__sale .price-item--regular{
+    font-family: 'jost';
+    font-size: 1.4rem;
+    line-height: 1.445;
+    font-weight: 600;
+    color: #AAA9A3;
+}
+.productlist-with-image .card__information .price__sale .price-item--sale{
+  font-family: 'jost';
+    font-size: 1.8rem;
+    line-height: 1.445;
+    font-weight: 600;
+    color: #3BB77E;
+}
+.productlist-with-image .card__badge{
+  line-height: 0;
+}
+.productlist-with-image .card__badge .badge{
+  border-top-left-radius: 1.2rem;
+  border-bottom-right-radius: 1.2rem;
+  border-top-right-radius:0;
+  border-bottom-left-radius:0;
+  position: absolute;
+  left: -1.5px;
+  top: -1.5px;
+}
+@media screen and (max-width:425px) {
+  .productlist-with-image .button-primary{
+    font-size: 1.4rem;
+    text-wrap: nowrap;
+  }
+}
