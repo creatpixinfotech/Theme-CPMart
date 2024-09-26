@@ -699,6 +699,46 @@
         "name": "Collection list"
       }
     },
+    "productlist-with-image": {
+      "name": "ProductList with Image",
+      "settings": {
+        "background_color": {
+          "label": "Background Color"
+        },
+        "heading": {
+          "label": "Heading"
+        },
+        "subheading": {
+          "label": "Subheading"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "button":{
+          "label": "Button Label",
+          "link": "Button Link"
+        },
+        "collection": {
+          "label": "Collection"
+        },
+      },
+      "blocks": {
+        "type":"block",
+        "name": "block",
+        "settings": {
+          "image": {
+              "label": "Image",
+              "image_col_start_position": "Image Column Start Position",
+              "image_col_end_position": "Image Column End Position",
+               "image_row_start_position": "Image Row Start Position",
+              "image_row_end_position": "Image Row End Position"
+            }
+        }
+      },
+      "presets": {
+        "name": "ProductList with Image"
+      }
+    },
     "contact-form": {
       "name": "Contact Form",
       "presets": {

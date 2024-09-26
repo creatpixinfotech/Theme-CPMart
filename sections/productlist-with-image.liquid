@@ -1,0 +1,314 @@
+{{ 'productlist-with-image.css' | asset_url | stylesheet_tag }}
+{{ 'quick-add.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+
+<div class="page-width productlist-with-image productlist-with-image-{{ section.id }} productlist-with-image-container">
+  {% if section.settings.title != blank %}
+    <div class="section-title ">
+      {{ section.settings.title }}
+    </div>
+  {% endif %}
+
+  <div class="collection-list">
+    {% for product in section.settings.collection.products %}
+      {% assign index = forloop.index %}
+      {% for block in section.blocks %}
+        {% if index == block.settings.image_start_position %}
+          <div
+            class="collection-list__wrapper"
+            style="
+              grid-column: {{ block.settings.image_start_position }}/{{ block.settings.image_end_position}};
+              grid-row: {{ block.settings.image_start_row }}/{{ block.settings.image_end_row }}
+            "
+          >
+            <div class="collection-list__content-wrapper">
+              {% if section.settings.subheading %}
+                <div class="collection-list__sub-heading">{{ section.settings.subheading }}</div>
+              {% endif %}
+              {% if section.settings.subheading %}
+                <div class="collection-list__description">{{ section.settings.description }}</div>
+              {% endif %}
+              {% if section.settings.btn_link %}
+                <a href="{{ section.settings.btn_link }}" class="button-primary">
+                  {{- section.settings.btn_text -}}
+                  {%- render 'icon-white-arrow' -%}
+                </a>
+              {% endif %}
+            </div>
+
+            <figure
+              class="collection-list__banner"
+            >
+              <picture class="collection-list__banner-image">
+                <source
+                  srcset="{{ block.settings.image | image_url : width: 1000, height: 1500 }}"
+                  media="(max-width: 640px)"
+                >
+                <source
+                  srcset="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
+                  media="(max-width: 768px)"
+                >
+                <source
+                  srcset="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
+                  media="(max-width: 1024px)"
+                >
+                <img
+                  src="{{ block.settings.image | image_url : width: 30 }}"
+                  data-src="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
+                  class="hero__media lazyload"
+                  alt="{{ block.settings.image.alt }}"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                  loading="eager"
+                >
+              </picture>
+            </figure>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      <div data-index="{{ forloop.index }}">
+        {% render 'card-product',
+         card_product: product,
+         quick_add: section.settings.quick_add,
+         card_layout: section.settings.card_layout
+        %}
+      </div>
+    {% endfor %}
+    {% for block in section.blocks %}
+      {% if block.settings.image_start_position > section.settings.collection.all_products_count %}
+        <div
+          class="collection-list__wrapper"
+          style="
+            grid-column: {{ block.settings.image_start_position }}/{{ block.settings.image_end_position}};
+            grid-row: {{ block.settings.image_start_row }}/{{ block.settings.image_end_row }}
+          "
+        >
+          <div class="collection-list__content-wrapper">
+            {% if section.settings.subheading %}
+              <div class="collection-list__sub-heading">{{ section.settings.subheading }}</div>
+            {% endif %}
+            {% if section.settings.subheading %}
+              <div class="collection-list__description">{{ section.settings.description }}</div>
+            {% endif %}
+            {% if section.settings.btn_link %}
+              <a href="{{ section.settings.btn_link }}" class="button-primary">
+                {{- section.settings.btn_text -}}
+                {%- render 'icon-white-arrow' -%}
+              </a>
+            {% endif %}
+          </div>
+          <figure class="collection-list__banner">
+            <picture class="collection-list__banner-image">
+              <source
+                srcset="{{ block.settings.image | image_url : width: 1000, height: 1500 }}"
+                media="(max-width: 640px)"
+              >
+              <source
+                srcset="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
+                media="(max-width: 768px)"
+              >
+              <source
+                srcset="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
+                media="(max-width: 1024px)"
+              >
+              <img
+                src="{{ block.settings.image | image_url : width: 30 }}"
+                data-src="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
+                class="hero__media"
+                alt="{{ block.settings.image.alt }}"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+                loading="eager"
+              >
+            </picture>
+          </figure>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% style %}
+  .productlist-with-image-{{ section.id }}{
+    background-color:{{ section.settings.bg_color }};
+      padding-top:{{ section.settings.padding-top }}px;
+      padding-bottom:{{ section.settings.padding-bottom }}px;
+  }
+
+
+    @media (max-width:768px) {
+      .productlist-with-image-{{ section.id }}{
+        padding-top:{{ section.settings.padding-top-mobile }}px;
+        padding-bottom:{{ section.settings.padding-bottom-mobile }}px;
+      }
+    }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "t:sections.productlist-with-image.name",
+  "settings": [
+    {
+      "type": "color",
+      "label": "t:sections.productlist-with-image.settings.background_color.label",
+      "id": "bg_color"
+    },
+    {
+      "type": "richtext",
+      "label": "t:sections.productlist-with-image.settings.heading.label",
+      "id": "title"
+    },
+    {
+      "type": "richtext",
+      "label": "t:sections.productlist-with-image.settings.subheading.label",
+      "id": "subheading"
+    },
+    {
+      "type": "richtext",
+      "label": "t:sections.productlist-with-image.settings.description.label",
+      "id": "description"
+    },
+    {
+      "type": "url",
+      "label": "t:sections.productlist-with-image.settings.button.link",
+      "id": "btn_link"
+    },
+    {
+      "type": "text",
+      "label": "t:sections.productlist-with-image.settings.button.label",
+      "id": "btn_text"
+    },
+    {
+      "type": "collection",
+      "label": "t:sections.productlist-with-image.settings.collection.label",
+      "id": "collection"
+    },
+    {
+      "type": "select",
+      "id": "card_layout",
+      "default": "layout-1",
+      "label": "t:sections.all.card_layout.label",
+      "options": [
+        {
+          "value": "layout-1",
+          "label": "t:sections.all.card_layout.options__1.label"
+        },
+        {
+          "value": "layout-2",
+          "label": "t:sections.all.card_layout.options__2.label"
+        },
+        {
+          "value": "layout-3",
+          "label": "t:sections.all.card_layout.options__3.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "quick_add",
+      "default": "none",
+      "label": "t:sections.main-collection-product-grid.settings.quick_add.label",
+      "info": "t:sections.main-collection-product-grid.settings.quick_add.info",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_1"
+        },
+        {
+          "value": "standard",
+          "label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_2"
+        },
+        {
+          "value": "bulk",
+          "label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_3"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "padding-top",
+      "label": "t:sections.all.padding.padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "t:sections.all.padding.padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding-top-mobile",
+      "label": "t:sections.all.padding.padding_top_mobile",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom-mobile",
+      "label": "t:sections.all.padding.padding_bottom_mobile",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "name": "t:sections.productlist-with-image.blocks.name",
+      "type": "t:sections.productlist-with-image.blocks.type",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "t:sections.productlist-with-image.blocks.settings.image.label",
+          "id": "image"
+        },
+        {
+          "type": "range",
+          "label": "t:sections.productlist-with-image.blocks.settings.image.image_col_start_position",
+          "id": "image_start_position",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "range",
+          "label": "t:sections.productlist-with-image.blocks.settings.image.image_col_end_position",
+          "id": "image_end_position",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 2
+        },
+        {
+          "type": "number",
+          "label": "t:sections.productlist-with-image.blocks.settings.image.image_row_start_position",
+          "id": "image_start_row",
+          "default": 1
+        },
+        {
+          "type": "number",
+          "label": "t:sections.productlist-with-image.blocks.settings.image.image_row_end_position",
+          "id": "image_end_row",
+          "default": 2
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.productlist-with-image.presets.name"
+    }
+  ]
+}
+{% endschema %}
