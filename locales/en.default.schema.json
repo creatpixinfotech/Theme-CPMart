@@ -284,6 +284,10 @@
         "social_vimeo_link": {
           "label": "Vimeo",
           "info": "https://vimeo.com/shopify"
+        },
+        "social_linkedin_link": {
+          "label": "Linkedin",
+          "info": "https://www.linkedin.com/shopify"
         }
       }
     },
@@ -447,6 +451,19 @@
         },
         "label": "Image shape",
         "info": "Standard-styled cards have no borders when an image shape is active."
+      },
+      "title_position": {
+        "label": "Title position",
+        "option_1": {
+          "label": "Left"
+        },
+        "option_2": {
+          "label": "Center"
+        },
+        "option_3": {
+          "label": "Right"
+        },
+        "default": "flex-start"
       }
     },
     "announcement-bar": {
