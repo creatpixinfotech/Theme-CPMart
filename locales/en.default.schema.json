@@ -2629,6 +2629,14 @@
     "newsletter": {
       "name": "Email signup",
       "settings": {
+        "image":"Background Image",
+        "button":
+        {
+          "label": "Button Label",
+        },
+        "color":{
+          "text_color":"Text Color"
+        },
         "full_width": {
           "label": "Make section full width"
         },
