@@ -22,3 +22,14 @@ function productDetails() {
 }
 
 productDetails();
+
+const titles = document.querySelectorAll('.product-details .product-details_title .titles');
+  if (titles.length > 0) {
+    titles[0].classList.add('active');
+  }
+  titles.forEach(title => {
+    title.addEventListener('click', function() {
+      titles.forEach(t => t.classList.remove('active'));
+      title.classList.add('active');
+    });
+  });
