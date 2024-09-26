@@ -47,7 +47,9 @@
   box-shadow: inherit;
   background-color: inherit;
 }
-
+.header__search .search__button:not(:focus-visible):not(.focused){
+  background-color:#3bb77e;
+}
 .search__button:hover .icon,
 .reset__button:hover .icon {
   transform: scale(1.07);
@@ -56,6 +58,10 @@
 .search__button .icon {
   height: 1.8rem;
   width: 1.8rem;
+}
+.header__search .search__button .icon {
+  height: 2.3rem;
+  width: 2.3rem;
 }
 
 .reset__button .icon.icon-close {

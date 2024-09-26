@@ -56,6 +56,7 @@ menu-drawer > details[open] > summary::before {
 details[open].menu-opening > .menu-drawer__submenu {
   transform: translateX(0);
   visibility: visible;
+  overflow: hidden;
 }
 
 .js .menu-drawer__navigation .submenu-open {
@@ -92,6 +93,8 @@ details[open].menu-opening > .menu-drawer__submenu {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  position: relative;
+  top:14rem;
 }
 
 .js .menu-drawer__menu li {
@@ -125,7 +128,8 @@ details[open].menu-opening > .menu-drawer__submenu {
   display: none;
 }
 
-.menu-drawer__menu-item > .icon-arrow {
+.menu-drawer__menu-item > .svg-wrapper {
+  width: 15px;
   position: absolute;
   right: 3rem;
   top: 50%;
@@ -162,9 +166,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   text-align: left;
 }
 
-.menu-drawer__close-button .icon-arrow {
+.menu-drawer__close-button .svg-wrapper {
   transform: rotate(180deg);
   margin-right: 1rem;
+  width: 15px;
 }
 
 .menu-drawer__utility-links {
@@ -203,7 +208,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   margin: 0;
 }
 
-.menu-drawer__account .icon-account {
+.menu-drawer__account account-icon > .svg-wrapper {
   height: 2rem;
   width: 2rem;
   margin-right: 1rem;
@@ -215,7 +220,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   margin-left: -0.45rem;
 }
 
-.menu-drawer__account:hover .icon-account {
+.menu-drawer__account:hover account-icon > .svg-wrapper {
   transform: scale(1.07);
 }
 

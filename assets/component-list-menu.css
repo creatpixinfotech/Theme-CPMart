@@ -28,3 +28,14 @@
   width: 10rem;
   padding: 0.5rem;
 }
+
+.header__inline-menu .nav__contact {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  letter-spacing: normal;
+  color: #253D4E;
+}
+.header__inline-menu .nav__contact-svg {
+  display: flex;
+}
