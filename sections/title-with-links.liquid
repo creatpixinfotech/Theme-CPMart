@@ -1,18 +1,21 @@
+{{ 'section-title-with-links.css' | asset_url | stylesheet_tag }}
 <section
   class="title-with-links"
-  style="padding-block-start: {{ section.settings.padding_top }};padding-block-end:{{ section.settings.padding_bottom }};background-color:{{ section.settings.bg_color }}"
+  style="padding-block-start: {{ section.settings.padding_top }}px;padding-block-end:{{ section.settings.padding_bottom }}px;background-color:{{ section.settings.bg_color }}"
 >
+<div class="page-width">
   <div class="title-with-links__wrapper">
     {% for block in section.blocks %}
-      <div style="background-image:url('{{ block.settings.bg_img |  image_url }}')">
+      <div class="title-with-links__background title-with-links__background-{{ forloop.index }}" style="background-image:url('{{ block.settings.bg_img |  image_url }}')">
         <div class="title-with-links__overlay"></div>
-        <div>
+        <div class=title-with-links__text>
           <div class="title-with-links__title">{{ block.settings.title }}</div>
-          <a class="button-primary" href="{{ block.settings.btn_url }}">{{ block.settings.btn_label }}</a>
+          <a class="button-primary" href="{{ block.settings.btn_url }}">{{ block.settings.btn_label }} <span> {{- 'icon-arrow.svg' | inline_asset_content -}}</span></a>
         </div>
       </div>
     {% endfor %}
   </div>
+</div>
 </section>
 
 {% schema %}
@@ -57,7 +60,7 @@
           "label": "t:sections.title-with-links.blocks.settings.bg_image"
         },
         {
-          "type": "text",
+          "type": "richtext",
           "id": "title",
           "label": "t:sections.title-with-links.blocks.settings.title"
         },
