@@ -4,4 +4,10 @@
 
 .related-products__heading {
   margin: 0 0 3rem;
+  font-family: jost;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.445;
+  text-align: left;
+  text-transform: capitalize;
 }

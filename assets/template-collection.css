@@ -30,6 +30,10 @@
   }
 }
 
+.collection {
+  background-color: #F8F9FF;
+}
+
 .collection .loading-overlay {
   top: 0;
   right: 0;
@@ -63,7 +67,7 @@
   }
 }
 
-.collection__description > * {
+.collection__description>* {
   margin: 0;
 }
 
@@ -96,4 +100,129 @@
 
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
+}
+
+.collection .collection-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collection .collection-header .collection-active {
+  text-decoration: underline;
+}
+
+.collection .heading-left {
+  text-align: left;
+}
+
+.collection .heading-right {
+  text-align: right;
+}
+
+.collection .heading-center {
+  text-align: center;
+}
+
+.collection .collection-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.collection .collection__title .title {
+  font-family: "jost";
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.445;
+  text-align: left;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.collection .collections-name {
+  display: flex;
+  gap: 2rem;
+}
+
+.collection .collections-name span {
+  font-family: "jost";
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.445;
+  text-align: left;
+  color: #242424;
+  cursor: pointer;
+}
+
+.collection .collections-name .collection-active {
+  color: #3BB77E;
+  text-decoration: none;
+}
+
+.collection .product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.collection .product-grid .grid__item {
+  max-width: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width:1200px) {
+  .collection .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width:990px) {
+  .collection .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width:749px) {
+  .collection .collection__title .title {
+    font-size: 2.4rem;
+  }
+
+  .collection .collection-header {
+    gap: 1rem;
+  }
+
+  .collection .collections-name span {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width:460px) {
+  .collection .product-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .collection .collection-flex {
+    flex-direction: column;
+  }
+
+  .collection .collection-header {
+    justify-content: center;
+  }
+}
+
+.collection .collection_design-icon {
+  width: fit-content;
+  position: absolute;
+  top: -5.1rem;
+  left: 0;
+}
+
+@media screen and (max-width:749px) {
+  .collection .collection_design-icon {
+    max-width: 8rem;
+    max-height: 8rem;
+    left: -1.4rem;
+  }
 }
