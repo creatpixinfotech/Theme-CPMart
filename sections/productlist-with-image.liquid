@@ -1,5 +1,5 @@
 {{ 'productlist-with-image.css' | asset_url | stylesheet_tag }}
-<div class="productlist-with-image productlist-with-image-{{ section.id }} productlist-with-image-container">
+<div class="page-width productlist-with-image productlist-with-image-{{ section.id }} productlist-with-image-container">
   {% if section.settings.title != blank %}
     <div class="section-title ">
       {{ section.settings.title }}
@@ -26,7 +26,7 @@
                 <div class="collection-list__description">{{ section.settings.description }}</div>
               {% endif %}
               {% if section.settings.btn_link %}
-                <a href="{{ section.settings.btn_link }}">
+                <a href="{{ section.settings.btn_link }}" class="button-primary">
                   {{- section.settings.btn_text -}}
                   {%- render 'icon-white-arrow' -%}
                 </a>
@@ -34,9 +34,9 @@
             </div>
 
             <figure
-              class=""
+              class="collection-list__banner"
             >
-              <picture>
+              <picture class="collection-list__banner-image">
                 <source
                   srcset="{{ block.settings.image | image_url : width: 1000, height: 1500 }}"
                   media="(max-width: 640px)"
@@ -85,14 +85,14 @@
               <div class="collection-list__description">{{ section.settings.description }}</div>
             {% endif %}
             {% if section.settings.btn_link %}
-              <a href="{{ section.settings.btn_link }}">
+              <a href="{{ section.settings.btn_link }}" class="button-primary">
                 {{- section.settings.btn_text -}}
                 {%- render 'icon-white-arrow' -%}
               </a>
             {% endif %}
           </div>
-          <figure>
-            <picture>
+          <figure class="collection-list__banner">
+            <picture class="collection-list__banner-image">
               <source
                 srcset="{{ block.settings.image | image_url : width: 1000, height: 1500 }}"
                 media="(max-width: 640px)"
