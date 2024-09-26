@@ -2626,6 +2626,27 @@
         "name": "Multicolumn"
       }
     },
+    "about-image-description": {
+      "name": "About Image Description",
+      "settings": {
+        "title":"Title",
+        "description":"Description"
+      },
+      "blocks": {
+        "type":{
+          "image":"Image",
+          "insights":"Insights"
+        },
+        "settings":{
+          "image":"Image",
+          "insights_count":"Insights Count",
+          "insights_label":"Insights Label"
+        }
+      },
+      "presets": {
+        "name": "About Image Description"
+      }
+    },
     "newsletter": {
       "name": "Email signup",
       "settings": {
