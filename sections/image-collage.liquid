@@ -2,8 +2,10 @@
 
 <div class="image-collage page-width">
   <div class="left-content">
-    <div class="sub-title">{{ section.settings['sub-title'] }}</div>
-    <div class="title">{{ section.settings.title }}</div>
+    <div class="left-content-title">
+      <div class="sub-title">{{ section.settings['sub-title'] }}</div>
+      <div class="title">{{ section.settings.title }}</div>
+    </div>
     <div class="image-section">
       <img
         srcset="{{ section.settings.image | image_url: width: section.settings.image.width }}, {{ section.settings.image | image_url: width: section.settings.image.width }} 2x"
@@ -31,7 +33,10 @@
       {% endfor %}
     </div>
     <div class="description">{{ section.settings.description }}</div>
-    <a href="{{ section.settings.link }}">{{ section.settings.button_text }}</a>
+    <a href="{{ section.settings.link }}" class="button-primary">
+      {{ section.settings.button_text }}
+      {{- 'icon-arrow.svg' | inline_asset_content -}}
+    </a>
   </div>
 </div>
 
