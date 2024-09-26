@@ -81,3 +81,15 @@ class CartNotification extends HTMLElement {
 }
 
 customElements.define('cart-notification', CartNotification);
+document.addEventListener("DOMContentLoaded", function() {
+  const accountWrapper = document.querySelector('.account_wrapper');
+  const accountBlock = document.querySelector('.account_block');
+
+  accountWrapper.addEventListener('mouseover', function() {
+    accountBlock.style.display = 'block';
+  });
+
+  accountWrapper.addEventListener('mouseout', function() {
+    accountBlock.style.display = 'none';
+  });
+});
