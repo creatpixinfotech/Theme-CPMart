@@ -1,0 +1,36 @@
+{{ 'section-product-details.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-details.js' | asset_url }}" defer="defer"></script>
+{% assign productDetails = product.metafields.custom.product_detail.value %}
+
+<div class="product-details" style="background-color: {{ section.settings.background_color }};">
+  <div class="page-width">
+    <div class="product-details_title">
+      {% for obj in productDetails %}
+        <span data-index="{{ forloop.index }}" class="titles">{{ obj.title | metafield_tag }}</span>
+      {% endfor %}
+    </div>
+    <div class="product-details_description">
+      {% for obj in productDetails %}
+        <div data-index="{{ forloop.index }}" class="descriptions">{{ obj.description | metafield_tag }}</div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.product_details.name",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.product_details.settings.background_color.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.product_details.presets.name"
+    }
+  ]
+}
+{% endschema %}

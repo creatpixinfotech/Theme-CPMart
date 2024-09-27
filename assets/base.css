@@ -1836,10 +1836,8 @@ details[open]>.share-button__fallback {
   width: 100%;
 }
 
-/* Select */
-
-.select .svg-wrapper,
-.customer select+.svg-wrapper {
+.select .icon-caret,
+.customer select + svg {
   height: 0.6rem;
   width: 1rem;
   pointer-events: none;
