@@ -6,22 +6,22 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "Everyday Fresh & CleanWith Our Products",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify:\/\/collections",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -35,9 +35,10 @@
         "button"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/home-6-bg-min-scaled_1_1_fe1872bf-8650-4d57-b2d6-048f9e2f1a81.png",
         "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "image_height": "medium",
+        "desktop_content_position": "top-left",
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-3",
