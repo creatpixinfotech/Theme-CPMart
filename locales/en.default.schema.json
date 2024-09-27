@@ -982,6 +982,42 @@
         "name": "Featured collection"
       }
     },
+    "image_collage": {
+      "name": "Image Collage",
+      "settings": {
+        "subtitle": {
+          "label": "Subtitle"
+        },
+        "title": {
+          "label": "Title"
+        },
+        "image": {
+          "label": "Image"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "button_text": {
+          "label": "Button text"
+        },
+        "button_link": {
+          "label": "Button link"
+        }
+      },
+      "blocks": {
+        "image": {
+          "name": "Image",
+          "settings": {
+            "image": {
+              "label": "Image"
+              }
+            }
+          }
+        },
+      "presets": {
+        "name": "Image Collage"
+      }
+    },
     "featured-product": {
       "name": "Featured product",
       "blocks": {

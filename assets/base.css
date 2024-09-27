@@ -74,13 +74,14 @@
   --shadow-opacity: var(--media-shadow-opacity);
   --shadow-visible: var(--media-shadow-visible);
 }
+
 .button-primary {
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   color: white;
   background-color: #64b496;
-  padding:1.1rem 1.5rem;
+  padding: 1.1rem 1.5rem;
   border-radius: .6rem;
   font-family: 'jost';
   max-width: 13rem;
@@ -91,11 +92,13 @@
   letter-spacing: normal;
   transition: all .3s ease-in-out;
 }
+
 .button-primary:hover {
-  background-color:orange;
-  max-width:14rem;
+  background-color: orange;
+  max-width: 14rem;
   justify-content: space-between;
 }
+
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
