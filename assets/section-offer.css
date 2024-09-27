@@ -1,0 +1,122 @@
+.offer .section-content {
+  display: flex;
+  gap: 3rem;
+}
+
+.offer .section-content.section-content-row {
+  flex-direction: row;
+}
+
+.offer .section-content.section-content-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.offer .collection-deal {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 33rem;
+  width: 100%;
+  align-items: center;
+  border-radius: 1.2rem;
+  position: relative;
+}
+
+.offer .collection-image {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.offer .collection-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offer .collection-content {
+  position: absolute;
+  top: 9rem;
+  left: 0;
+  padding-left: 3rem;
+  color: #FFFFFF;
+}
+
+.offer .collection-content .collection-deal__title {
+  font-family: 'Jost';
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.445;
+  letter-spacing: 0;
+}
+
+.offer .collection-content .collection-deal__description {
+  font-family: 'Jost';
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.445;
+  letter-spacing: 0;
+}
+
+.offer .collection-timer {
+  display: flex;
+  gap: 1rem;
+}
+
+.offer .collection-timer .collection-time {
+  display: flex;
+  flex-direction: column;
+  background-color: #3BB77E;
+  border-radius: 3px;
+  width: 5rem;
+  align-items: center;
+}
+
+.offer .collection-timer .collection-time .day,
+.offer .collection-timer .collection-time .hours,
+.offer .collection-timer .collection-time .mins {
+  font-family: Jost;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.offer .collection-timer .collection-time .span {
+  font-family: Jost;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.offer .section-content .collections {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  column-gap: 2rem;
+  row-gap: 4rem;
+}
+
+.offer .collection-deal .collection-btn {
+  margin-top: 4rem;
+}
+
+@media screen and (max-width: 1280px) {
+  .offer .section-content .collections {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width:990px) {
+  .offer .section-content {
+    flex-direction: column !important;
+  }
+
+  .offer .collection-deal {
+    max-width: 100%;
+    height: 35rem;
+    overflow: hidden;
+  }
+
+  .offer .collection-content {
+    top: 4rem;
+  }
+}

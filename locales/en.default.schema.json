@@ -991,18 +991,6 @@
         "swipe_on_mobile": {
           "label": "Enable swipe on mobile"
         },
-        "heading_alignments": {
-          "label": "Heading Alignment",
-          "options__1": {
-            "label": "Left"
-          },
-          "options__2": {
-            "label": "Center"
-          },
-          "options__3": {
-            "label": "Right"
-          }
-        },
         "show_collection_with_title": {
           "label": "Show collection title",          
         },
@@ -1019,6 +1007,66 @@
       },
       "presets": {
         "name": "Featured collection"
+      }
+    },
+    "offer-deal": {
+      "name": "Offer Deal",
+      "settings": {
+        "background_color": {
+          "label": "Background color"
+        },
+        "collection": {
+          "label": "Collection"
+        },
+        "collection_position": {
+          "label": "Collection position",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Right"
+          },
+          "default": {
+            "label": "left"
+          }
+        },
+      },
+      "blocks": {
+        "collection": {
+          "name": "collection",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "background_color": {
+              "label": "Background color"
+            },
+            "button_text": {
+              "label": "Button text"
+            },
+            "button_link": {
+              "label": "Button link"
+            },
+            "title": {
+              "label": "Title"
+            },
+            "sub_title": {
+              "label": "Sub title"
+            },
+            "Days": {
+              "label": "Days"
+            },
+            "hours": {
+              "label": "Hours"
+            },
+            "minutes": {
+              "label": "Minutes"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Offer Deal"
       }
     },
     "image_collage": {

@@ -1,0 +1,211 @@
+{{ 'section-offer.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'offer-swiper.js' | asset_url }}" defer="defer"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer="defer"></script>
+<script src="{{ 'timer.js' | asset_url }}" defer="defer"></script>
+
+<div class="offer" style="background-color: {{ section.settings.background-color }};">
+  <div class="page-width">
+    <div class="section-content section-content-{{ section.settings.collection-position }}">
+      {% for block in section.blocks %}
+            <div class="collection-deal" style="background-color: {{ block.settings.background-color }};">
+              <div class="collection-image">
+                <img
+                  srcset="
+                    {%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if block.settings.image.width >= 940 -%}{{ block.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+                    {%- if block.settings.image.width >= 1066 -%}{{ block.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                    {{ block.settings.image | image_url }} {{ block.settings.image.width }}w
+                  "
+                  src="{{ block.settings.image | image_url: width: 533 }}"
+                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                  alt="{{ block.settings.image.alt | escape }}"
+                  class="motion-reduce"
+                  width="{{  block.settings.image.width }}"
+                  height="{{  block.settings.image.height }}"
+                >
+              </div>
+              <div class="collection-content">
+                <div class="collection-deal__title">
+                  {{- block.settings.title -}}
+                </div>
+                <div class="collection-deal__description">{{ block.settings.subtitle }}</div>
+              <div class="collection-timer">
+                <div class="collection-time">
+                  <span class="day">{{ block.settings.day }}</span>
+                  <span class="span">Days</span>
+                </div>
+                <div class="collection-time">
+                  <span class="hours">{{ block.settings.hours }}</span>
+                  <span class="span">Hours</span>
+                </div>
+                <div class="collection-time">
+                  <span class="mins">{{ block.settings.mins }}</span>
+                  <span class="span">Mins</span>
+                </div>
+              </div>
+              <div class="collection-btn">
+                <a href="{{ block.settings.url }}" class="collection-btn__link button-primary">
+                  {{- block.settings.button_text -}}
+                {%- render 'icon-white-arrow' -%}
+
+                </a>
+              </div>
+            </div>
+
+            </div>
+            {% endfor %}
+            <div class="collections">
+              {% for product in section.settings.collection.products %}
+                <div class="products">
+                  {% render 'card-product',
+                    card_product: product,
+                    section_id: section.id,
+                    quick_add: section.settings.quick_add,
+                    card_layout: section.settings.card_layout
+                  %}
+                </div>
+              {% endfor %}
+            </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.offer-deal.name",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background-color",
+      "label": "t:sections.offer-deal.settings.background_color.label"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:sections.offer-deal.settings.collection.label"
+    },
+    {
+      "type": "select",
+      "id": "card_layout",
+      "default": "layout-1",
+      "label": "t:sections.all.card_layout.label",
+      "options": [
+        {
+          "value": "layout-1",
+          "label": "t:sections.all.card_layout.options__1.label"
+        },
+        {
+          "value": "layout-2",
+          "label": "t:sections.all.card_layout.options__2.label"
+        },
+        {
+          "value": "layout-3",
+          "label": "t:sections.all.card_layout.options__3.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "quick_add",
+      "default": "none",
+      "label": "t:sections.main-collection-product-grid.settings.quick_add.label",
+      "info": "t:sections.main-collection-product-grid.settings.quick_add.info",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_1"
+        },
+        {
+          "value": "standard",
+          "label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_2"
+        },
+        {
+          "value": "bulk",
+          "label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_3"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "collection-position",
+      "label": "t:sections.offer-deal.settings.collection_position.label",
+      "options": [
+        {
+          "value": "row",
+          "label": "t:sections.offer-deal.settings.collection_position.options__1.label"
+        },
+        {
+          "value": "row-reverse",
+          "label": "t:sections.offer-deal.settings.collection_position.options__2.label"
+        }
+      ],
+      "default": "row"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "t:sections.offer-deal.blocks.collection.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.offer-deal.blocks.collection.settings.image.label"
+        },
+        {
+          "type": "color",
+          "id": "background-color",
+          "label": "t:sections.offer-deal.blocks.collection.settings.background_color.label"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "t:sections.offer-deal.blocks.collection.settings.button_link.label"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "t:sections.offer-deal.blocks.collection.settings.button_text.label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.offer-deal.blocks.collection.settings.title.label"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "t:sections.offer-deal.blocks.collection.settings.sub_title.label"
+        },
+        {
+          "type": "number",
+          "id": "day",
+          "label": "t:sections.offer-deal.blocks.collection.settings.Days.label"
+        },
+        {
+          "type": "number",
+          "id": "hours",
+          "label": "t:sections.offer-deal.blocks.collection.settings.hours.label",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mins",
+          "label": "t:sections.offer-deal.blocks.collection.settings.minutes.label",
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.offer-deal.presets.name"
+    }
+  ]
+}
+{% endschema %}
