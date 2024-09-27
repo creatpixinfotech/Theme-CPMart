@@ -1260,7 +1260,7 @@
               "label": "Image"
             },
             "color": {
-              "label": "Color"
+              "label": "Background Color"
             },
             "collection": {
               "label": "Collection"
