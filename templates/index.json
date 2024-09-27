@@ -21,7 +21,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -41,37 +41,130 @@
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-3",
+        "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "collection_list_mFz9Mx": {
+      "type": "collection-list",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "featured_collection_fe8QtX": {
+          "type": "featured_collection",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "collection": "frontpage",
+            "background_color": "#feefea"
           }
         },
-        "text": {
-          "type": "text",
+        "featured_collection_CXzDXE": {
+          "type": "featured_collection",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "collection": "juice",
+            "background_color": "#ecffec"
+          }
+        },
+        "featured_collection_wGYraH": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "snack",
+            "background_color": "#fffceb"
+          }
+        },
+        "featured_collection_3fd8LX": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "cake-milk",
+            "background_color": "#fff3ff"
+          }
+        },
+        "featured_collection_paeJ34": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "vegetable",
+            "background_color": "#ecffec"
+          }
+        },
+        "featured_collection_rXQmCK": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "clothes",
+            "background_color": "#fffceb"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "featured_collection_fe8QtX",
+        "featured_collection_CXzDXE",
+        "featured_collection_wGYraH",
+        "featured_collection_3fd8LX",
+        "featured_collection_paeJ34",
+        "featured_collection_rXQmCK"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 6,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "show_item_count": true
+      }
+    },
+    "collections_with_image_Ea8Uef": {
+      "type": "collections-with-image",
+      "blocks": {
+        "t_sections_collections_with_image_blocks_type_niiKpd": {
+          "type": "t:sections.collections-with-image.blocks.type",
+          "settings": {
+            "title": "<p>Everyday Fresh &\u2028Clean with Our\u2028Products<\/p>",
+            "description": "",
+            "description_color": "",
+            "alignment": "flex-start",
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/collections\/vegetable",
+            "collection": "vegetable",
+            "background_color": "#f0e8d5"
+          }
+        },
+        "t_sections_collections_with_image_blocks_type_A6UVJW": {
+          "type": "t:sections.collections-with-image.blocks.type",
+          "settings": {
+            "title": "<p>The best Organic\u2028Products Online<\/p>",
+            "description": "",
+            "description_color": "",
+            "alignment": "flex-start",
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/collections\/juice",
+            "collection": "juice",
+            "background_color": "#f3e8e8"
+          }
+        },
+        "t_sections_collections_with_image_blocks_type_4i3CPT": {
+          "type": "t:sections.collections-with-image.blocks.type",
+          "settings": {
+            "title": "<p>The best Products <br\/>Online<\/p>",
+            "description": "",
+            "description_color": "",
+            "alignment": "flex-start",
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/collections\/clothes",
+            "collection": "clothes",
+            "background_color": "#e7eaf3"
+          }
+        }
+      },
+      "block_order": [
+        "t_sections_collections_with_image_blocks_type_niiKpd",
+        "t_sections_collections_with_image_blocks_type_A6UVJW",
+        "t_sections_collections_with_image_blocks_type_4i3CPT"
+      ],
+      "settings": {
+        "show_collection_image": true
       }
     },
     "featured_collection": {
@@ -79,70 +172,163 @@
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
+        "description": "",
+        "heading_alignment": "left",
+        "show_description": false,
+        "description_style": "body",
+        "show_collection_with_title": false,
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "full_width": false,
         "show_view_all": false,
-        "swipe_on_mobile": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
+        "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "card_layout": "layout-1",
+        "quick_add": "standard",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 28,
         "padding_bottom": 36
       }
     },
-    "collage": {
-      "type": "collage",
+    "productlist_with_image_r9xUcm": {
+      "type": "productlist-with-image",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "t_sections_productlist_with_image_blocks_type_9qAeGh": {
+          "type": "t:sections.productlist-with-image.blocks.type",
           "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
+            "image": "shopify:\/\/shop_images\/square-background-natural-green-leaves_1_1.png",
+            "image_start_position": 1,
+            "image_end_position": 2,
+            "image_start_row": 1,
+            "image_end_row": 2
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "t_sections_productlist_with_image_blocks_type_9qAeGh"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "bg_color": "",
+        "title": "<p>Daily Best Sells<\/p>",
+        "subheading": "<p>Daily Best Sells item<\/p>",
+        "description": "<p>Lorem Ipsum is simply dummy text of the.<\/p>",
+        "btn_link": "shopify:\/\/collections\/cake-milk",
+        "btn_text": "Shop Now",
+        "collection": "frontpage",
+        "card_layout": "layout-3",
+        "quick_add": "standard",
+        "padding-top": 36,
+        "padding-bottom": 36,
+        "padding-top-mobile": 36,
+        "padding-bottom-mobile": 36
       }
     },
-    "video": {
-      "type": "video",
+    "productlist_with_image_64Xwcx": {
+      "type": "productlist-with-image",
+      "blocks": {
+        "t_sections_productlist_with_image_blocks_type_eetjDn": {
+          "type": "t:sections.productlist-with-image.blocks.type",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/square-background-natural-green-leaves_4.png",
+            "image_start_position": 1,
+            "image_end_position": 2,
+            "image_start_row": 1,
+            "image_end_row": 2
+          }
+        }
+      },
+      "block_order": [
+        "t_sections_productlist_with_image_blocks_type_eetjDn"
+      ],
       "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "bg_color": "#f8f9ff",
+        "title": "<p>Daily Used Food<\/p>",
+        "subheading": "<p>Daily Best Sells item<\/p>",
+        "description": "<p>Lorem Ipsum is simply dummy text of the.<\/p>",
+        "btn_link": "shopify:\/\/collections\/cake-milk",
+        "btn_text": "Shop Now",
+        "collection": "frontpage",
+        "card_layout": "layout-3",
+        "quick_add": "standard",
+        "padding-top": 36,
+        "padding-bottom": 36,
+        "padding-top-mobile": 36,
+        "padding-bottom-mobile": 36
+      }
+    },
+    "productlist_with_image_jAaCKb": {
+      "type": "productlist-with-image",
+      "blocks": {
+        "t_sections_productlist_with_image_blocks_type_E73gM3": {
+          "type": "t:sections.productlist-with-image.blocks.type",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/square-background-natural-green-leaves_4.png",
+            "image_start_position": 1,
+            "image_end_position": 2,
+            "image_start_row": 1,
+            "image_end_row": 2
+          }
+        }
+      },
+      "block_order": [
+        "t_sections_productlist_with_image_blocks_type_E73gM3"
+      ],
+      "settings": {
+        "bg_color": "",
+        "title": "<p>Healthy Food<\/p>",
+        "subheading": "<p>Healthy Food item<\/p>",
+        "description": "<p>Lorem Ipsum is simply dummy text of the.<\/p>",
+        "btn_link": "shopify:\/\/collections\/cake-milk",
+        "btn_text": "Shop Now",
+        "collection": "frontpage",
+        "card_layout": "layout-3",
+        "quick_add": "standard",
+        "padding-top": 36,
+        "padding-bottom": 36,
+        "padding-top-mobile": 36,
+        "padding-bottom-mobile": 36
+      }
+    },
+    "collection_with_image_swiper_M7PRfK": {
+      "type": "collection-with-image-swiper",
+      "blocks": {
+        "collections_U6d3Ce": {
+          "type": "collections",
+          "settings": {
+            "collection_heading": "<p>Top Selling<\/p>",
+            "collection": "frontpage"
+          }
+        },
+        "collections_8HbpEU": {
+          "type": "collections",
+          "settings": {
+            "collection_heading": "<p>Trending Products<\/p>",
+            "collection": "juice"
+          }
+        },
+        "collections_Y7LHQh": {
+          "type": "collections",
+          "settings": {
+            "collection_heading": "<p>Top Rated<\/p>",
+            "collection": "clothes"
+          }
+        }
+      },
+      "block_order": [
+        "collections_U6d3Ce",
+        "collections_8HbpEU",
+        "collections_Y7LHQh"
+      ],
+      "settings": {
+        "background_color": "#f8f9ff"
       }
     },
     "multicolumn": {
@@ -151,8 +337,9 @@
         "column1": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "image": "shopify:\/\/shop_images\/icon-1_1.png",
+            "title": "Best prices & offers",
+            "text": "<p>Best prices & offers<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -160,8 +347,9 @@
         "column2": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "image": "shopify:\/\/shop_images\/icon-2_1.png",
+            "title": "Fast delivery",
+            "text": "<p>24\/7 amazing services<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -169,8 +357,29 @@
         "column3": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "image": "shopify:\/\/shop_images\/icon-3_1.png",
+            "title": "Great daily deal",
+            "text": "<p>When you sign up<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_TBaUiz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-4_1.png",
+            "title": "Wide assortment",
+            "text": "<p>Mega Discounts<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_9Mgkrh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-5_1.png",
+            "title": "Easy returns",
+            "text": "<p>Within 30 days<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -179,7 +388,9 @@
       "block_order": [
         "column1",
         "column2",
-        "column3"
+        "column3",
+        "column_TBaUiz",
+        "column_9Mgkrh"
       ],
       "settings": {
         "title": "",
@@ -191,20 +402,555 @@
         "background_style": "none",
         "button_label": "",
         "button_link": "",
-        "swipe_on_mobile": false,
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
+        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "collection_list_gzWpDV": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_tRV3V7": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "frontpage",
+            "background_image": "shopify:\/\/shop_images\/Rectangle_81_1.png",
+            "background_color": "#feefea"
+          }
+        },
+        "featured_collection_QkcwqJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "juice",
+            "background_image": "shopify:\/\/shop_images\/Rectangle_82.png",
+            "background_color": "#ecffec"
+          }
+        },
+        "featured_collection_cVEBXK": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "snack",
+            "background_image": "shopify:\/\/shop_images\/Rectangle_83.png",
+            "background_color": "#fffceb"
+          }
+        },
+        "featured_collection_pjbmG9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "cake-milk",
+            "background_image": "shopify:\/\/shop_images\/Rectangle_84.png",
+            "background_color": "#fff3ff"
+          }
+        },
+        "featured_collection_Y3mygi": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "vegetable",
+            "background_image": "shopify:\/\/shop_images\/Rectangle_82.png",
+            "background_color": "#ecffec"
+          }
+        },
+        "featured_collection_iVahYW": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "clothes",
+            "background_image": "shopify:\/\/shop_images\/Rectangle_83.png",
+            "background_color": "#fffceb"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_tRV3V7",
+        "featured_collection_QkcwqJ",
+        "featured_collection_cVEBXK",
+        "featured_collection_pjbmG9",
+        "featured_collection_Y3mygi",
+        "featured_collection_iVahYW"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 6,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "show_item_count": true
+      }
+    },
+    "collections_with_image_D7PyhB": {
+      "type": "collections-with-image",
+      "blocks": {
+        "t_sections_collections_with_image_blocks_type_iz3kfG": {
+          "type": "t:sections.collections-with-image.blocks.type",
+          "settings": {
+            "title": "<p>Everyday Fresh &\u2028Clean with Our\u2028Products<\/p>",
+            "description": "",
+            "description_color": "",
+            "alignment": "flex-start",
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/collections\/vegetable",
+            "collection": "vegetable",
+            "background_image": "shopify:\/\/shop_images\/Rectangle_93.png",
+            "background_color": "#f0e8d5"
+          }
+        },
+        "t_sections_collections_with_image_blocks_type_iH4DJx": {
+          "type": "t:sections.collections-with-image.blocks.type",
+          "settings": {
+            "title": "<p>The best Organic\u2028Products Online<\/p>",
+            "description": "",
+            "description_color": "",
+            "alignment": "flex-start",
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/collections\/juice",
+            "collection": "juice",
+            "background_image": "shopify:\/\/shop_images\/Rectangle_94.png",
+            "background_color": "#f3e8e8"
+          }
+        },
+        "t_sections_collections_with_image_blocks_type_HfYh3L": {
+          "type": "t:sections.collections-with-image.blocks.type",
+          "settings": {
+            "title": "<p>The best Products <br\/>Online<\/p>",
+            "description": "",
+            "description_color": "",
+            "alignment": "flex-start",
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/collections\/clothes",
+            "collection": "clothes",
+            "background_image": "shopify:\/\/shop_images\/Rectangle_95.png",
+            "background_color": "#e7eaf3"
+          }
+        }
+      },
+      "block_order": [
+        "t_sections_collections_with_image_blocks_type_iz3kfG",
+        "t_sections_collections_with_image_blocks_type_iH4DJx",
+        "t_sections_collections_with_image_blocks_type_HfYh3L"
+      ],
+      "settings": {
+        "show_collection_image": false
+      }
+    },
+    "featured_collection_b9gYhn": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Fresh Daily Product",
+        "heading_size": "h2",
+        "description": "",
+        "heading_alignment": "center",
+        "show_description": false,
+        "description_style": "body",
+        "show_collection_with_title": false,
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "card_layout": "layout-2",
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    },
+    "image_collage_p8tUkH": {
+      "type": "image-collage",
+      "blocks": {
+        "image_xmf8q3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_10361.png"
+          }
+        },
+        "image_Q6w4dW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_10362.png"
+          }
+        },
+        "image_y3xPdz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_10363.png"
+          }
+        },
+        "image_U6JTpL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_10364.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_xmf8q3",
+        "image_Q6w4dW",
+        "image_y3xPdz",
+        "image_U6JTpL"
+      ],
+      "settings": {
+        "sub-title": "Buy Our Product",
+        "title": "<p>Cultivating the soil, growing crops and raising livestock<\/p>",
+        "image": "shopify:\/\/shop_images\/Rectangle_10360.png",
+        "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.<\/p>",
+        "button_text": "Read More",
+        "link": ""
+      }
+    },
+    "title_with_links_wDHMwd": {
+      "type": "title-with-links",
+      "blocks": {
+        "t_sections_title_with_links_blocks_type_GEJi6E": {
+          "type": "t:sections.title-with-links.blocks.type",
+          "settings": {
+            "bg_img": "shopify:\/\/shop_images\/title-with-link-photo1.png",
+            "title": "<p>Everyday Fresh & Clean <br\/>with Our Products<\/p>",
+            "btn_url": "",
+            "btn_label": "Shop Now"
+          }
+        },
+        "t_sections_title_with_links_blocks_type_nR74NM": {
+          "type": "t:sections.title-with-links.blocks.type",
+          "settings": {
+            "bg_img": "shopify:\/\/shop_images\/title-with-link-photo2.png",
+            "title": "<p>The best Products <br\/>Online<\/p>",
+            "btn_url": "",
+            "btn_label": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "t_sections_title_with_links_blocks_type_GEJi6E",
+        "t_sections_title_with_links_blocks_type_nR74NM"
+      ],
+      "settings": {
+        "bg_color": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "collection_with_image_swiper_zF9D34": {
+      "type": "collection-with-image-swiper",
+      "blocks": {
+        "image_wHJtNy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/square-background-natural-green-leaves_4.jpg",
+            "heading": "<p>Daily Best Sells item<\/p>",
+            "description": "<p>Lorem Ipsum is simply dummy text of the.<\/p>",
+            "btn_text": "Shop Now",
+            "btn_link": "shopify:\/\/collections"
+          }
+        },
+        "collections_g9THRj": {
+          "type": "collections",
+          "settings": {
+            "collection_heading": "<p>Trending Products<\/p>",
+            "collection": "juice"
+          }
+        },
+        "collections_b7QcbF": {
+          "type": "collections",
+          "settings": {
+            "collection_heading": "<p>Top Rated<\/p>",
+            "collection": "clothes"
+          }
+        }
+      },
+      "block_order": [
+        "image_wHJtNy",
+        "collections_g9THRj",
+        "collections_b7QcbF"
+      ],
+      "settings": {
+        "background_color": "#f8f9ff"
+      }
+    },
+    "collection_list_3cCd8V": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_6wf9dp": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "frontpage",
+            "background_image": "shopify:\/\/shop_images\/Vector_4.png",
+            "background_color": "#feefea"
+          }
+        },
+        "featured_collection_WdMcDc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "juice",
+            "background_image": "shopify:\/\/shop_images\/Vector_6.png",
+            "background_color": "#ecffec"
+          }
+        },
+        "featured_collection_q6ajQh": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "snack",
+            "background_image": "shopify:\/\/shop_images\/Vector_7.png",
+            "background_color": "#fffceb"
+          }
+        },
+        "featured_collection_3pDVmE": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "cake-milk",
+            "background_image": "shopify:\/\/shop_images\/Rectangle_84.png",
+            "background_color": "#fff3ff"
+          }
+        },
+        "featured_collection_tdPYWR": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "vegetable",
+            "background_image": "shopify:\/\/shop_images\/Vector_9.png",
+            "background_color": "#ecffec"
+          }
+        },
+        "featured_collection_i4Ld7K": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "clothes",
+            "background_image": "shopify:\/\/shop_images\/Vector_7.png",
+            "background_color": "#fffceb"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_6wf9dp",
+        "featured_collection_WdMcDc",
+        "featured_collection_q6ajQh",
+        "featured_collection_3pDVmE",
+        "featured_collection_tdPYWR",
+        "featured_collection_i4Ld7K"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 6,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "show_item_count": true
+      }
+    },
+    "collections_with_image_HbMQq3": {
+      "type": "collections-with-image",
+      "blocks": {
+        "t_sections_collections_with_image_blocks_type_K4N7QD": {
+          "type": "t:sections.collections-with-image.blocks.type",
+          "settings": {
+            "title": "<p>Everyday Fresh &\u2028Clean with Our\u2028Products<\/p>",
+            "description": "<p>Save Upto 40% Off<\/p>",
+            "description_color": "#ff543e",
+            "alignment": "flex-start",
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/collections\/vegetable",
+            "collection": "vegetable",
+            "background_color": "#f0e8d5"
+          }
+        },
+        "t_sections_collections_with_image_blocks_type_zUzixp": {
+          "type": "t:sections.collections-with-image.blocks.type",
+          "settings": {
+            "title": "<p>The best Products <br\/>Online<\/p>",
+            "description": "<p>Save Upto 40% Off<\/p>",
+            "description_color": "#ff543e",
+            "alignment": "flex-start",
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/collections\/clothes",
+            "collection": "clothes",
+            "background_color": "#e7eaf3"
+          }
+        }
+      },
+      "block_order": [
+        "t_sections_collections_with_image_blocks_type_K4N7QD",
+        "t_sections_collections_with_image_blocks_type_zUzixp"
+      ],
+      "settings": {
+        "show_collection_image": true
+      }
+    },
+    "image_video_grid_8pWhya": {
+      "type": "image-video-grid",
+      "blocks": {
+        "t_sections_image_video_grid_blocks_type_VEcWHb": {
+          "type": "t:sections.image-video-grid.blocks.type",
+          "settings": {
+            "images": "shopify:\/\/shop_images\/Rectangle_10348.png",
+            "choose_media": "image"
+          }
+        },
+        "t_sections_image_video_grid_blocks_type_DQhAPG": {
+          "type": "t:sections.image-video-grid.blocks.type",
+          "settings": {
+            "videos": "shopify:\/\/files\/videos\/BB_e30b40e3-c037-4a81-9ad5-53d36fe7d2a6.mov",
+            "choose_media": "video"
+          }
+        },
+        "t_sections_image_video_grid_blocks_type_QwVDbN": {
+          "type": "t:sections.image-video-grid.blocks.type",
+          "settings": {
+            "images": "shopify:\/\/shop_images\/Rectangle_10351.png",
+            "choose_media": "image"
+          }
+        },
+        "t_sections_image_video_grid_blocks_type_kdgKaa": {
+          "type": "t:sections.image-video-grid.blocks.type",
+          "settings": {
+            "images": "shopify:\/\/shop_images\/Rectangle_10351.png",
+            "choose_media": "image"
+          }
+        },
+        "t_sections_image_video_grid_blocks_type_XqYqTr": {
+          "type": "t:sections.image-video-grid.blocks.type",
+          "settings": {
+            "images": "shopify:\/\/shop_images\/Rectangle_10350.png",
+            "choose_media": "image"
+          }
+        },
+        "t_sections_image_video_grid_blocks_type_hTaN3f": {
+          "type": "t:sections.image-video-grid.blocks.type",
+          "settings": {
+            "images": "shopify:\/\/shop_images\/Rectangle_10352.png",
+            "choose_media": "image"
+          }
+        }
+      },
+      "block_order": [
+        "t_sections_image_video_grid_blocks_type_VEcWHb",
+        "t_sections_image_video_grid_blocks_type_DQhAPG",
+        "t_sections_image_video_grid_blocks_type_QwVDbN",
+        "t_sections_image_video_grid_blocks_type_kdgKaa",
+        "t_sections_image_video_grid_blocks_type_XqYqTr",
+        "t_sections_image_video_grid_blocks_type_hTaN3f"
+      ],
+      "settings": {
+        "title": "Our Video",
+        "heading": "<p>Happy & Healthy Life<br\/>With Fresh Vegetable<\/p>",
+        "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.<\/p>",
+        "bg_color": ""
+      }
+    },
+    "deal_of_the_day_CUbHGU": {
+      "type": "deal-of-the-day",
+      "blocks": {
+        "collection_nUbbVE": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/81702756_Blackberries-milk-splash-floating--3_4.png",
+            "background-color": "#fffceb",
+            "collection": "vegetable",
+            "title": "Deal of the day",
+            "subtitle": "Lorem Ipsum is simply dummy text of the.Lorem Ipsum is simply dummy text of the.",
+            "day": 12,
+            "hours": 13,
+            "mins": 40,
+            "secs": 40
+          }
+        },
+        "product_aD9fKP": {
+          "type": "product",
+          "settings": {
+            "product_list": [
+              "lorem-ipsum-is-dummy-text-of-the",
+              "lorem-ipsum-is-simply-dummy-text-of-the-copy",
+              "lorem-ipsum-is-simply-dummy-text-of-the"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "collection_nUbbVE",
+        "product_aD9fKP"
+      ],
+      "settings": {
+        "background-color": "",
+        "title": "Deal On This Month",
+        "sub_title": "Tranding Deal",
+        "card_layout": "layout-2",
+        "quick_add": "standard",
+        "title_position": "left",
+        "collection-position": "row"
+      }
+    },
+    "newsletter_i8FF4j": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_w3rmLM": {
+          "type": "heading",
+          "settings": {
+            "heading": "Start You'r Daily Shopping with Nest Mart",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_rAmfNi": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Stay home & get your daily needs from our shop<\/p>"
+          }
+        },
+        "email_form_YQgeG9": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading_w3rmLM",
+        "paragraph_rAmfNi",
+        "email_form_YQgeG9"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "image_banner",
-    "rich_text",
+    "collection_list_mFz9Mx",
+    "collections_with_image_Ea8Uef",
     "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "productlist_with_image_r9xUcm",
+    "productlist_with_image_64Xwcx",
+    "productlist_with_image_jAaCKb",
+    "collection_with_image_swiper_M7PRfK",
+    "multicolumn",
+    "collection_list_gzWpDV",
+    "collections_with_image_D7PyhB",
+    "featured_collection_b9gYhn",
+    "image_collage_p8tUkH",
+    "title_with_links_wDHMwd",
+    "collection_with_image_swiper_zF9D34",
+    "collection_list_3cCd8V",
+    "collections_with_image_HbMQq3",
+    "image_video_grid_8pWhya",
+    "deal_of_the_day_CUbHGU",
+    "newsletter_i8FF4j"
   ]
 }
