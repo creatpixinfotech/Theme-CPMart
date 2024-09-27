@@ -70,3 +70,7 @@
 .collection-list-view-all {
   margin-top: 2rem;
 }
+
+.collection-list-wrapper .card__content .card__information .card__heading {
+  text-align: center;
+}
