@@ -11,7 +11,7 @@
   .newsletter-form {
     align-items: flex-start;
     margin: 0 auto;
-    max-width: 36rem;
+    max-width: 48rem;
   }
 }
 
@@ -19,9 +19,6 @@
   width: 100%;
 }
 
-.newsletter-form__field-wrapper .field__input {
-  padding-right: 5rem;
-}
 
 .newsletter-form__field-wrapper .field {
   z-index: 0;
@@ -68,4 +65,197 @@
 
 .newsletter-form__button .icon {
   width: 1.5rem;
+}
+
+.newsletter .newsletter__wrapper {
+  aspect-ratio: 240/73;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  min-height: 35rem;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+}
+
+.newsletter .newsletter__wrapper .inline-richtext {
+  font-family: 'Jost';
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.445;
+  color: #fff;
+  margin: 0;
+  margin-bottom: -1rem;
+  letter-spacing: 0;
+}
+
+.newsletter .newsletter__wrapper .newsletter__subheading {
+  font-family: 'Jost';
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.445;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.newsletter .newsletter-form__field-wrapper .field__input {
+  padding: 2.85rem 2rem;
+  max-height: 8rem;
+  height: 100%;
+  padding-right: 15rem;
+  max-width: 48rem;
+  width: 100%;
+  border-radius: 1.2rem;
+  margin: 0;
+  font-family: 'Jost';
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.445;
+
+}
+
+.newsletter .newsletter-form__field-wrapper .field__input::Placeholder {
+  opacity: 1;
+}
+
+.newsletter .newsletter__wrapper .newsletter-form__field-wrapper .field__label {
+  top: 50%;
+  transform: translatey(-50%);
+  font-family: 'Jost';
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.445;
+  text-align: left;
+  color:rgba(43, 43, 45, .6);
+}
+
+.newsletter .newsletter__wrapper .newsletter-form__button {
+  max-width: 13rem;
+  width: 100%;
+}
+
+.newsletter .newsletter__wrapper .button-primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  background-color: #3BB77E;
+  padding: 1.1rem 1.5rem;
+  border-radius: 0.6rem;
+  max-width: 13rem;
+  width: 100%;
+  height: fit-content;
+  top: 50%;
+  transform: translatey(-50%);
+  margin-right: 2rem;
+}
+
+.newsletter .newsletter__wrapper .button-primary:hover {
+  background-color: orange;
+  max-width: 14rem;
+  margin-right: 1rem;
+}
+
+.newsletter__wrapper .newsletter-form__field-wrapper {
+  max-width: 48rem;
+}
+
+.newsletter .newsletter__wrapper .newsletter-data {
+  max-width: 50.3rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 3rem;
+  position: absolute;
+  top: 20.54%;
+  left: 32.031%;
+}
+
+@media screen and (max-width:1200px){
+  .newsletter .newsletter__wrapper .newsletter-data {
+   position: unset;
+  }
+
+  .newsletter .newsletter__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
+
+.newsletter .newsletter__wrapper .newsletter-form {
+  margin: 0;
+}
+
+.newsletter .newsletter-form__message{
+  justify-content: flex-start ;
+}
+
+.newsletter .newsletter-form__field-wrapper .field::after{
+  box-shadow: none;
+}
+
+@media screen and (max-width:749px) {
+  .newsletter .newsletter__wrapper .inline-richtext {
+    font-size: 1.6rem;
+  }
+
+  .newsletter .newsletter__wrapper .newsletter__subheading {
+    font-size: 2.4rem;
+  }
+
+  .newsletter .newsletter-form {
+    align-items: baseline;
+  }
+
+  .newsletter .newsletter-form__field-wrapper .field__input {
+    max-height: 7rem;
+    padding: 2.5rem 10rem 2.5rem 1.5rem;
+  }
+
+  .newsletter .newsletter__wrapper {
+    padding: 2rem;
+    align-items: flex-start;
+  }
+
+  .newsletter .newsletter__wrapper .newsletter-form__field-wrapper .field__label{
+    font-size: 1.4rem;
+    left: 1.5rem;
+  }
+
+  .newsletter .newsletter__wrapper .newsletter-data{
+    gap: 1.5rem;
+  }
+
+  .newsletter .newsletter__wrapper .button-primary{
+    font-size: 1.4rem;
+    padding: .8rem 1rem;
+    max-width: 8.5rem;
+  }
+
+  .newsletter .newsletter__wrapper .button-primary:hover{
+    max-width: 9.5rem;
+  }
+
+  .newsletter-form__message--success{
+    margin-top: 1rem;
+  }
+
+  .newsletter-form__field-wrapper .newsletter-form__message{
+    margin-top: 1rem;
+  }
+
+}
+
+.newsletter .newsletter-form__field-wrapper .field__input:focus + .field__label{
+  top:.5rem;
+  transform: translate(0);
+}
+
+.newsletter .newsletter-form__message{
+  font-family: 'jost';
+
 }
