@@ -1,0 +1,86 @@
+{{ 'section-title-with-links.css' | asset_url | stylesheet_tag }}
+<section
+  class="title-with-links"
+  style="padding-block-start: {{ section.settings.padding_top }}px;padding-block-end:{{ section.settings.padding_bottom }}px;background-color:{{ section.settings.bg_color }}"
+>
+<div class="page-width">
+  <div class="title-with-links__wrapper">
+    {% for block in section.blocks %}
+      <div class="title-with-links__background title-with-links__background-{{ forloop.index }}" style="background-image:url('{{ block.settings.bg_img |  image_url }}')">
+        <div class="title-with-links__overlay"></div>
+        <div class=title-with-links__text>
+          <div class="title-with-links__title">{{ block.settings.title }}</div>
+          <a class="button-primary" href="{{ block.settings.btn_url }}">{{ block.settings.btn_label }} <span> {{- 'icon-arrow.svg' | inline_asset_content -}}</span></a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.title-with-links.name",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "step": 2,
+      "min": 0,
+      "max": 100,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "step": 2,
+      "min": 0,
+      "max": 100,
+      "unit": "px",
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "type": "t:sections.title-with-links.blocks.type",
+      "name": "t:sections.title-with-links.blocks.name",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "bg_img",
+          "label": "t:sections.title-with-links.blocks.settings.bg_image"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "t:sections.title-with-links.blocks.settings.title"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "t:sections.title-with-links.blocks.settings.link.button_link"
+        },
+        {
+          "type": "text",
+          "id": "btn_label",
+          "label": "t:sections.title-with-links.blocks.settings.label.button_label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.title-with-links.presets.name"
+    }
+  ]
+}
+{% endschema %}
