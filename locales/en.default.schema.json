@@ -1125,6 +1125,8 @@
       },
       "presets": {
         "name": "Collection with image swiper"
+      }
+      },
     "product_details" : {
       "name" : "Product Details",
       "settings" : {
