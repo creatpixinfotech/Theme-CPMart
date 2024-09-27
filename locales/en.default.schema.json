@@ -683,6 +683,13 @@
         },
         "swipe_on_mobile": {
           "label": "Enable swipe on mobile"
+        },
+        "show_item" : "Show Item Count",
+        "background_color":{
+          "label": "Background Color"
+        },
+        "background_image":{
+          "label": "Background Image"
         }
       },
       "blocks": {

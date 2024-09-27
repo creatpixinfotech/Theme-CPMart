@@ -49,6 +49,9 @@
     {%- endunless -%}
 
     <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div class="collection-list-background">
+        <img src="{{ 'leaf_img.png' | file_url}}" alt="background -image" width="" height="">
+      </div>
       <ul
         class="collection-list contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
         id="Slider-{{ section.id }}"
@@ -76,7 +79,10 @@
               card_collection: block.settings.collection,
               media_aspect_ratio: section.settings.image_ratio,
               columns: columns,
-              placeholder_image: placeholder_image
+              placeholder_image: placeholder_image,
+              show_items: section.settings.show_item_count,
+              background_color: block.settings.background_color,
+              background_image: block.settings.background_image
             %}
           </li>
         {%- endfor -%}
@@ -269,6 +275,12 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "checkbox",
+      "id": "show_item_count",
+      "label": "t:sections.collection-list.settings.show_item",
+      "default": true
     }
   ],
   "blocks": [
@@ -280,6 +292,16 @@
           "type": "collection",
           "id": "collection",
           "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "t:sections.collection-list.settings.background_image.label"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "t:sections.collection-list.settings.background_color.label"
         }
       ]
     }
