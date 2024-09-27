@@ -2,7 +2,56 @@
   .template-404 .title + * {
     margin-top: 1rem;
   }
-
+  .template-page-number {
+    font-family: 'Jost';
+    font-size: 12.8rem;
+    font-weight: 700;
+    line-height: 1.445;
+    color: #253d4e;
+    margin: 0;
+  }
+  .template-button {
+    color: white;
+    border-radius: 0.6rem;
+    font-family: Jost;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.445;
+    text-decoration: none;
+    background-color: #3bb77e;
+    padding: 1.5rem 5rem;
+  }
+  .template-title {
+    font-family: 'Jost';
+    font-size: 6.4rem;
+    font-weight: 700;
+    line-height: 1.445;
+    color: #253d4e;
+    letter-spacing: normal;
+    margin: 0;
+  }
+  .template-description {
+    max-width: 58.3rem;
+    width: 100%;
+    font-family: 'Jost';
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.445;
+    margin: 1rem auto 4rem;
+    letter-spacing: normal;
+    color: #777777;
+  }
+  @media screen and (max-width: 750px) {
+    .template-page-number {
+      font-size: 4.8rem;
+    }
+    .template-title {
+      font-size: 2.4rem;
+    }
+    .template-description {
+      font-size: 1.6rem;
+    }
+  }
   @media screen and (min-width: 750px) {
     .template-404 .title + * {
       margin-top: 2rem;
@@ -11,13 +60,13 @@
 </style>
 
 <div class="template-404 page-width page-margin center">
-  <p>
+  <p class="template-page-number">
     {{ 'templates.404.subtext' | t }}
   </p>
-  <h1 class="title">
-    {{ 'templates.404.title' | t }}
-  </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="button">
-    {{ 'general.continue_shopping' | t }}
-  </a>
+  <h1 class="template-title">Opus, Page not found</h1>
+  <p class="template-description">
+    We are very sorry for the inconvenience. it looks like you're trying to access a page that has been deleted or never
+    even existed.
+  </p>
+  <a href="{{ routes.all_products_collection_url }}" class="template-button"> Back To Home </a>
 </div>

@@ -230,6 +230,7 @@
   border: 1px solid #3BB77E;
   border-radius: 1.2rem;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .card-wrapper.layout-3 .card__inner {
