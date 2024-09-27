@@ -1,5 +1,5 @@
 @media screen and (min-width: 1024px) {
-  .collection-list {
+  .productlist-with-image-container .collection-list {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }

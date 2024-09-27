@@ -175,7 +175,8 @@
                     lazy_load: lazy_load,
                     skip_styles: skip_card_product_styles,
                     quick_add: section.settings.quick_add,
-                    section_id: section.id
+                    section_id: section.id,
+                    card_layout: section.settings.card_layout
                   %}
                 </li>
                 {%- assign skip_card_product_styles = true -%}
@@ -308,6 +309,26 @@
       "default": false,
       "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
       "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
+    },
+    {
+      "type": "select",
+      "id": "card_layout",
+      "default": "layout-1",
+      "label": "t:sections.all.card_layout.label",
+      "options": [
+        {
+          "value": "layout-1",
+          "label": "t:sections.all.card_layout.options__1.label"
+        },
+        {
+          "value": "layout-2",
+          "label": "t:sections.all.card_layout.options__2.label"
+        },
+        {
+          "value": "layout-3",
+          "label": "t:sections.all.card_layout.options__3.label"
+        }
+      ]
     },
     {
       "type": "select",
