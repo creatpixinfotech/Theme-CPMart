@@ -21,7 +21,7 @@
       style="grid-template-columns: repeat({% if section.blocks.size > 3 %} 3 {% else %} {{ section.blocks.size }} {% endif %}, 1fr);"
     >
       {% for block in section.blocks %}
-      {% if block.settings.choose_media === "video" %}
+      {% if block.settings.choose_media == "video" %}
         <div class="videos-card">
           <div class="video-overlay"></div>
           <span  class="image-play-button" onclick="videoToggle('{{ block.settings.videos.id }}')">{% render 'icon-play_button' %}</span>
