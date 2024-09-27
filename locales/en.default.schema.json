@@ -1218,6 +1218,86 @@
         "name": "Product Details"
       }
     },
+    "deal-of-the-day": {
+      "name": "Deal of the Day",
+      "settings": {
+        "background_color": {
+          "label": "Background color",
+        },
+        "title": {
+          "label": "Title",
+        },
+        "sub_title": {
+          "label": "Sub Title",
+        },
+        "title_position": {
+          "label": "Title Position",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          }
+        },
+        "collection_position": {
+          "label": "Collection Deal Position",
+          "option_1": {
+            "label": "Left"
+          },
+          "option_2": {
+            "label": "Right"
+          }
+        }
+      },
+      "blocks": {
+        "collection_deal": {
+          "name": "Collection deal",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "color": {
+              "label": "Color"
+            },
+            "collection": {
+              "label": "Collection"
+            },
+            "title": {
+              "label": "Title",
+            },
+            "sub_title": {
+              "label": "Sub Title",
+            },
+            "day": {
+              "label": "Day",
+            },
+            "hours": {
+              "label": "Hours",
+            },
+            "minutes": {
+              "label": "Minutes",
+            },
+            "seconds": {
+              "label": "Seconds",
+            },
+          }
+        },
+        "product_deal": {
+          "name": "Product deal",
+          "settings": {
+            "product_list": {
+              "label": "Product list"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Deal of the Day"
+      }
+    },
     "footer": {
       "name": "Footer",
       "blocks": {
