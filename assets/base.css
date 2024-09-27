@@ -1875,7 +1875,6 @@ details[open]>.share-button__fallback {
   height: auto;
   border: 1px solid green;
   border-radius: .6rem;
-  height: 100%;
 }
 .field__input,
 .customer .field input {
@@ -2829,6 +2828,7 @@ menu-drawer+.header__search {
 }
 .header__search .search-modal{
   width: 100%;
+  border-bottom-width: 0px;
 }
 
 .header--top-center>.header__search {
@@ -2969,7 +2969,7 @@ details[open]>.header__icon--menu .icon-hamburger {
     position: absolute;
     top: 0;
     left: 49%;
-    transform: translate(-49.5%);
+    transform: translate(-49.6%);
     width: 100vw;
     height: 1px;
     background-color: #dee2e6;
@@ -3825,15 +3825,15 @@ details-disclosure>details {
   position: absolute;
   display: none;
   background-color: white;
-  max-width:15rem;
+  min-width:15rem;
   width: 100%;
-  top: 9rem;
+  top: 6rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 @media screen and (max-width:990px){
   .account_block {
-    top: 6.5rem;
-    right: 0;
+    top: 6rem;
+    right:-10rem;
   }
 }
 .account_block:hover{
@@ -3846,11 +3846,14 @@ details-disclosure>details {
 }
 .account_block .account_block-ul li{
   padding:.5rem 0;
+  cursor: pointer;
 }
 .account_block .account_block-ul li a{
   text-decoration: none;
   color: black;
   padding-left: 1.5rem;
+  display: flex;
+  width: 100%;
 }
 .account_block .account_block-ul li:hover a{
   color: white;
