@@ -1169,6 +1169,54 @@ class ProductRecommendations extends HTMLElement {
 
 customElements.define('product-recommendations', ProductRecommendations);
 
+class wishlistProduct extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+  }
+
+  render() {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    let wishlistHTML = '';
+console.log("hgjrsrsdhfjsdhrsfhj");
+
+    if (wishlist.length > 0) {
+      wishlistHTML = `<ul class="wishlist-list">`;
+      wishlist.forEach(product => {
+        fetch(`/pages/wishlist.json?ids=${product.id}`)
+        .then((response) => response.text())
+        .then((text) => {
+          console.log(text,"json");
+          
+        });
+        wishlistHTML += `
+           <li>            
+              <p>${product.id} </p>
+          </li>`;
+      });
+      wishlistHTML += `</ul>`;
+    } else {
+      wishlistHTML = '<p>Your wishlist is empty</p>';
+    }
+
+    this.innerHTML = wishlistHTML;
+  }
+}
+
+
+customElements.define('wish-list', wishlistProduct);
+
+function updateWishlistUI() {
+  const wishlistElement = document.querySelector('wishlist');
+  if (wishlistElement) {
+    wishlistElement.render();
+  }
+}
+
+
 class AccountIcon extends HTMLElement {
   constructor() {
     super();

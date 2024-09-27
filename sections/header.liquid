@@ -262,6 +262,14 @@
         {%- endcase -%}
       {%- endfor -%}
 
+<<<<<<< Updated upstream
+=======
+      <a href="pages/wishlist" class="header__icon header__icon--wishlist link focus-inset">
+        <span class="svg-wrapper">{%  render 'icon-wishlist' %}<span class="header-inline-menu-name">{{ 'templates.wishlist.wishlist' | t }}</span></span>
+        <span class="visually-hidden">{{ 'templates.wishlist.wishlist' | t }}</span>
+      </a>
+
+>>>>>>> Stashed changes
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
           {% if cart == empty %}
             <span class="svg-wrapper">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
