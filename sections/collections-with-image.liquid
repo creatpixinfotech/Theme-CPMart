@@ -1,0 +1,130 @@
+{{ 'collections-with-image.css' | asset_url | stylesheet_tag }}
+
+<section class="collections-with-image" id="collections-with-image-{{ section.id }}">
+  <div class="page-width">
+  <div class="collections-with-image__wrapper">
+    {% for block in section.blocks %}
+      <div
+        class="collections-with-image__card{% if block.settings.background_image %} collections-with-image__card-with-background{% endif %}{% if block.settings.description != blank %} collections-with-image__card-with-discount{% endif %}"
+        style="{% if block.settings.background_image %} background-image:url('{{ block.settings.background_image |  image_url }}') {% else %} background-color: {{ block.settings.background_color }};{% endif %}"
+      >
+        <div
+          class="collections-with-image__card-content"
+          style="{% unless section.settings.show_collection_image %} align-items: {{ block.settings.alignment }}{% endunless %}"
+        >
+          {% if block.settings.title != blank %}   
+            <div class="collections__title">{{ block.settings.title }}</div>
+          {% endif %}
+          {% if block.settings.description != blank %}
+            <div class="collections__description font-Jost" style="color:{{ block.settings.description_color  }};">
+              {{ block.settings.description }}
+            </div>
+          {% endif %}
+          <div class="collections__button-container button-shopping__now">
+            <a href="{{block.settings.url}}" class="collections__shop-btn font-Jost">{{ block.settings.button_text }}</a>
+            {% render 'icon-white-arrow' %}
+          </div>
+        </div>
+        {% if section.settings.show_collection_image %}
+          <figure class="collections__fig">
+            <picture>
+              <source srcset="{{ block.settings.collection.featured_image | image_url: width: 200, height: 200 }}">
+              <img
+                src="{{ block.settings.collection.featured_image | image_url: width: 200, height: 200 }}"
+                class="lazyloaded"
+                alt="{{ block.settings.collection.featured_image.alt }}"
+                width=""
+                height=""
+                loading="eager"
+              >
+            </picture>
+          </figure>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.collections-with-image.name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "label": "t:sections.collections-with-image.settings.show_image.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "t:sections.collections-with-image.blocks.type",
+      "name": "t:sections.collections-with-image.blocks.name",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "t:sections.collections-with-image.blocks.settings.title.label"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "t:sections.collections-with-image.blocks.settings.description.label"
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "t:sections.collections-with-image.blocks.settings.description.color"
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "options": [
+            {
+              "value": "flex-start",
+              "label": "t:sections.collections-with-image.blocks.settings.alignmemnt.left"
+            },
+            {
+              "value": "flex-end",
+              "label": "t:sections.collections-with-image.blocks.settings.alignmemnt.right"
+            }
+          ],
+          "label": "t:sections.collections-with-image.blocks.settings.alignmemnt.name",
+          "default": "flex-start"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "t:sections.collections-with-image.blocks.settings.buttons.label"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "t:sections.collections-with-image.blocks.settings.buttons.url"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.collections-with-image.blocks.settings.collection.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "t:sections.collections-with-image.blocks.settings.background_image.label"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "t:sections.collections-with-image.blocks.settings.color.background.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.collections-with-image.presets.name"
+    }
+  ]
+}
+{% endschema %}

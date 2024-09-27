@@ -806,7 +806,7 @@ summary::-webkit-details-marker {
     z-index: 4;
   }
 
-  .facets .disclosure-has-popup[open]>summary+* {
+                .facets .disclosure-has-popup[open]>summary+* {
     z-index: 2;
   }
 }
@@ -1310,7 +1310,7 @@ button.shopify-payment-button__button--unbranded,
   --shadow-opacity: var(--buttons-shadow-opacity);
   --shadow-visible: var(--buttons-shadow-visible);
   --border-offset: var(--buttons-border-offset);
-  /* reduce radius edge artifacts */
+    /* reduce radius edge artifacts */
   --border-opacity: calc(1 - var(--buttons-border-opacity));
   border-radius: var(--buttons-radius-outset);
   position: relative;
@@ -1324,6 +1324,23 @@ button.shopify-payment-button__button--unbranded {
   min-height: calc(4.5rem + var(--buttons-border-width) * 2);
 }
 
+.button-shopping__now {
+  background-color: #3BB77E;
+  color: #FFFFFF;
+  display: flex;
+  padding: 1.1rem 1.5rem;
+  align-items: center;
+  text-transform: capitalize;
+  text-decoration: none;
+  border-radius: calc(var(--collection-card-corner-radius) / 2);
+  gap: .8rem;
+  transition: all .4s ease;
+}
+
+.button-shopping__now:hover {
+  background-color: #FDC040;
+  gap: 1.4rem;
+}
 .shopify-payment-button__button--branded {
   z-index: auto;
 }
@@ -1836,8 +1853,10 @@ details[open]>.share-button__fallback {
   width: 100%;
 }
 
-.select .icon-caret,
-.customer select + svg {
+/* Select */
+
+.select .svg-wrapper,
+.customer select+.svg-wrapper {
   height: 0.6rem;
   width: 1rem;
   pointer-events: none;
@@ -2842,6 +2861,7 @@ menu-drawer+.header__search {
 @media screen and (min-width: 990px) {
 
   .header:not(.header--top-center) *>.header__search,
+.header:not(.header--top-center) *>.header__search,
   .header--top-center>.header__search {
     display: inline-flex;
   }
