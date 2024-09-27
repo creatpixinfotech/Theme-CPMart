@@ -975,8 +975,6 @@
         "name": "Featured product"
       }
     },
-<<<<<<< Updated upstream
-=======
     "collection_with_image_swiper" : {
       "name": "Collection with image swiper",
       "settings": {
@@ -1087,7 +1085,6 @@
         }
       }
     },
->>>>>>> Stashed changes
     "footer": {
       "name": "Footer",
       "blocks": {
