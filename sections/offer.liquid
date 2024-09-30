@@ -8,68 +8,69 @@
   <div class="page-width">
     <div class="section-content section-content-{{ section.settings.collection-position }}">
       {% for block in section.blocks %}
-            <div class="collection-deal" style="background-color: {{ block.settings.background-color }};">
-              <div class="collection-image">
-                <img
-                  srcset="
-                    {%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
-                    {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
-                    {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
-                    {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
-                    {%- if block.settings.image.width >= 940 -%}{{ block.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
-                    {%- if block.settings.image.width >= 1066 -%}{{ block.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
-                    {{ block.settings.image | image_url }} {{ block.settings.image.width }}w
-                  "
-                  src="{{ block.settings.image | image_url: width: 533 }}"
-                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                  alt="{{ block.settings.image.alt | escape }}"
-                  class="motion-reduce"
-                  width="{{  block.settings.image.width }}"
-                  height="{{  block.settings.image.height }}"
-                >
+        <div class="collection-deal" style="background-color: {{ block.settings.background-color }};">
+          <div class="collection-image">
+            <img
+              srcset="
+                {%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                {%- if block.settings.image.width >= 940 -%}{{ block.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+                {%- if block.settings.image.width >= 1066 -%}{{ block.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                {{ block.settings.image | image_url }} {{ block.settings.image.width }}w
+              "
+              src="{{ block.settings.image | image_url: width: 533 }}"
+              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+              alt="{{ block.settings.image.alt | escape }}"
+              class="motion-reduce"
+              width="{{  block.settings.image.width }}"
+              height="{{  block.settings.image.height }}"
+            >
+          </div>
+          <div class="collection-content">
+            <div class="collection-deal__title">
+              {{- block.settings.title -}}
+            </div>
+            <div class="collection-deal__description">{{ block.settings.subtitle }}</div>
+            <div class="collection-timer">
+              <div class="collection-time">
+                <span class="day">{{ block.settings.day }}</span>
+                <span class="span">Days</span>
               </div>
-              <div class="collection-content">
-                <div class="collection-deal__title">
-                  {{- block.settings.title -}}
-                </div>
-                <div class="collection-deal__description">{{ block.settings.subtitle }}</div>
-              <div class="collection-timer">
-                <div class="collection-time">
-                  <span class="day">{{ block.settings.day }}</span>
-                  <span class="span">Days</span>
-                </div>
-                <div class="collection-time">
-                  <span class="hours">{{ block.settings.hours }}</span>
-                  <span class="span">Hours</span>
-                </div>
-                <div class="collection-time">
-                  <span class="mins">{{ block.settings.mins }}</span>
-                  <span class="span">Mins</span>
-                </div>
+              <div class="collection-time">
+                <span class="hours">{{ block.settings.hours }}</span>
+                <span class="span">Hours</span>
               </div>
-              <div class="collection-btn">
-                <a href="{{ block.settings.url }}" class="collection-btn__link button-primary">
-                  {{- block.settings.button_text -}}
+              <div class="collection-time">
+                <span class="mins">{{ block.settings.mins }}</span>
+                <span class="span">Mins</span>
+              </div>
+            </div>
+            <div class="collection-btn">
+              <a href="{{ block.settings.url }}" class="collection-btn__link button-primary">
+                {{- block.settings.button_text -}}
                 {%- render 'icon-white-arrow' -%}
-
-                </a>
-              </div>
+              </a>
             </div>
-
+          </div>
+        </div>
+      {% endfor %}
+      <div class="swiper collections-swiper">
+        <div class="swiper-wrapper">
+          {% for product in section.settings.collection.products %}
+            <div class="products swiper-slide">
+              {% render 'card-product',
+                card_product: product,
+                section_id: section.id,
+                quick_add: section.settings.quick_add,
+                card_layout: section.settings.card_layout
+              %}
             </div>
-            {% endfor %}
-            <div class="collections">
-              {% for product in section.settings.collection.products %}
-                <div class="products">
-                  {% render 'card-product',
-                    card_product: product,
-                    section_id: section.id,
-                    quick_add: section.settings.quick_add,
-                    card_layout: section.settings.card_layout
-                  %}
-                </div>
-              {% endfor %}
-            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
   </div>
 </div>

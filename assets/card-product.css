@@ -130,6 +130,7 @@
   padding: 0 3rem;
   margin-top: -7.5rem;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .card-wrapper .card .card__inner .card__media {

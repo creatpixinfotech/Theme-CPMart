@@ -93,6 +93,7 @@
   grid-template-rows: repeat(2, minmax(0, 1fr));
   column-gap: 2rem;
   row-gap: 4rem;
+  width: 100% !important;
 }
 
 .offer .collection-deal .collection-btn {
@@ -119,4 +120,16 @@
   .offer .collection-content {
     top: 4rem;
   }
+}
+
+.section-content .collections-swiper{
+  width: 100% ;
+}
+
+.offer .collections-swiper .swiper-wrapper{
+  flex-direction: row;
+}
+
+.offer .section-content{
+  padding-block: 4rem 16rem;
 }
