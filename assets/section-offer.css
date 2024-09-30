@@ -122,14 +122,37 @@
   }
 }
 
-.section-content .collections-swiper{
-  width: 100% ;
-}
-
-.offer .collections-swiper .swiper-wrapper{
-  flex-direction: row;
-}
-
-.offer .section-content{
+.offer .section-content {
   padding-block: 4rem 16rem;
+}
+
+.offer .collections-grid .product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3rem;
+  row-gap: 4rem;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.offer .collections-grid .product-grid li {
+  list-style: none;
+}
+
+
+@media screen and (max-width: 1280px) {
+  .offer .collections-grid .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .offer .collections-grid .product-grid {
+    column-gap: 2rem;
+    row-gap: 2rem;
+  }
+
+  .offer .collections-grid .product-grid .card .card-information {
+    flex-direction: column;
+  }
 }

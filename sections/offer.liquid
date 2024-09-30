@@ -56,10 +56,16 @@
           </div>
         </div>
       {% endfor %}
-      <div class="swiper collections-swiper">
-        <div class="swiper-wrapper">
+      {%- paginate section.settings.collection.products by section.settings.products_per_page -%}
+      <div class="collections-grid">
+        <ul id="product-grid" class="product-grid" data-id="{{ section.id }}">
           {% for product in section.settings.collection.products %}
-            <div class="products swiper-slide">
+          {% assign lazy_load = false %}
+            {%- if forloop.index > 2 -%}
+              {%- assign lazy_load = true -%}
+            {%- endif -%}
+          <li>
+            <div class="products">
               {% render 'card-product',
                 card_product: product,
                 section_id: section.id,
@@ -67,10 +73,14 @@
                 card_layout: section.settings.card_layout
               %}
             </div>
-          {% endfor %}
-        </div>
-        <div class="swiper-pagination"></div>
+          </li>
+            {% endfor %}
+          </ul>
+          {%- if paginate.pages > 1 -%}
+          {% render 'pagination', paginate: paginate, anchor: '' %}
+        {%- endif -%}
       </div>
+      {%- endpaginate %}
     </div>
   </div>
 </div>
@@ -79,6 +89,15 @@
 {
   "name": "t:sections.offer-deal.name",
   "settings": [
+  {
+    "type": "range",
+    "id": "products_per_page",
+    "min": 6,
+    "max": 36,
+    "step": 2,
+    "default": 6,
+    "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+  },
     {
       "type": "color",
       "id": "background-color",
