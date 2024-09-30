@@ -2295,7 +2295,7 @@ input[type='checkbox'] {
 }
 
 .cart-count-bubble {
-  top: 0;
+  top: 1rem;
   position: absolute;
   background-color: rgb(var(--color-button));
   color: rgb(var(--color-button-text));
@@ -2584,6 +2584,9 @@ input[type='checkbox'] {
 @media screen and (max-width: 749px) {
   .header--has-app {
     grid-template-columns: auto 1fr auto;
+  }
+  .cart-count-bubble {
+    top: 0;
   }
 }
 
