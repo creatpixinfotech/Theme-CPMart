@@ -1,0 +1,45 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "offer_MFYA38": {
+      "type": "offer",
+      "blocks": {
+        "collection_N43LgV": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/square-background-natural-green-leaves_1_1.png",
+            "background-color": "",
+            "url": "shopify:\/\/collections",
+            "button_text": "Shop",
+            "title": "Deal Of The Day",
+            "subtitle": "<p>Lorem Ipsum is simply dummy text of the.<\/p>",
+            "day": 55,
+            "hours": 22,
+            "mins": 20
+          }
+        }
+      },
+      "block_order": [
+        "collection_N43LgV"
+      ],
+      "settings": {
+        "background-color": "",
+        "collection": "frontpage",
+        "card_layout": "layout-2",
+        "quick_add": "standard",
+        "collection-position": "row"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "offer_MFYA38"
+  ]
+}
