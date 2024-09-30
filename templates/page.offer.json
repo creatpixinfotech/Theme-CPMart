@@ -36,10 +36,89 @@
         "quick_add": "standard",
         "collection-position": "row"
       }
+    },
+    "multicolumn_F7btMY": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_MB4X8D": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-1_1.png",
+            "title": "Best prices & offers",
+            "text": "<p>Best prices & offers<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_mpNT6N": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-2_1.png",
+            "title": "Fast delivery",
+            "text": "<p>24\/7 amazing services<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_ii4fhC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-3_1.png",
+            "title": "Great daily deal",
+            "text": "<p>When you sign up<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_FGMhfh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-4_1.png",
+            "title": "Wide assortment",
+            "text": "<p>Mega Discounts<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_C4dFqF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-5_1.png",
+            "title": "Easy returns",
+            "text": "<p>Within 30 days<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_MB4X8D",
+        "column_mpNT6N",
+        "column_ii4fhC",
+        "column_FGMhfh",
+        "column_C4dFqF"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "offer_MFYA38"
+    "offer_MFYA38",
+    "multicolumn_F7btMY"
   ]
 }
