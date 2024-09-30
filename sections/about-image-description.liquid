@@ -1,0 +1,152 @@
+{{ 'about-image-description.css' | asset_url | stylesheet_tag }}
+<section class="page-width about-image-description" id="about-image-description">
+  <div class="about-image-description__wrapper {% if section.settings.layout == 'img_right' %} about-image-description__grid--reverse{% endif %}">
+    {% liquid
+      assign block_count = 0
+      for block in section.blocks
+        if block.type == 'Image'
+          assign block_count = block_count | plus: 1
+        endif
+      endfor
+    %}
+    <div class="about-image-description___image-wrapper {% if block_count >= 2 %} image-grid__wrapper {% endif %}">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'Image' %}
+            {% if section.blocks.size < 2 %}
+              <figure>
+                <picture>
+                  <source srcset="{{ block.settings.image | image_url }}" media="(max-width: 750px)">
+                  <img
+                    src="{{ block.settings.image | image_url }}"
+                    alt="{{ block.settings.image.alt }}"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.height }}"
+                  >
+                </picture>
+              </figure>
+            {% else %}
+              <div class="image-grid__block image-grid__block-{{ forloop.index }}">
+                <figure class="image-grid__block-fig-item">
+                  <picture>
+                    <source srcset="{{ block.settings.image | image_url }}" media="(max-width: 750px)">
+                    <img
+                      src="{{ block.settings.image | image_url }}"
+                      alt="{{ block.settings.image.alt }}"
+                      width="{{ block.settings.image.width }}"
+                      height="{{ block.settings.image.height }}"
+                    >
+                  </picture>
+                </figure>
+              </div>
+            {% endif %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+
+    <div class="about-image-description__content-wrapper">
+      <div class="about-image-description__title">
+        {{ section.settings.title }}
+      </div>
+      <div class="about-image-description__description">
+        {{ section.settings.description }}
+      </div>
+      {% assign has_insights = false %}
+
+      {% for block in section.blocks %}
+        {% if block.type == 'Insights' %}
+          {% assign has_insights = true %}
+        {% endif %}
+      {% endfor %}
+      <div
+        class="about-image-description-insights"
+        style="display: {% if has_insights %}flex{% else %}none{% endif %};"
+      >
+        {% if has_insights %}
+          {% for block in section.blocks %}
+            {% if block.type == 'Insights' %}
+              <div class="insights__wrapper">
+                <div class="insights">
+                  <span class="insights_number">
+                    {{ block.settings.insight_count }}
+                    <span class="insights-k">K</span>
+                  </span>
+                  <span class="insights_vendor">{{ block.settings.insights_label }}</span>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "t:sections.about-image-description.name",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.about-image-description.settings.title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:sections.about-image-description.settings.description"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "img_left",
+          "label": "left"
+        },
+        {
+          "value": "img_right",
+          "label": "right"
+        }
+      ],
+      "default": "img_left",
+      "label": "Image Position"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Image",
+      "name": "Image",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.about-image-description.blocks.settings.image"
+        }
+      ]
+    },
+    {
+      "type": "Insights",
+      "name": "Insights",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "insight_count",
+          "label": "t:sections.about-image-description.blocks.settings.insights_count"
+        },
+        {
+          "type": "text",
+          "id": "insights_label",
+          "label": "t:sections.about-image-description.blocks.settings.insights_label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.about-image-description.presets.name"
+    }
+  ]
+}
+{% endschema %}
