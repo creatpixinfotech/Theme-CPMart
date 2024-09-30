@@ -284,3 +284,19 @@ if (!customElements.get('cart-note')) {
     }
   );
 }
+
+document.querySelector('.clear_cart').addEventListener('click', function() {
+  fetch('/cart/clear.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    window.location.reload(); 
+  })
+  .catch(error => {
+    console.error('Error clearing cart:', error);
+  });
+});

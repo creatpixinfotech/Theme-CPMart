@@ -4,6 +4,7 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -29,9 +30,6 @@
   <div class="page-width">
     <div class="title-wrapper-with-link">
       <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-      <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
-        {{- 'general.continue_shopping' | t -}}
-      </a>
     </div>
 
     <div class="cart__warnings">
@@ -47,7 +45,7 @@
         </p>
       {%- endif -%}
     </div>
-
+    <div class="cart_details">
     <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
       <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
         <div class="js-contents">
@@ -61,6 +59,9 @@
                   <th class="caption-with-letter-spacing" colspan="2" scope="col">
                     {{ 'sections.cart.headings.product' | t }}
                   </th>
+                  <th class=""  colspan="1" scope="col">
+                    Price
+                  </th>
                   <th class="medium-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">
                     {{ 'sections.cart.headings.total' | t }}
                   </th>
@@ -73,6 +74,9 @@
                   </th>
                   <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">
                     {{ 'sections.cart.headings.total' | t }}
+                  </th>
+                  <th>
+                    Action
                   </th>
                 </tr>
               </thead>
@@ -109,9 +113,6 @@
                           <span class="visually-hidden">
                             {{ 'products.product.price.regular_price' | t }}
                           </span>
-                          <s class="cart-item__old-price product-option">
-                            {{- item.original_price | money -}}
-                          </s>
                           <span class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </span>
@@ -120,9 +121,7 @@
                           </strong>
                         </div>
                       {%- else -%}
-                        <div class="product-option">
-                          {{ item.original_price | money }}
-                        </div>
+
                       {%- endif -%}
 
                       {%- if item.product.has_only_default_variant == false
@@ -169,6 +168,13 @@
                           </li>
                         {%- endfor -%}
                       </ul>
+                    </td>
+                    <td class="cart-item__price right">
+                      <div class="cart-item__price-wrapper">
+                        <span class="price price--end">
+                          {{ item.price | money }}
+                        </span>
+                      </div>
                     </td>
 
                     <td class="cart-item__totals right medium-hide large-up-hide">
@@ -240,6 +246,7 @@
                                 {{- 'icon-info.svg' | inline_asset_content -}}
                               </button>
                             {%- endif -%}
+                            <div class="price-per-item__container">
                             <quantity-input class="quantity cart-quantity">
                               <button class="quantity__button" name="minus" type="button">
                                 <span class="visually-hidden">
@@ -278,20 +285,7 @@
                               </button>
                             </quantity-input>
                           </div>
-                          <cart-remove-button
-                            id="Remove-{{ item.index | plus: 1 }}"
-                            data-index="{{ item.index | plus: 1 }}"
-                          >
-                            <a
-                              href="{{ item.url_to_remove }}"
-                              class="button button--tertiary"
-                              aria-label="{{ 'sections.cart.remove_title' | t: title: item.title | escape }}"
-                            >
-                              <span class="svg-wrapper">
-                                {{- 'icon-remove.svg' | inline_asset_content -}}
-                              </span>
-                            </a>
-                          </cart-remove-button>
+                          </div>
                         </div>
                         {%- if has_qty_rules or has_vol_pricing -%}
                           <button
@@ -429,6 +423,22 @@
                         {%- endif -%}
                       </div>
                     </td>
+                    <td class="cart-item_remove">
+                      <cart-remove-button
+                      id="Remove-{{ item.index | plus: 1 }}"
+                      data-index="{{ item.index | plus: 1 }}"
+                    >
+                      <a
+                        href="{{ item.url_to_remove }}"
+                        class="button button--tertiary"
+                        aria-label="{{ 'sections.cart.remove_title' | t: title: item.title | escape }}"
+                      >
+                        <span class="svg-wrapper">
+                          {{- 'icon-remove.svg' | inline_asset_content -}}
+                        </span>
+                      </a>
+                    </cart-remove-button>
+                    </td>
                   </tr>
                 {%- endfor -%}
               </tbody>
@@ -436,7 +446,6 @@
           {%- endif -%}
         </div>
       </div>
-
       <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
       <p
         class="visually-hidden"
@@ -448,6 +457,73 @@
         {{ 'accessibility.loading' | t }}
       </p>
     </form>
+    <div class="cart-right">
+      <div class="discount">
+        <div class="order">Have a Coupon?</div>
+        <div class="discount_input">
+          <input type="text" value="" placeholder="Enter Discount Code: " />
+          <button id="apply-discount-btn" class="">
+            APPLY
+          </button>
+        </div>
+      </div>
+      <div class="total-amount">
+        <h2>Order Summary</h2>
+        <div>
+          <span class="total">Sub - Total</span>
+          <span class="price price--end" id="cart-subtotal">
+            {{ cart.total_price | money_with_currency }}
+          </span>
+        </div>
+        <div>
+          <span class="discount">Discount</span>
+          <span class="price price--end" id="cart-discount">
+            0
+          </span>
+        </div>
+        <div>
+          <span class="tax">Tax</span>
+          <span class="price price--end" id="cart-tax">
+            Calculate in Checkout
+          </span>
+        </div>
+        <div>
+          <span class="delivery">Delivery Charge</span>
+          <span class="price price--end" id="cart-shipping">
+            Calculate in Checkout
+          </span>
+        </div>
+        <div>
+          <span class="total">Total Amount</span>
+          <span class="price price--end" id="cart-total">
+            {{ cart.total_price | money_with_currency }}
+          </span>
+        </div>
+        <div class="cart__ctas" {{ block.shopify_attributes }}>
+          <button
+            type="submit"
+            id="checkout"
+            class="cart__checkout-button button"
+            name="checkout"
+            {% if cart == empty %}
+              disabled
+            {% endif %}
+            form="cart"
+          >
+            {{ 'sections.cart.checkout' | t }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div>
+    <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
+      {{- 'general.continue_shopping' | t -}}
+    </a>
+    <div class="clear_cart">
+      Clear Cart
+    </div>
+  </div>
   </div>
 </cart-items>
 
