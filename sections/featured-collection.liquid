@@ -99,7 +99,6 @@
       <div class="collection_design-icon">
         {% render 'circle-design' %}
       </div>
-
       <ul
         id="Slider-{{ section.id }}"
         data-id="{{ section.id }}"
@@ -131,7 +130,8 @@
                   skip_styles: skip_card_product_styles,
                   section_id: section.id,
                   quick_add: section.settings.quick_add,
-                  card_layout: section.settings.card_layout
+                  card_layout: section.settings.card_layout,
+                  card_color: product.metafields.custom.card_color
                 %}
               </li>
             {% endfor %}
@@ -156,7 +156,8 @@
                 skip_styles: skip_card_product_styles,
                 section_id: section.id,
                 quick_add: section.settings.quick_add,
-                card_layout: section.settings.card_layout
+                card_layout: section.settings.card_layout,
+                card_color: product.metafields.custom.card_color
               %}
             </li>
             {%- assign skip_card_product_styles = true -%}
@@ -396,6 +397,11 @@
         }
       ],
       "default": "solid"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image_background_color",
+      "label": "t:sections.featured-collection.settings.enable_image_background_color.label"
     },
     {
       "type": "checkbox",

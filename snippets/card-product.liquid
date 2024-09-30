@@ -40,22 +40,34 @@
       assign ratio = 1
     endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover {{ card_layout }}">
+  {% assign badge_color = settings.sale_badge_color_scheme %}
+
+  {% if section.settings.enable_image_background_color and card_product.metafields.custom.badge_color %}
+    {% assign badge_color = card_product.metafields.custom.badge_color %}
+  {% endif %}
+  <div
+    class="card-wrapper product-card-wrapper underline-links-hover {{ card_layout }}"
+  >
     <div
       class="
-        card card--{{ settings.card_style }}
-        {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
-        {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
-        {% if image_shape and image_shape != 'default' %} card--shape{% endif %}
-        {% if extend_height %} card--extend-height{% endif %}
-        {% if card_product.featured_media == nil and settings.card_style == 'card' %} ratio{% endif %}
-        {% if horizontal_class %} card--horizontal{% endif %}
+         card card--{{ settings.card_style }}
+         {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
+        {% assign card_color = settings.card_color_scheme %}
+         {% if section.settings.enable_image_background_color and card_product.metafields.custom.card_color %}
+           {% assign card_color = card_product.metafields.custom.card_color %}
+         {% elsif settings.card_style == 'card' %}
+           {% assign card_color = 'color-' | append: settings.card_color_scheme | append: ' gradient' %}
+         {% endif %}
+         {% if image_shape and image_shape != 'default' %} card--shape{% endif %}
+         {% if extend_height %} card--extend-height{% endif %}
+         {% if card_product.featured_media == nil and settings.card_style == 'card' %} ratio{% endif %}
+         {% if horizontal_class %} card--horizontal{% endif %}
       "
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
       <div
-        class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
-        style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+        class="card__inner {% if settings.card_style == 'standard' %} color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
+        style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;  background-color: {{ card_color }};"
       >
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
@@ -135,7 +147,8 @@
             {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
               <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+                class="badge badge--bottom-left color-{{  badge_color }}"
+                style="background-color: {{ badge_color }}; color:white;"
               >
                 {{- 'products.product.on_sale' | t -}}
               </span>

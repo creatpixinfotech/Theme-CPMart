@@ -941,6 +941,9 @@
             "label": "Solid button"
           }
         },
+        "enable_image_background_color" :{
+          "label":"use metafeild image background and badge color"
+        },
         "enable_desktop_slider": {
           "label": "Enable carousel on desktop"
         },
