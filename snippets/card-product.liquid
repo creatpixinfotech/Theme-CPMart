@@ -159,10 +159,14 @@
       </div>
       <div class="card__content-info {% if  card_layout == 'layout-2' %}color-{{ settings.card_color_scheme }} {% endif %}">
         <div class="card__content card__content--data">
-          <div class="product_type">
+        <div class="product_type">
+        {{ card_product.type }}
+        </div>
+          <div class="card__information">
+          <div>
+          <div class="product_type product-type-layout_3">
             {{ card_product.type }}
           </div>
-          <div class="card__information">
             <h3
               class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
               {% if card_product.featured_media or settings.card_style == 'card' %}
@@ -178,6 +182,7 @@
                 {{ card_product.title | escape }}
               </a>
             </h3>
+            </div>
             <div class="card-information">
               {%- if show_vendor -%}
                 <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>

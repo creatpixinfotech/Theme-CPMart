@@ -91,6 +91,7 @@
   text-decoration: none;
   letter-spacing: normal;
   transition: all .3s ease-in-out;
+  width: 100%;
 }
 
 .button-primary:hover {

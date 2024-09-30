@@ -9,13 +9,13 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-color: transparent;
+  background-position: center;
+  background-size: contain;
 }
 
 @media screen and (max-width:990px) {
   .collection-list__item .card-wrapper {
     background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
   }
 }
 
@@ -134,7 +134,6 @@
 .collection-list__item .card__inner {
   max-width: 10rem;
   margin: 0 auto;
-  margin-top: 2rem;
 }
 
 .card--media .card__inner .card__content {

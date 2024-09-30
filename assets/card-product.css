@@ -140,7 +140,16 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
+.card-wrapper.layout-3 .product_type{
+  display: none;
+}
+.card-wrapper.layout-3  .product-type-layout_3{
+  display: block;
+}
+.card-wrapper.layout-3 .card__content{
+  display: flex;
+  height: 100%;
+}
 @media screen and (max-width: 749px) {
   .card-wrapper.layout-1 .card .card__content-info {
     padding: 0 1.5rem;
@@ -269,6 +278,7 @@
 
 .card-wrapper.layout-3 .card__content .card__information {
   gap: 1rem;
+  justify-content: space-between;
 }
 
 .card-wrapper.layout-3 .card__content .card__badge {

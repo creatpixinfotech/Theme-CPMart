@@ -162,7 +162,7 @@
 
 .deal-of-the-day .card__content-info {
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 
 .deal-of-the-day .product-deal .products:last-child {
