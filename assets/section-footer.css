@@ -203,10 +203,6 @@
   .footer-block__heading {
     margin-bottom: 1.2rem;
     margin-top: 0;
-    font-size: calc(var(--font-heading-scale) * 1.6rem);
-    font-weight: 600;
-    line-height: 1.5;
-    font-family: 'Poppins';
   }
 }
 
@@ -341,9 +337,6 @@
 .footer_show-title-2,
 .footer_show-title-1 {
   font-family: 'Poppins';
-  font-size: 1.4rem;
-  line-height: 1.5;
-  font-weight: 400;
 }
 
 .footer_show-title {
@@ -359,9 +352,6 @@
 
 .footer-block__details-content {
   font-family: 'Poppins';
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.5;
 }
 
 @media screen and (min-width: 750px) {

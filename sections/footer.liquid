@@ -90,7 +90,7 @@
                         class="footer-block-logo"
                       >
                     {%- endif -%}
-                    <div class="footer-block__details-content rte">
+                    <div class="footer-block__details-content rte text-l text-thin">
                       {{ block.settings.subtext }}
                     </div>
                     <div
@@ -111,7 +111,7 @@
                     </div>
                   {%- when 'link_list' -%}
                     {%- if block.settings.heading != blank -%}
-                      <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
+                      <h2 class="footer-block__heading inline-richtext text-bold text-l">{{- block.settings.heading -}}</h2>
                     {%- endif -%}
                     {%- if block.settings.menu != blank -%}
                       <ul class="footer-block__details-content list-unstyled">
@@ -185,7 +185,7 @@
             {%- if section.settings.newsletter_enable -%}
               <div class="footer-block__newsletter">
                 {%- if section.settings.newsletter_heading != blank -%}
-                  <h2 class="footer-block__heading inline-richtext">{{ section.settings.newsletter_heading }}</h2>
+                  <h2 class="footer-block__heading inline-richtext text-bold text-l">{{ section.settings.newsletter_heading }}</h2>
                 {%- endif -%}
                 {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
                   <input type="hidden" name="contact[tags]" value="newsletter">
@@ -304,7 +304,7 @@
     </div>
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">
-        <small class="copyright__content">&copy; {{ 'now' | date: '%Y' }},Lorem All rights reserved. </small>
+        <small class="copyright__content text-thin text-m">&copy; {{ 'now' | date: '%Y' }},Lorem All rights reserved. </small>
         {%- if section.settings.show_policy -%}
           <ul class="policies list-unstyled">
             {%- for policy in shop.policies -%}
@@ -320,8 +320,8 @@
         {%- endif -%}
       </div>
       <div class="footer_show-title">
-        <small class="footer_show-title-1">Terms & condition</small>
-        <small class="footer_show-title-2">Payment Method</small>
+        <small class="footer_show-title-1 text-thin text-m">Terms & condition</small>
+        <small class="footer_show-title-2 text-thin text-m">Payment Method</small>
       </div>
     </div>
   </div>

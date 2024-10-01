@@ -90,7 +90,7 @@
           >
             <span
               {%- if link.current %}
-                class="header__active-menu-item"
+                class="header__active-menu-item font-jost text-bold text-l"
               {% endif %}
             >
               {{- link.title | escape -}}
@@ -104,6 +104,6 @@
     <span class="nav__contact-svg">
       {% render 'icon-phone' %}
     </span>
-    <span>+91 12345 56789</span>
+    <span class="text-thin text-l">+91 12345 56789</span>
   </div>
 </nav>

@@ -4,15 +4,15 @@
   <div class="page-width image-video-grid__wrapper">
     <div class="image-video-grid__content-wrapper">
       <div class="image-video-grid__title_wrapper">
-        <div class="image-video-grid__title">{{ section.settings.title }}</div>
+        <div class="image-video-grid__title font-jost text-bold text-l">{{ section.settings.title }}</div>
         <span class="image-video-grid__icon-line">
           {%- if section.settings.title != blank %}{% render 'icon_line' %}{% endif -%}
         </span>
       </div>
-      <div class="image-video-grid__heading">
+      <div class="image-video-grid__heading font-jost text-bolder heading-l">
         {{ section.settings.heading }}
       </div>
-      <div class="image-video-grid__description">
+      <div class="image-video-grid__description font-jost text-semibold text-l">
         {{ section.settings.description }}
       </div>
     </div>

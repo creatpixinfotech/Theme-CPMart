@@ -350,11 +350,6 @@
   letter-spacing: -.01em;
 }
 
-.collection-list__item .card__items {
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.445;
-}
 
 @media only screen and (max-width: 750px) {
   .collection-list__item .card__heading {

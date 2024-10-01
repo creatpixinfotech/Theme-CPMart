@@ -13,10 +13,10 @@
             style="{% unless section.settings.show_collection_image %} align-items: {{ block.settings.alignment }}{% endunless %}"
           >
             {% if block.settings.title != blank %}
-              <div class="collections__title">{{ block.settings.title }}</div>
+              <div class="collections__title font-jost text-bold heading-m">{{ block.settings.title }}</div>
             {% endif %}
             {% if block.settings.description != blank %}
-              <div class="collections__description font-Jost" style="color:{{ block.settings.description_color  }};">
+              <div class="collections__description font-jost text-bold heading-m" style="color:{{ block.settings.description_color  }};">
                 {{ block.settings.description }}
               </div>
             {% endif %}

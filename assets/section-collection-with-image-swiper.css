@@ -33,10 +33,6 @@
 }
 
 .collection-with-image-swiper .collection__heading {
-  font-family: 'Jost';
-  font-size: 2.2rem;
-  font-weight: 600;
-  line-height: 1.445;
   text-transform: capitalize;
   display: flex;
   flex-direction: column;
@@ -62,27 +58,15 @@
 }
 
 .collection_product_card .product_title {
-  font-family: 'Jost';
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.445;
   color: #253D4E;
   text-decoration: none;
 }
 
 .product_price .price-on-sale {
-  font-family: 'Jost';
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 1.445;
   color: #3BB77E;
 }
 
 .product_price .price-original {
-  font-family: 'Jost';
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.445;
   text-align: left;
   color: #AAA9A3;
   text-decoration: line-through;
@@ -112,10 +96,6 @@
 }
 
 .image-content .collection-list__heading {
-  font-family: 'Jost';
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 1.445;
   letter-spacing: 0;
   margin-bottom: 1rem;
 }

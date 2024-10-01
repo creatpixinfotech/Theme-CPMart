@@ -122,7 +122,7 @@
     {%- if card_collection != blank and card_style == 'card' or card_collection.featured_image -%}
       <div class="card__content">
         <div class="card__information">
-          <h3 class="card__heading font-jost">
+          <h3 class="card__heading font-jost text-bold heading-s">
             <a
               {% if card_collection == blank %}
                 role="link" aria-disabled="true"
@@ -139,7 +139,7 @@
             </a>
           </h3>
           {% if show_items %}
-            <span class="card__items font-jost"> {{ card_collection.all_products_count }} Items</span>
+            <span class="card__items font-jost text-thin text-l"> {{ card_collection.all_products_count }} Items</span>
           {% endif %}
           {%- if card_collection.featured_image == null and card_collection.description != blank -%}
             <p class="card__caption">

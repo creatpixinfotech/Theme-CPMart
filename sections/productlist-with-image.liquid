@@ -5,7 +5,7 @@
 <div class="productlist-with-image productlist-with-image-{{ section.id }} productlist-with-image-container">
   <div class="page-width">
     {% if section.settings.title != blank %}
-      <div class="section-title ">
+      <div class="section-title font-jost text-bolder heading-l">
         {{ section.settings.title }}
       </div>
     {% endif %}
@@ -24,10 +24,10 @@
             >
               <div class="collection-list__content-wrapper">
                 {% if section.settings.subheading %}
-                  <div class="collection-list__sub-heading">{{ section.settings.subheading }}</div>
+                  <div class="collection-list__sub-heading font-jost text-bolder heading-l">{{ section.settings.subheading }}</div>
                 {% endif %}
                 {% if section.settings.subheading %}
-                  <div class="collection-list__description">{{ section.settings.description }}</div>
+                  <div class="collection-list__description font-jost text-bold text-l">{{ section.settings.description }}</div>
                 {% endif %}
                 {% if section.settings.btn_link %}
                   <a href="{{ section.settings.btn_link }}" class="button-primary">

@@ -288,8 +288,6 @@
 }
 
 .multicolumn-card__info .inline-richtext {
-  font-size: 1.6rem;
-  font-weight: 600;
   line-height: 1.445;
   color: #242424;
   letter-spacing: 0;
@@ -300,9 +298,6 @@
 }
 
 .multicolumn-card__info .rte p {
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 1.445;
   color: #ADADAD;
   letter-spacing: 0;
 }

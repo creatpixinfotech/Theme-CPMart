@@ -1636,9 +1636,6 @@ a.product__text {
 }
 
 .product__info-wrapper .product__description p {
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.445;
   letter-spacing: 0;
 }
 

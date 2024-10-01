@@ -3,8 +3,8 @@
 <div class="image-collage page-width">
   <div class="left-content">
     <div class="left-content-title">
-      <div class="sub-title">{{ section.settings['sub-title'] }}</div>
-      <div class="title">{{ section.settings.title }}</div>
+      <div class="sub-title font-jost text-bold text-l">{{ section.settings['sub-title'] }}</div>
+      <div class="title font-jost text-bolder heading-l">{{ section.settings.title }}</div>
     </div>
     <div class="image-section">
       <img
@@ -32,7 +32,7 @@
         </figure>
       {% endfor %}
     </div>
-    <div class="description">{{ section.settings.description }}</div>
+    <div class="description font-jost text-semibold text-l">{{ section.settings.description }}</div>
     <a href="{{ section.settings.link }}" class="button-primary">
       {{ section.settings.button_text }}
       {{- 'icon-arrow.svg' | inline_asset_content -}}

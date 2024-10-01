@@ -19,10 +19,6 @@
 }
 
 .image-collage .left-content .sub-title {
-  font-family: 'Jost';
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.445;
   text-align: left;
   color: #253D4E;
   text-transform: capitalize;
@@ -30,10 +26,6 @@
 }
 
 .image-collage .left-content .title {
-  font-family: 'Jost';
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 1.445;
   text-align: left;
   color: #253D4E;
   letter-spacing: 0;
@@ -85,10 +77,6 @@
 }
 
 .image-collage .right-content .description {
-  font-family: 'Jost';
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 1.445;
   letter-spacing: 0.02em;
   text-align: left;
   color: #242424;

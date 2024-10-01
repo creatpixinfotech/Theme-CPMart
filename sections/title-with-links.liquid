@@ -9,7 +9,7 @@
       <div class="title-with-links__background title-with-links__background-{{ forloop.index }}" style="background-image:url('{{ block.settings.bg_img |  image_url }}')">
         <div class="title-with-links__overlay"></div>
         <div class=title-with-links__text>
-          <div class="title-with-links__title">{{ block.settings.title }}</div>
+          <div class="title-with-links__title font-jost heading-m text-bold">{{ block.settings.title }}</div>
           <a class="button-primary" href="{{ block.settings.btn_url }}">{{ block.settings.btn_label }} <span> {{- 'icon-arrow.svg' | inline_asset_content -}}</span></a>
         </div>
       </div>

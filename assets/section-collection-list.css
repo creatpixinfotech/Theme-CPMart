@@ -111,7 +111,7 @@
   text-align: center;
   font-size: 2rem;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 460px) {
   .section-collection-list .collection-list{
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;

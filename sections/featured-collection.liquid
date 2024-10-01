@@ -69,7 +69,7 @@
   >
     <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %} {% if section.settings.show_collection_with_title %} collection-flex {% endif %}">
       {%- if section.settings.title != blank -%}
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} heading-{{ section.settings.heading_alignment }}">
+        <h2 class="title inline-richtext font-jost text-bolder heading-l {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} heading-{{ section.settings.heading_alignment }}">
           {{ section.settings.title }}
         </h2>
       {%- endif -%}

@@ -23,10 +23,6 @@
 
 
 .image-video-grid .image-video-grid__title_wrapper .image-video-grid__title {
-  font-family: Jost;
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.445;
   color: #253D4E;
 }
 
@@ -36,10 +32,6 @@
 }
 
 .image-video-grid .image-video-grid__heading {
-  font-family: Jost;
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 1.445;
   color: #3BB77E;
   margin-top: 1rem;
   letter-spacing: normal;
@@ -50,10 +42,6 @@
 }
 
 .image-video-grid .image-video-grid__description {
-  font-family: Jost;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 1.445;
   letter-spacing: 0.02em;
   margin: 0;
   margin-top: 2rem;

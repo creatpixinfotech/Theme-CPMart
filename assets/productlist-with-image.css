@@ -63,10 +63,6 @@
 .productlist-with-image .section-title p{
   margin-top: 0;
   margin-bottom: 4rem;
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 1.445;
-  font-family: 'Jost';
   color: #253D4E;
   letter-spacing: normal;
 }
@@ -85,10 +81,6 @@
   }
 }
 .productlist-with-image .collection-list__sub-heading{
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 1.445;
-  font-family: 'Jost';
   letter-spacing: normal;
 }
 @media screen and (max-width:1024px){
@@ -100,10 +92,6 @@
   margin: 0;
 }
 .productlist-with-image .collection-list__description{
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.445;
-  font-family: 'jost';
   max-width: 24.2rem;
   letter-spacing: normal;
 }

@@ -385,42 +385,42 @@ h6,
 
 .heading-xl {
   font-size: 5.2rem;
-  line-height: 1.2;
+  line-height: 7.514rem;
 }
 
 .heading-l {
   font-size: 3.2rem;
-  line-height: 1.2;
+  line-height: 4.624rem;
 }
 
 .heading-m {
-  font-size: 2.4rem;
-  line-height: 1.2;
+  font-size: 2.2rem;
+  line-height: 3.179rem;
 }
 
 .heading-s {
-  font-size: 2.2rem;
-  line-height: 1.2;
+  font-size: 2rem;
+  line-height: 2.89rem;
 }
 
 .text-xl {
   font-size: 1.8rem;
-  line-height: 1.2;
+  line-height: 2.601rem;
 }
 
 .text-l {
   font-size: 1.6rem;
-  line-height: 1.2;
+  line-height: 1.445;
 }
 
 .text-m {
   font-size: 1.4rem;
-  line-height: 1.2;
+  line-height: 2.023rem;
 }
 
 .text-s {
   font-size: 1.2rem;
-  line-height: 1.2;
+  line-height: 1.8rem;
 }
 
 .text-bolder {
@@ -2818,7 +2818,6 @@ input[type='checkbox'] {
 .header__icon .svg-wrapper {
   width: 100%;
   height: 100%;
-  font-size: 1.6rem;
   line-height: 1.5;
 }
 
@@ -3091,10 +3090,6 @@ details[open]>.header__icon--menu .icon-hamburger {
 
 .header__menu-item span {
   transition: text-decoration var(--duration-short) ease;
-  font-family: 'Jost';
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.445;
 }
 
 .header__menu-item:hover span {
@@ -3119,6 +3114,10 @@ details[open]>.header__menu-item .icon-caret {
   color: #3BB77E;
   text-decoration: none;
   text-underline-offset: 0.3rem;
+  font-family: Jost;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.445;
 }
 
 .header__menu-item:hover .header__active-menu-item {

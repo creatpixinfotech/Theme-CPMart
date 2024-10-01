@@ -97,10 +97,10 @@
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
-                <div class="product__title font-jost" {{ block.shopify_attributes }}>
+                <div class="product__title font-jost text-bold " {{ block.shopify_attributes }}>
                   <h1>{{ product.title | escape }}</h1>
                   <a href="{{ product.url }}" class="product__title">
-                    <h2 class="h1 popup_title">
+                    <h2 class="h1 popup_title font-jost text-bold heading-m">
                       {{ product.title | escape }}
                     </h2>
                   </a>
@@ -193,7 +193,7 @@
                 </p>
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                  <div class="product__description rte quick-add-hidden font-jost text-thin text-l" {{ block.shopify_attributes }}>
                     {{ product.description }}
                   </div>
                 {%- endif -%}
@@ -239,7 +239,7 @@
                     | item_count_for_variant: product.selected_or_first_available_variant.id
                   -%}
                   {% # theme-check-enable %}
-                  <label class="quantity__label form__label font-jost" for="Quantity-{{ section.id }}">
+                  <label class="quantity__label form__label font-jost text-thin" for="Quantity-{{ section.id }}">
                     {{ 'products.product.quantity.label' | t }}
                     <span class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}">
                       {%- render 'loading-spinner' -%}

@@ -79,10 +79,6 @@
 }
 
 .newsletter .newsletter__wrapper .inline-richtext {
-  font-family: 'Jost';
-  font-size: 2.2rem;
-  font-weight: 600;
-  line-height: 1.445;
   color: #fff;
   margin: 0;
   margin-bottom: -1rem;
@@ -90,10 +86,6 @@
 }
 
 .newsletter .newsletter__wrapper .newsletter__subheading {
-  font-family: 'Jost';
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 1.445;
   color: #fff;
   margin: 0;
   letter-spacing: 0;

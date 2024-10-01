@@ -127,10 +127,6 @@
 }
 
 .collection .collection__title .title {
-  font-family: "jost";
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 1.445;
   text-transform: capitalize;
   margin: 0;
 }

@@ -6,30 +6,18 @@
 }
 
 .card__content .card__information .card__heading {
-  font-family: "jost";
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.445;
   text-align: left;
   color: #253D4E;
   letter-spacing: 0;
 }
 
 .price__container .price-item--sale {
-  font-family: "jost";
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 1.445;
   text-align: left;
   color: #3BB77E;
   letter-spacing: 0;
 }
 
 .price .price__container .price-item--regular {
-  font-family: "jost";
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.445;
   text-align: left;
   color: #AAA9A3;
   margin: 0;
@@ -202,9 +190,6 @@
 
 .card__content .product_type {
   font-family: 'Poppins';
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.5;
   text-align: left;
   color: #AAA9A3;
 }

@@ -4,11 +4,11 @@
 <div class="deal-of-the-day" style="background-color: {{ section.settings.background-color }};">
   <div class="page-width">
     <div class="section-header">
-      <div class="sub-header">
+      <div class="sub-header font-jost text-bold text-l">
         <span>{{ section.settings.sub_title }}</span>
         {% render '_icon-line' %}
       </div>
-      <h2 class="header-{{ section.settings.title_position }}">{{ section.settings.title }}</h2>
+      <h2 class="header-{{ section.settings.title_position }} font-jost text-bolder heading-l">{{ section.settings.title }}</h2>
     </div>
     <div class="section-content section-content-{{ section.settings.collection-position }}">
       {% for block in section.blocks %}
@@ -35,30 +35,30 @@
                 >
               </div>
               <div class="collection-content">
-                <a href="{{ block.settings.collection.url }}" class="collection-deal__title">
+                <a href="{{ block.settings.collection.url }}" class="collection-deal__title font-jost text-bolder heading-l">
                   {{- block.settings.title -}}
                 </a>
-                <div class="collection-deal__discription">{{ block.settings.subtitle }}</div>
+                <div class="collection-deal__discription font-jost text-bold text-l">{{ block.settings.subtitle }}</div>
               </div>
-              <div class="collection-timer">
+              <div class="collection-timer font-jost text-bolder heading-l">
                 <div class="collection-time">
                   <span class="day">{{ block.settings.day }}</span>
-                  <span class="span">Days</span>
+                  <span class="span font-jost text-bold text-l">Days</span>
                 </div>
                 :
                 <div class="collection-time">
                   <span class="hours">{{ block.settings.hours }}</span>
-                  <span class="span">Hours</span>
+                  <span class="span font-jost text-bold text-l">Hours</span>
                 </div>
                 :
                 <div class="collection-time">
                   <span class="mins">{{ block.settings.mins }}</span>
-                  <span class="span">Mins</span>
+                  <span class="span font-jost text-bold text-l">Mins</span>
                 </div>
                 :
                 <div class="collection-time">
                   <span class="secs">{{ block.settings.secs }}</span>
-                  <span class="span">Secs</span>
+                  <span class="span font-jost text-bold text-l">Secs</span>
                 </div>
               </div>
             </div>

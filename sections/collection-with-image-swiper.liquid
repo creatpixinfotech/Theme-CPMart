@@ -32,10 +32,10 @@
               >
               <div class="image-content">
                 {% if block.settings.heading %}
-                  <div class="collection-list__heading">{{ block.settings.heading }}</div>
+                  <div class="collection-list__heading font-jost text-bolder heading-l">{{ block.settings.heading }}</div>
                 {% endif %}
                 {% if block.settings.description %}
-                  <div class="collection-list__description">{{ block.settings.description }}</div>
+                  <div class="collection-list__description font-jost text-bold text-l">{{ block.settings.description }}</div>
                 {% endif %}
 
                 {% if block.settings.btn_link %}
@@ -48,7 +48,7 @@
             </div>
           {% when 'collections' %}
             <div class="js-collection-swiper swiper">
-              <div class="collection__heading">
+              <div class="collection__heading font-jost text-bold heading-m">
                 {{ block.settings.collection_heading }}
                 <div class="swiper-pagination"></div>
               </div>
@@ -85,11 +85,11 @@
                       </a>
                     </div>
                     <div class="product_content">
-                      <a href="{{ product.url }}" class="product_title">{{ product.title }}</a>
+                      <a href="{{ product.url }}" class="product_title font-jost text-bold text-l">{{ product.title }}</a>
                       <div class="product_stars"></div>
                       <div class="product_price">
-                        <span class="price-on-sale">{{ product.price | money_with_currency }}</span>
-                        <span class="price-original">{{ product.compare_at_price | money_with_currency }}</span>
+                        <span class="price-on-sale font-jost text-bold text-xl">{{ product.price | money_with_currency }}</span>
+                        <span class="price-original font-jost text-bold text-m ">{{ product.compare_at_price | money_with_currency }}</span>
                       </div>
                     </div>
                   </div>
