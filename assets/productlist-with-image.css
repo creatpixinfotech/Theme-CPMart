@@ -36,9 +36,9 @@
     height: 10rem;
     position: absolute;
     background-image: url(/cdn/shop/files/leaf_img.png?v=1725968143);
-    left: -8rem;
-    bottom: 0;
-    transform: rotate(-16deg);
+    left: -85px;
+    bottom: 5px;
+    transform: rotate(352deg);
     background-repeat: no-repeat;
   }
 }
@@ -63,11 +63,12 @@
 .productlist-with-image .section-title p{
   margin-top: 0;
   margin-bottom: 4rem;
-   font-size: 3.2rem;
-   font-weight: 700;
-   line-height: 1.445;
-   font-family: 'Jost';
-   color: #253D4E;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.445;
+  font-family: 'Jost';
+  color: #253D4E;
+  letter-spacing: normal;
 }
 .productlist-with-image .collection-list__content-wrapper{
     position: absolute;
@@ -88,6 +89,7 @@
   font-weight: 700;
   line-height: 1.445;
   font-family: 'Jost';
+  letter-spacing: normal;
 }
 @media screen and (max-width:1024px){
   .productlist-with-image .collection-list__sub-heading{
@@ -102,6 +104,8 @@
   font-weight: 600;
   line-height: 1.445;
   font-family: 'jost';
+  max-width: 24.2rem;
+  letter-spacing: normal;
 }
 @media screen and (max-width:749px){
   .productlist-with-image .section-title p{

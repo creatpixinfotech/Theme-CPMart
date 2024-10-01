@@ -158,7 +158,8 @@
 .collection .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
+  column-gap: 3rem;
+  row-gap: 4rem;
 }
 
 .collection .product-grid .grid__item {

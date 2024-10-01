@@ -5,8 +5,8 @@
 
 .collection-list-background {
   position: absolute;
-  top: -5rem;
-  left: -5rem;
+  top: -6rem;
+  left: -6.6rem;
 }
 
 .collection-list-title {
@@ -21,8 +21,17 @@
   max-width: 100%;
   width: 100%;
   aspect-ratio: 1;
-
 }
+
+.section-collection-list .collection-list .collection-list__item:hover {
+  .card-wrapper {
+    border: 1px solid #3BB77E;
+  }
+  .full-unstyled-link {
+    color: #3BB77E;
+  }
+}
+
 .section-collection-list .collection-list .collection-list__item .card-wrapper{
   border-radius: 0.6rem;
   position: relative;
@@ -100,6 +109,7 @@
 
 .collection-list-wrapper .card__content .card__information .card__heading {
   text-align: center;
+  font-size: 2rem;
 }
 @media screen and (max-width: 480px) {
   .section-collection-list .collection-list{

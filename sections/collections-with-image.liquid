@@ -26,26 +26,22 @@
               </a>
               {% render 'icon-white-arrow' %}
             </div>
-          {% endif %}
-          <div class="collections__button-container button-primary">
-            <a href="{{block.settings.url}}" class="collections__shop-btn font-Jost">{{ block.settings.button_text }}</a>
-            {% render 'icon-white-arrow' %}
-          </div>
-          {% if section.settings.show_collection_image %}
-            <figure class="collections__fig">
-              <picture>
-                <source srcset="{{ block.settings.collection.featured_image | image_url: width: 200, height: 200 }}">
-                <img
-                  src="{{ block.settings.collection.featured_image | image_url: width: 200, height: 200 }}"
-                  class="lazyloaded"
-                  alt="{{ block.settings.collection.featured_image.alt }}"
-                  width=""
-                  height=""
-                  loading="eager"
-                >
-              </picture>
-            </figure>
-          {% endif %}
+        </div>
+        {% if section.settings.show_collection_image %}
+        <figure class="collections__fig">
+          <picture>
+            <source srcset="{{ block.settings.collection.featured_image | image_url: width: 200, height: 200 }}">
+            <img
+              src="{{ block.settings.collection.featured_image | image_url: width: 200, height: 200 }}"
+              class="lazyloaded"
+              alt="{{ block.settings.collection.featured_image.alt }}"
+              width=""
+              height=""
+              loading="eager"
+            >
+          </picture>
+        </figure>
+      {% endif %}
         </div>
       {% endfor %}
     </div>

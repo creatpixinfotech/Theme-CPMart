@@ -29,6 +29,7 @@
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
   {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {%- endunless -%}
+<script src="{{ 'whislist.js' | asset_url }}" defer="defer"></script>
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
@@ -49,6 +50,14 @@
   <div
     class="card-wrapper product-card-wrapper underline-links-hover {{ card_layout }}"
   >
+  <div class="card__wishlist">
+    <div class="empty-heart"> 
+      {{- 'icon-empaty-heart.svg' | inline_asset_content -}}
+    </div>
+    <div class="fill-heart">
+      {{- 'icon-fill-heart.svg' | inline_asset_content -}}
+    </div>
+  </div>
     <div
       class="
          card card--{{ settings.card_style }}

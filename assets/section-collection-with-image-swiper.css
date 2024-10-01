@@ -24,6 +24,8 @@
 
 .product_image {
   line-height: 0;
+  background-color: #E7EAF3;
+  border-radius: 6px;
 }
 
 .collection-with-image-swiper .js-collection-swiper {
@@ -100,6 +102,7 @@
 
 .js-collection-swiper .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: #3BB77E;
+  border-radius: 4rem;
 }
 
 .js-collection-swiper .swiper-wrapper .swiper-slide {
@@ -123,6 +126,7 @@
 
 .collection-with-image-swiper .swiper-pagination-progressbar.swiper-pagination-horizontal {
   height: .5rem;
+  border-radius: 4rem;
 }
 
 .collection-with-image-swiper .image-section {

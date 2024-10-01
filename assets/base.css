@@ -761,6 +761,10 @@ h3 .icon-arrow,
   }
 }
 
+.svg-wrapper .header-inline-menu-name  {
+  letter-spacing: normal;
+}
+
 .header svg.icon.icon-close {
   display: none;
 }
@@ -1917,7 +1921,7 @@ details[open]>.share-button__fallback {
 
 .header__search .field__input {
   height: auto;
-  border: 1px solid green;
+  border: 1px solid #3BB77E;
   border-radius: .6rem;
 }
 
@@ -1988,7 +1992,8 @@ details[open]>.share-button__fallback {
 .header__search .search__button {
   max-width: 6rem;
   width: 100%;
-  max-height: 5.6rem;
+  max-height: 5.9rem;
+  padding-inline: 1.8rem;
   height: 100%;
   border-top-right-radius: .6rem;
   border-bottom-right-radius: .6rem;
@@ -2014,8 +2019,8 @@ details[open]>.share-button__fallback {
 }
 
 .field__button>.svg-wrapper {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2.3rem;
+  width: 2.3rem;
 }
 
 .field__input:-webkit-autofill~.field__button,
@@ -2695,9 +2700,10 @@ input[type='checkbox'] {
 
 .header__heading-link {
   display: inline-block;
-  padding: 0.75rem;
+  padding-block: 0.65rem;
   text-decoration: none;
   word-break: break-word;
+  margin-left: 0;
 }
 
 @media screen and (max-width:749px) {
@@ -2745,12 +2751,6 @@ input[type='checkbox'] {
 }
 
 @media screen and (min-width: 990px) {
-
-  .header--middle-left .header__heading-link,
-  .header--top-left .header__heading-link {
-    margin-left: -0.75rem;
-  }
-
   .header__heading,
   .header__heading-link {
     justify-self: start;

@@ -112,6 +112,7 @@
   display: flex;
   align-items: center;
   gap: 1.1rem;
+  text-transform: capitalize;
 }
 
 .card .quick-add .quick-add__submit::after {
@@ -149,6 +150,8 @@
 .card-wrapper.layout-3 .card__content{
   display: flex;
   height: 100%;
+  padding-inline: 0;
+  padding-bottom: 2rem;
 }
 @media screen and (max-width: 749px) {
   .card-wrapper.layout-1 .card .card__content-info {
@@ -252,7 +255,7 @@
   font-weight: 800;
   color: #FFFFFF;
   background-color: #3BB77E;
-  padding: 1.3rem 0;
+  padding: 1.35rem 0;
   width: 100%;
   transition: all .3s ease;
 }
@@ -284,6 +287,13 @@
 .card-wrapper.layout-3 .card__content .card__badge {
   top: -.2rem;
 }
+.card-wrapper.layout-3 .product-type-layout_3 {
+  display: block;
+}
+
+.card-wrapper .product-type-layout_3 {
+  display: none;
+}
 
 @media screen and (max-width:749px) {
   .card-wrapper.layout-3 .card__content-info {
@@ -293,4 +303,20 @@
 
 .card .card__content-info {
   height: 100%;
+}
+
+.card-wrapper .card__wishlist {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.card-wrapper .card__wishlist .empty-heart {
+  display: block;
+}
+
+.card-wrapper .card__wishlist .fill-heart {
+  display: none;
 }
