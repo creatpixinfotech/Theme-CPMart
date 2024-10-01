@@ -523,6 +523,9 @@ table:not([class]) th {
 }
 
 @media screen and (min-width: 750px) and (max-width: 989px) {
+  .facets-vertical .medium-hide {
+    display: flex !important;
+  }
   .medium-hide {
     display: none !important;
   }
@@ -1480,31 +1483,33 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .button--secondary__green {
-  padding: 1.4rem 5rem;
+  padding: 1.4rem 3rem;
   margin: 0;
   width: fit-content;
   font-family: "jost";
   background-color: #3BB77E;
   color: #fff;
-  border-radius: .3rem;
+  border-radius: .6rem;
   border: none;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.445;
   text-transform: capitalize;
   transition: all .5s ease-in-out;
+  letter-spacing: normal;
 }
 
 .button--secondary__green:hover {
   background-color: #FDC040;
+  color: white;
 }
 
 .button--secondary__green-lite {
-  padding: 1.4rem 5rem;
+  padding: 1.4rem 3rem;
   margin: 0;
   width: fit-content;
   border: 1px solid #3BB77E;
-  border-radius: .3rem;
+  border-radius: .6rem;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.445;
@@ -1516,6 +1521,8 @@ button.shopify-payment-button__button--unbranded {
   background-color: #fff;
   color: #3BB77E;
   transition: all .5s ease-in-out;
+  cursor: pointer;
+  letter-spacing: normal;
 }
 
 .button--secondary__green-lite:hover {
@@ -3954,4 +3961,13 @@ details-disclosure>details {
   .account_wrapper {
     padding: 2rem 0;
   }
+}
+.rich-text__heading{
+  font-family: Jost;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.445;
+  text-align: left;
+  color: #2b2b2d;
+  text-transform: capitalize;
 }

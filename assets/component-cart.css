@@ -153,7 +153,8 @@ cart-items {
 
 .cart__ctas button {
   width: 100%;
-  padding: 1.5rem 3rem;
+  padding: 1.3rem 3rem;
+  margin: 0 .85rem;
 }
 
 .cart__ctas > * + * {
