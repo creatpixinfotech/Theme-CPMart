@@ -334,7 +334,7 @@ class PriceRange extends HTMLElement {
     const minVal = minInput.value;
     const maxVal = maxInput.value;
 
-    priceDisplay.textContent = `Price: ${cartSymbol}${minVal} - ${cartSymbol}${maxVal}`;
+    priceDisplay.innerHTML = `<span class="price_text">Price:</span> ${cartSymbol}${minVal} - ${cartSymbol}${maxVal}`;
   }
 
   setMinAndMaxValues() {

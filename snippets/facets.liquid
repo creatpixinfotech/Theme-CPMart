@@ -138,7 +138,7 @@
                       aria-label="{{ filter.label | escape }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
                     >
                       <div>
-                        <span class="facets__summary-label">
+                        <span class="facets__summary-label text-bold text-xl font-jost">
                           {{- filter.label | escape }}
                           {%- if filter_type == 'vertical' -%}
                             <span class="facets__selected{% if filter.active_values.size == 0 %} hidden{% endif %}">
@@ -187,11 +187,11 @@
                             assign inactive_filter_values = filter.values | where: 'active', false
                             assign sorted_values = active_filter_values | concat: inactive_filter_values
                           endif
-                        -%}
-                        <ul
-                          class="{{ visual_layout_class }}{% if filter_type == 'vertical' %} facets__list--vertical{% else %} facets__list{% endif %} list-unstyled"
-                          role="list"
-                        >
+                        -%} {% assign filterTag = filter.label |  downcase %}
+                            <ul
+                              class="{% if filterTag == "tags" %} facet_tag {% endif %}{{ visual_layout_class }}{% if filter_type == 'vertical' %} facets__list--vertical{% else %} facets__list{% endif %} list-unstyled"
+                              role="list"
+                            >
                           {%- for value in sorted_values -%}
                             {% liquid
                               assign input_id = 'Filter-' | append: filter.param_name | escape | append: '-' | append: forloop.index
@@ -206,7 +206,10 @@
 
                             {%- capture text_value -%}
                               <span class="facet-checkbox__text" aria-hidden="true">
-                                <span class="facet-checkbox__text-label">{{- value.label | escape }}</span> ({{- value.count -}})
+                                <span class="facet-checkbox__text-label">{{- value.label | escape }}</span>
+                              {% if filterTag != "tags" and filterTag != "weight" %}
+                                <span> [{{- value.count -}}]</span>
+                                {% endif %}
                               </span>
                               <span class="visually-hidden">
                                 {{- value.label | escape }} (
@@ -238,7 +241,10 @@
                                   {{ text_value }}
                                 </div>
                               {%- else -%}
-                                <label for="{{ input_id }}" class="{{ label_class }}">
+                              {% assign filterTag = filter.label |  downcase %}
+                                <label for="{{ input_id }}" class="{{ label_class }}
+                                {% if filterTag == "tags" %}label__tags {% endif %}
+                                ">
                                   <input
                                     type="checkbox"
                                     name="{{ value.param_name }}"
@@ -262,12 +268,14 @@
                                         }}
                                       {%- endif -%}
                                     </div>
-                                  {%- else -%}
+                                  {%- else-if -%}
+                                  {% assign filterTag = filter.label |  downcase %}
+                                  {% if filterTag != "tags" %}
                                     {{- 'square.svg' | inline_asset_content -}}
-
                                     <div class="svg-wrapper">
                                       {{- 'icon-checkmark.svg' | inline_asset_content -}}
-                                    </div>
+                                      </div>
+                                    {% endif %}
                                   {%- endif -%}
 
                                   {{ text_value }}

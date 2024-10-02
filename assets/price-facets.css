@@ -1,5 +1,9 @@
 .price-range {
-  margin-top: 8px;
+  margin-top:.8rem;
+  margin-bottom: 1.8rem;
+}
+.price_text{
+  color: #2B2B2D;
 }
 .field:after {
   content: none;
@@ -16,12 +20,29 @@
 .facets-vertical .facets__price .field:last-of-type {
   margin: 0;
 }
+.facet-checkbox__text{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.label__tags .facet-checkbox__text{
+  width:fit-content;
+}
+.facet_tag {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
 .price-facets__filter-btn {
   border: none;
+  max-width: 8.5rem;
+  text-align: center;
+  display: block;
+  cursor: pointer;
 }
 .custom-wrapper {
   margin: 0;
-  width: 70%;
+  width: 100%;
   padding: 0px;
   position: relative;
   left: 0;

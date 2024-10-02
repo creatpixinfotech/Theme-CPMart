@@ -80,7 +80,7 @@
   align-items: center;
   justify-content: space-between;
   color: white;
-  background-color: #64b496;
+  background-color:#3BB77E;
   padding: 1.1rem 1.5rem;
   border-radius: .6rem;
   font-family: 'jost';
@@ -566,6 +566,9 @@ table:not([class]) th {
 @media screen and (min-width: 750px) and (max-width: 989px) {
   .facets-vertical .medium-hide {
     display: flex !important;
+  }
+  .facets-vertical .small-hide{
+    display: none;
   }
   .medium-hide {
     display: none !important;
