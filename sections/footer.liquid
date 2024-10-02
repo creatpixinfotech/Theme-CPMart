@@ -79,14 +79,14 @@
                   {%- when '@app' -%}
                     {% render block %}
                   {%- when 'text' -%}
-                    {%- if settings.logo != blank -%}
+                    {%- if block.settings.logo != blank -%}
                       <img
-                        srcset="{{ settings.logo | image_url: width: settings.logo_width }}, {{ settings.logo | image_url: width: image_size_2x }} 2x"
-                        src="{{ settings.logo | image_url: width: 760 }}"
-                        alt="{{ settings.logo.alt | escape }}"
+                        srcset="{{ block.settings.logo | image_url: width: block.settings.logo_width }}, {{ block.settings.logo | image_url: width: image_size_2x }} 2x"
+                        src="{{ block.settings.logo | image_url: width: 760 }}"
+                        alt="{{ block.settings.logo.alt | escape }}"
                         loading="lazy"
-                        width="{{ settings.logo.width }}"
-                        height="{{ settings.logo.height }}"
+                        width="{{ block.settings.logo.width }}"
+                        height="{{ block.settings.logo.height }}"
                         class="footer-block-logo"
                       >
                     {%- endif -%}
@@ -111,7 +111,9 @@
                     </div>
                   {%- when 'link_list' -%}
                     {%- if block.settings.heading != blank -%}
-                      <h2 class="footer-block__heading inline-richtext text-bold text-l">{{- block.settings.heading -}}</h2>
+                      <h2 class="footer-block__heading inline-richtext text-bold text-l">
+                        {{- block.settings.heading -}}
+                      </h2>
                     {%- endif -%}
                     {%- if block.settings.menu != blank -%}
                       <ul class="footer-block__details-content list-unstyled">
@@ -185,7 +187,9 @@
             {%- if section.settings.newsletter_enable -%}
               <div class="footer-block__newsletter">
                 {%- if section.settings.newsletter_heading != blank -%}
-                  <h2 class="footer-block__heading inline-richtext text-bold text-l">{{ section.settings.newsletter_heading }}</h2>
+                  <h2 class="footer-block__heading inline-richtext text-bold text-l">
+                    {{ section.settings.newsletter_heading }}
+                  </h2>
                 {%- endif -%}
                 {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
                   <input type="hidden" name="contact[tags]" value="newsletter">
@@ -211,9 +215,7 @@
                         placeholder="Enter Your Email"
                         required
                       >
-                      <label class="field__label" for="NewsletterForm--{{ section.id }}">
-                        Enter Your Email
-                      </label>
+                      <label class="field__label" for="NewsletterForm--{{ section.id }}"> Enter Your Email </label>
                       <button
                         type="submit"
                         class="newsletter-form__button field__button"
@@ -304,7 +306,9 @@
     </div>
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">
-        <small class="copyright__content text-thin text-m">&copy; {{ 'now' | date: '%Y' }},Lorem All rights reserved. </small>
+        <small class="copyright__content text-thin text-m"
+          >&copy; {{ 'now' | date: '%Y' }},Lorem All rights reserved.
+        </small>
         {%- if section.settings.show_policy -%}
           <ul class="policies list-unstyled">
             {%- for policy in shop.policies -%}
@@ -378,6 +382,11 @@
       "type": "text",
       "name": "t:sections.footer.blocks.text.name",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "t:sections.footer.logo"
+        },
         {
           "type": "inline_richtext",
           "id": "heading",

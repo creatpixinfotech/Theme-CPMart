@@ -441,8 +441,9 @@
 }
 
 .footer-block-logo {
-  max-width: 110px;
+  max-width: 47.3%;
   width: 100%;
+  object-fit: contain
 }
 
 .footer-block-image {
