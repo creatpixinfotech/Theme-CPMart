@@ -109,7 +109,6 @@
 
 .collection-list-wrapper .card__content .card__information .card__heading {
   text-align: center;
-  font-size: 2rem;
 }
 @media screen and (max-width: 460px) {
   .section-collection-list .collection-list{

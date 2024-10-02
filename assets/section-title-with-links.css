@@ -17,6 +17,8 @@
   overflow: hidden;
   transition: transform 0.3s ease;
   padding-block: 10rem 15.9rem;
+  display: flex;
+  justify-content: center;
 }
 
 .title-with-links .title-with-links__background-1 {
@@ -54,6 +56,7 @@
   flex-direction: column;
   row-gap: 2rem;
   padding-inline: 10rem;
+  align-items: center;
 }
 
 .title-with-links .title-with-links__title {
@@ -70,8 +73,6 @@
 
 .title-with-links .button-primary {
   z-index: 2;
-  margin: 0 auto;
-  width: 100%;
 }
 
 @media screen and (max-width:1200px) {
@@ -102,11 +103,6 @@
 @media screen and (max-width:749px) {
   .title-with-links .title-with-links__background {
     padding-block: 5rem;
-  }
-
-  .title-with-links .title-with-links__title {
-    font-size: 1.8rem;
-    line-height: 2.9rem;
   }
 
   .title-with-links__text {

@@ -260,10 +260,6 @@
     border: none;
   }
 
-  .deal-of-the-day .collection-timer .span {
-    font-size: 1.4rem;
-  }
-
   .deal-of-the-day .product-deal .products:last-child {
     max-height: unset;
   }
@@ -299,18 +295,6 @@
 
   .deal-of-the-day .collection-deal {
     padding: 1.5rem;
-  }
-
-  .deal-of-the-day .header-left {
-    font-size: 2.4rem;
-  }
-
-  .deal-of-the-day .collection-content .collection-deal__title {
-    font-size: 2.4rem;
-  }
-
-  .deal-of-the-day .collection-content .collection-deal__discription {
-    font-size: 1.4rem;
   }
 
   .deal-of-the-day .collection-timer {

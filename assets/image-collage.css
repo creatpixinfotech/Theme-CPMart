@@ -117,12 +117,4 @@
   .image-collage {
     grid-template-columns: repeat(1, 1fr);
   }
-
-  .image-collage .left-content .sub-title {
-    font-size: 1.4rem;
-  }
-
-  .image-collage .right-content .description {
-    font-size: 1.4rem;
-  }
 }

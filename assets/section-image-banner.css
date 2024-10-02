@@ -514,12 +514,7 @@
     font-size: 3rem;
     line-height: 1.25;
   }
-
-  .banner__content .banner__box .banner__text {
-    font-size: 1.4rem;
-    line-height: 1.25;
-  }
-
+  
   .banner__content .banner__box .banner__buttons .button-primary {
     margin: 0 auto;
   }

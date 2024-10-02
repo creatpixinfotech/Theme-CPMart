@@ -146,14 +146,6 @@
     padding: 0 1.5rem;
   }
 
-  .card__content .card__information .card__heading {
-    font-size: 1.4rem;
-  }
-
-  .price__container .price-item--sale {
-    font-size: 1.4rem;
-  }
-
   .price .price__container .price-item--regular {
     font-size: 1.1rem;
   }

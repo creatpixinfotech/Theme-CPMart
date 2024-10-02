@@ -179,10 +179,7 @@
   }
 }
 
-@media screen and (max-width: 749px) {
-  .collection .collection__title .title {
-    font-size: 2.4rem;
-  }
+@media screen and (max-width:749px) {
 
   .collection .collection-header {
     gap: 1rem;

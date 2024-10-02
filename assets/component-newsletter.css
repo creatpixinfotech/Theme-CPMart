@@ -191,13 +191,6 @@
 }
 
 @media screen and (max-width:749px) {
-  .newsletter .newsletter__wrapper .inline-richtext {
-    font-size: 1.6rem;
-  }
-
-  .newsletter .newsletter__wrapper .newsletter__subheading {
-    font-size: 2.4rem;
-  }
 
   .newsletter .newsletter-form {
     align-items: baseline;

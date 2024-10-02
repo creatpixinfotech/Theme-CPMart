@@ -443,6 +443,47 @@ h6,
   font-family: 'jost';
 }
 
+@media screen and (max-width: 749px)  {
+  .heading-xl {
+    font-size: 3.2rem;
+    line-height: 3.514rem;
+  }
+  
+  .heading-l {
+    font-size: 2.2rem;
+    line-height: 3.179rem;
+  }
+  
+  .heading-m {
+    font-size: 2rem;
+    line-height:  2.89rem;
+  }
+  
+  .heading-s {
+    font-size: 1.8rem;
+    line-height: 2.601rem;
+  }
+  
+  .text-xl {
+    font-size: 1.6rem;
+    line-height: 1.445;
+  }
+  
+  .text-l {
+    font-size: 1.4rem;
+    line-height: 2.023rem;
+  }
+  
+  .text-m {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+  
+  .text-s {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+}
 
 blockquote {
   font-style: italic;
@@ -2812,7 +2853,6 @@ input[type='checkbox'] {
 
 .header__icon span {
   height: 100%;
-  font-weight: 600;
 }
 
 .header__icon .svg-wrapper {
@@ -3114,10 +3154,7 @@ details[open]>.header__menu-item .icon-caret {
   color: #3BB77E;
   text-decoration: none;
   text-underline-offset: 0.3rem;
-  font-family: Jost;
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.445;
+
 }
 
 .header__menu-item:hover .header__active-menu-item {
@@ -3957,10 +3994,6 @@ details-disclosure>details {
   }
 }
 .rich-text__heading{
-  font-family: 'Jost';
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 1.445;
   text-align: left;
   color: #2b2b2d;
   text-transform: capitalize;

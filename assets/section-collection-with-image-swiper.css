@@ -129,10 +129,6 @@
 }
 
 .collection-with-image-swiper .collection-list__description {
-  font-family: 'Jost';
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.445;
   margin-bottom: 3rem;
   letter-spacing: 0;
 }
@@ -142,13 +138,6 @@
 }
 
 @media screen and (max-width:749px) {
-  .collection-with-image-swiper .collection__heading {
-    font-size: 1.8rem;
-  }
-
-  .collection_product_card .product_title {
-    font-size: 1.4rem;
-  }
 
   .product_price .price-on-sale {
     font-size: 1.6rem;
@@ -176,7 +165,6 @@
   }
 
   .collection-with-image-swiper .collection-list__description {
-    font-size: 1.4rem;
     margin-bottom: 1.5rem;
   }
 
