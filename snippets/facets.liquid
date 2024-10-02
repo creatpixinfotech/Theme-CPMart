@@ -28,7 +28,7 @@
   endif
 -%}
 
-<div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+<div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}" {%- if filter_type == 'vertical' %} style="background-color: {{ background_color }};" {% endif %}>
   {%- if filter_type == 'vertical' or filter_type == 'horizontal' -%}
     <facet-filters-form class="facets small-hide">
       <form
@@ -56,7 +56,7 @@
             {% comment %} Pills are right below the title for filter type vertical {% endcomment %}
             {%- if filter_type == 'vertical' -%}
               <div class="active-facets active-facets-desktop">
-                <div class="active-facets-vertical-filter">
+                {% comment %} <div class="active-facets-vertical-filter">
                   {%- unless results.filters == empty -%}
                     <h2
                       class="facets__heading facets__heading--vertical caption-large text-body"
@@ -71,7 +71,7 @@
                       <span>{{ 'products.facets.clear_all' | t }}</span>
                     </a>
                   </facet-remove>
-                </div>
+                </div> {% endcomment %}
                 {%- for filter in results.filters -%}
                   {%- for value in filter.active_values -%}
                     <facet-remove>
@@ -125,7 +125,7 @@
 
               {% case filter.type %}
                 {% when 'boolean', 'list' %}
-                  <details
+                  <{% if filter_type == 'horizontal' %}details{% else %}div{% endif %}
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
                     class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
                     data-index="{{ forloop.index }}"
@@ -151,7 +151,7 @@
                             {{ 'products.facets.filter_and_operator_subtitle' | t }}
                           </span>
                         {%- endif -%}
-                        {{- 'icon-caret.svg' | inline_asset_content -}}
+                      {%- if filter_type == 'horizontal' -%}{{- 'icon-caret.svg' | inline_asset_content -}}{% endif %}
                       </div>
                     </summary>
                     <div
@@ -294,9 +294,9 @@
                         </show-more-button>
                       {%- endif %}
                     </div>
-                  </details>
+                  </{% if filter_type == 'horizontal' %}details{% else %}div{% endif %}>
                 {% when 'price_range' %}
-                  <details
+                  <{% if filter_type == 'horizontal' %}details{% else %}div{% endif %}
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
                     class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
                     data-index="{{ forloop.index }}"
@@ -307,31 +307,33 @@
                     <summary class="facets__summary caption-large focus-offset">
                       <div>
                         <span>{{ filter.label | escape }}</span>
-                        {{- 'icon-caret.svg' | inline_asset_content -}}
-                      </div>
+                      {%- if filter_type == 'horizontal' -%}{{- 'icon-caret.svg' | inline_asset_content -}}{% endif %}
+                        </div>
                     </summary>
                     <div
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
                       class="{% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
                     >
-                      <div class="{% if filter_type == 'horizontal' %}facets__header{% else %}facets__header-vertical{% endif %}">
-                        {%- assign max_price_amount = filter.range_max | money | strip_html | escape -%}
-                        <span class="facets__selected">
-                          {{- 'products.facets.max_price' | t: price: max_price_amount -}}
-                        </span>
-                        {%- if filter_type != 'vertical' -%}
-                          <facet-remove>
-                            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
-                              {{ 'products.facets.reset' | t }}
-                            </a>
-                          </facet-remove>
-                        {%- endif -%}
-                      </div>
+                      {% comment %}
+                        <div class="{% if filter_type == 'horizontal' %}facets__header{% else %}facets__header-vertical{% endif %}">
+                          {%- assign max_price_amount = filter.range_max | money | strip_html | escape -%}
+                          <span class="facets__selected">
+                            {{- 'products.facets.max_price' | t: price: max_price_amount -}}
+                          </span>
+                          {%- if filter_type != 'vertical' -%}
+                            <facet-remove>
+                              <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
+                                {{ 'products.facets.reset' | t }}
+                              </a>
+                            </facet-remove>
+                          {%- endif -%}
+                        </div>
+                      {% endcomment %}
                       <price-range class="facets__price">
                         {% render 'price-facet', filter: filter, id_prefix: 'Filter-', filter_type: filter_type %}
                       </price-range>
                     </div>
-                  </details>
+                  </{% if filter_type == 'horizontal' %}details{% else %}div{% endif %}>
               {% endcase %}
             {%- endfor -%}
           </div>

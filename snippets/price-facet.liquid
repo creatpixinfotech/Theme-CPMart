@@ -1,45 +1,58 @@
-<span class="field-currency">{{ cart.currency.symbol }}</span>
+{% comment %} <span class="field-currency">{{ cart.currency.symbol }}</span> {% endcomment %}
+{{ 'price-facets.css' | asset_url | stylesheet_tag }}
+<div class="custom-wrapper">
+  <div class="price-input-container">
+    <div class="price-input">
+      <div class="slider-container">
+        <div class="price-slider"></div>
+      </div>
+    </div>
+    <div class="range-input">
+      <input
+        type="range"
+        name="{{ filter.min_value.param_name }}"
+        id="{{ id_prefix }}{{ filter.label | escape }}-GTE"
+        {%- if filter.min_value.value -%}
+          value="{{ filter.min_value.value | money_without_currency }}"
+        {%- endif -%}
+        class="min-range field__input"
+        min="0"
+        max="{{ filter.range_max | money_without_currency }}"
+        value="2"
+        step="1"
+        data-min="0"
+        data-max="{{ filter.range_max | money_without_currency }}"
+      >
 
-<div class="field">
-  <input
-    class="field__input"
-    name="{{ filter.min_value.param_name }}"
-    id="{{ id_prefix }}{{ filter.label | escape }}-GTE"
-    {%- if filter.min_value.value -%}
-      value="{{ filter.min_value.value | money_without_currency }}"
-    {%- endif -%}
-    type="text"
-    inputmode="decimal"
-    placeholder="0"
-    data-pattern="\d| |,|\."
-    data-min="0"
-    data-max="{{ filter.range_max | money_without_currency }}"
-  >
-  <label class="field__label" for="{{ id_prefix }}{{ filter.label | escape }}-GTE">
-    {{- 'products.facets.from' | t -}}
-  </label>
+      <input
+        type="range"
+        name="{{ filter.max_value.param_name }}"
+        id="{{ id_prefix }}{{ filter.label | escape }}-GTE"
+        {%- if filter.max_value.value -%}
+          value="{{ filter.max_value.value | money_without_currency }}"
+        {%- endif -%}
+        class="max-range field__input"
+        min="0"
+        max="{{ filter.range_max | money_without_currency }}"
+        value="34"
+        step="1"
+        data-min="0"
+        data-max="{{ filter.range_max | money_without_currency }}"
+      >
+    </div>
+  </div>
+  <div class="price-range" data-cart-symbol="{{ cart.currency.symbol }}">Price:</div>
+  <button class="price-facets__filter-btn button-primary">Filter</button>
 </div>
 
-{%- if filter_type != 'vertical' -%}
-  <span class="field-currency">{{ cart.currency.symbol }}</span>
-{%- endif -%}
+{% comment %}
+  {%- if filter_type != 'vertical' -%}
+    <span class="field-currency">{{ cart.currency.symbol }}</span>
+  {%- endif -%}
+{% endcomment %}
 
-<div class="field">
-  <input
-    class="field__input"
-    name="{{ filter.max_value.param_name }}"
-    id="{{ id_prefix }}{{ filter.label | escape }}-LTE"
-    {%- if filter.max_value.value -%}
-      value="{{ filter.max_value.value | money_without_currency }}"
-    {%- endif -%}
-    type="text"
-    inputmode="decimal"
-    placeholder="{{ filter.range_max | money_without_currency }}"
-    data-pattern="\d| |,|\."
-    data-min="0"
-    data-max="{{ filter.range_max | money_without_currency }}"
-  >
-  <label class="field__label" for="{{ id_prefix }}{{ filter.label | escape }}-LTE">
-    {{- 'products.facets.to' | t -}}
-  </label>
-</div>
+{% comment %}
+  <style lang="scss">
+
+  </style>
+{% endcomment %}

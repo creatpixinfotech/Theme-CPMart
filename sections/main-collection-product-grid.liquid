@@ -112,7 +112,8 @@
             enable_filtering: section.settings.enable_filtering,
             enable_sorting: section.settings.enable_sorting,
             filter_type: section.settings.filter_type,
-            paginate: paginate
+            paginate: paginate,
+            background_color: section.settings.bg_color
           %}
         </aside>
       {%- endif -%}
@@ -225,6 +226,12 @@
       "label": "t:sections.all.colors.label",
       "info": "t:sections.all.colors.has_cards_info",
       "default": "scheme-1"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#DEE2E6"
     },
     {
       "type": "header",

@@ -63,7 +63,7 @@
   }
 }
 
-.collection__description>* {
+.collection__description > * {
   margin: 0;
 }
 
@@ -127,6 +127,10 @@
 }
 
 .collection .collection__title .title {
+  font-family: 'jost';
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.445;
   text-transform: capitalize;
   margin: 0;
 }
@@ -137,7 +141,7 @@
 }
 
 .collection .collections-name span {
-  font-family: "jost";
+  font-family: 'jost';
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.445;
@@ -147,63 +151,35 @@
 }
 
 .collection .collections-name .collection-active {
-  color: #3BB77E;
+  color: #3bb77e;
   text-decoration: none;
 }
 
 .collection .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 3rem;
-  row-gap: 4rem;
-}
-.facets-vertical .collection .product-grid {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
 }
-@media screen and (max-width:1200px) {
-  .facets-vertical .collection .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap:1.5rem
-  }
-}
-@media screen and (max-width:990px) {
-  .facets-vertical .collection .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap:1.5rem
-  }
-}
-@media screen and (max-width:880px) {
-  .facets-vertical .collection .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width:460px) {
-  .facets-vertical .collection .product-grid {
-    grid-template-columns: repeat(1, 1fr);
-    row-gap: 2rem;
-  }
-}
+
 .collection .product-grid .grid__item {
   max-width: 100%;
   width: 100%;
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width: 1200px) {
   .collection .product-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media screen and (max-width:990px) {
+@media screen and (max-width: 990px) {
   .collection .product-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 }
 
-@media screen and (max-width:749px) {
+@media screen and (max-width: 749px) {
   .collection .collection__title .title {
     font-size: 2.4rem;
   }
@@ -217,7 +193,7 @@
   }
 }
 
-@media screen and (max-width:460px) {
+@media screen and (max-width: 460px) {
   .collection .product-grid {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -238,7 +214,7 @@
   left: 0;
 }
 
-@media screen and (max-width:749px) {
+@media screen and (max-width: 749px) {
   .collection .collection_design-icon {
     max-width: 8rem;
     max-height: 8rem;

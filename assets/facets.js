@@ -303,15 +303,20 @@ class PriceRange extends HTMLElement {
   constructor() {
     super();
     this.querySelectorAll('input').forEach((element) => {
+      element.addEventListener('input', this.onRangeChange.bind(this));
       element.addEventListener('change', this.onRangeChange.bind(this));
       element.addEventListener('keydown', this.onKeyDown.bind(this));
     });
     this.setMinAndMaxValues();
+    this.updateSlider();
+    this.updatePriceDisplay();
   }
 
   onRangeChange(event) {
     this.adjustToValidValues(event.currentTarget);
     this.setMinAndMaxValues();
+    this.updateSlider();
+    this.updatePriceDisplay();
   }
 
   onKeyDown(event) {
@@ -319,6 +324,17 @@ class PriceRange extends HTMLElement {
 
     const pattern = /[0-9]|\.|,|'| |Tab|Backspace|Enter|ArrowUp|ArrowDown|ArrowLeft|ArrowRight|Delete|Escape/;
     if (!event.key.match(pattern)) event.preventDefault();
+  }
+  updatePriceDisplay() {
+    const minInput = this.querySelector('.min-range');
+    const maxInput = this.querySelector('.max-range');
+    const priceDisplay = this.querySelector('.price-range');
+    const cartSymbol = priceDisplay.getAttribute('data-cart-symbol');
+
+    const minVal = minInput.value;
+    const maxVal = maxInput.value;
+
+    priceDisplay.textContent = `Price: ${cartSymbol}${minVal} - ${cartSymbol}${maxVal}`;
   }
 
   setMinAndMaxValues() {
@@ -338,6 +354,23 @@ class PriceRange extends HTMLElement {
 
     if (value < min) input.value = min;
     if (value > max) input.value = max;
+  }
+
+  updateSlider() {
+    const minInput = this.querySelector('.min-range');
+    const maxInput = this.querySelector('.max-range');
+    const slider = this.querySelector('.price-slider');
+
+    const minVal = parseInt(minInput.value);
+    const maxVal = parseInt(maxInput.value);
+    const minRange = parseInt(minInput.getAttribute('data-min'));
+    const maxRange = parseInt(maxInput.getAttribute('data-max'));
+
+    const percentageMin = ((minVal - minRange) / (maxRange - minRange)) * 100;
+    const percentageMax = ((maxVal - minRange) / (maxRange - minRange)) * 100;
+
+    slider.style.left = `${percentageMin}%`;
+    slider.style.right = `${100 - percentageMax}%`;
   }
 }
 

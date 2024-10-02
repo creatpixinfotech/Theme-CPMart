@@ -546,6 +546,7 @@
 
 .facets__price {
   display: flex;
+  align-items: center;
   padding: 2rem;
 }
 
