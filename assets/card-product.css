@@ -290,10 +290,33 @@
   z-index: 10;
 }
 
-.card-wrapper .card__wishlist .empty-heart {
+.card-wrapper .card__wishlist .empty-heart .heart_icon {
   display: block;
+  fill: none;
+}
+.card-wrapper .card__wishlist .empty-heart .active {
+  fill: red;
+  stroke-width: 0;
+
+  animation: beat cubic-bezier(0.04, 0.4, 0.5, 0.95) 450ms forwards 1;
 }
 
-.card-wrapper .card__wishlist .fill-heart {
-  display: none;
+@keyframes beat {
+  30% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.card-wrapper .card__wishlist .empty-heart .active > path {
+  stroke-width: 0;
+}
+.card-wrapper .card__wishlist .empty-heart .heart_icon > path {
+  pointer-events: none;
 }

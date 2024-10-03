@@ -5,7 +5,11 @@ function getFocusableElements(container) {
     )
   );
 }
-
+document.addEventListener('click', function (event) {
+  if (event.target.classList.contains('heart_icon')) {
+    event.target.classList.toggle('active');
+  }
+});
 class SectionId {
   static #separator = '__';
 
