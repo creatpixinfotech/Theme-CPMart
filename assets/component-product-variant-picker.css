@@ -49,7 +49,7 @@ variant-selects {
 
 .product-form__input--dropdown .dropdown-swatch {
   position: absolute;
-  left: 1.6rem;
+  right: 3.6rem;
   top: calc(50% - var(--swatch-input--size) / 2);
   width: var(--swatch-input--size);
   height: var(--swatch-input--size);

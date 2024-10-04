@@ -295,7 +295,7 @@
   fill: none;
 }
 .card-wrapper .card__wishlist .empty-heart .active {
-  fill: red;
+  fill: #F74B81;
   stroke-width: 0;
 
   animation: beat cubic-bezier(0.04, 0.4, 0.5, 0.95) 450ms forwards 1;
