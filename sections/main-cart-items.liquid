@@ -25,6 +25,7 @@
 {%- endunless -%}
 
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'discount.js' | asset_url }}" defer="defer"></script>
 
 <cart-items class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="page-width">
@@ -495,21 +496,39 @@
         <div class="discount">
           <div class="order">Have a Coupon?</div>
           <div class="discount_input">
-            <input type="text" value="" placeholder="Coupon Code ">
+            <input type="text" value="" placeholder="Coupon Code">
             <button id="apply-discount-btn" class="">{{ 'sections.cart.Apply' | t }}</button>
           </div>
+          <div class="discounts_apply">
+            <div class="discount-content">
+              <span class="discount_svg">
+                {{- 'icon-discount.svg' | inline_asset_content -}}
+              </span>
+              <div class="discounts_details">
+                <span class="discount_name"></span>
+                (<span class="discount_amount"></span>)
+              </div>
+            </div>
+            <div class="discount_close">
+              {{- 'icon-close.svg' | inline_asset_content -}}
+            </div>
+          </div>
+          <div class="discount-error">
+            Please enter Valid Code
+          </div>
+
         </div>
         <div class="total-amount">
           <h2 class="amount-title">Order Summary</h2>
           <div>
             <span class="total">Sub - Total</span>
             <span class="price price--end" id="cart-subtotal">
-              {{ cart.total_price | money_with_currency }}
+              {{ cart.original_total_price | money_with_currency }}
             </span>
           </div>
           <div>
             <span class="discount-text">Discount</span>
-            <span class="price price--end" id="cart-discount"> 0 </span>
+            <span class="price price--end" id="cart-discount">0</span>
           </div>
           <div>
             <span class="tax">Tax</span>
@@ -522,7 +541,7 @@
           <div class="final-price">
             <span class="total">Total Amount</span>
             <span class="price price--end" id="cart-total">
-              {{ cart.total_price | money_with_currency }}
+              {{ cart.original_total_price | money_with_currency }}
             </span>
           </div>
           <div class="cart__ctas " {{ block.shopify_attributes }}>
