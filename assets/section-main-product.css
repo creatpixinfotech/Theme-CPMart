@@ -1870,3 +1870,12 @@ a.product__text {
   color: #fff;
   background-color: #3BB77E;
 }
+
+.product-note-save__btn {
+  border: none !important;
+}
+.product-note-save__btn {
+  display: unset !important;
+  margin-bottom: 1rem;
+  vertical-align: bottom !important;
+}

@@ -75,7 +75,7 @@
 
                 <tbody>
                   {%- for item in cart.items -%}
-                    <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
+                    <tr class="cart-item cart-item-{{ forloop.index }}">
                       <td class="cart-item__media">
                         {% if item.image %}
                           {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
@@ -140,7 +140,9 @@
                                         {{ property.last | split: '/' | last }}
                                       </a>
                                     {%- else -%}
-                                      {{ property.last }}
+                                      <span class="{% if property.first == 'note' %} product-note {% endif %}">
+                                        {{- property.last -}}
+                                      </span>
                                     {%- endif -%}
                                   </dd>
                                 </div>
@@ -441,12 +443,30 @@
                             </span>
                           </a>
                         </cart-remove-button>
-                        <a href="#" class="button--editor">
-                          <span class="svg-wrapper">
-                            {{- 'icon-cart-editor.svg' | inline_asset_content -}}
-                          </span>
-                        </a>
+                        <product-note-toggle>
+                          <button
+                            type="button"
+                            class="button--editor product-note__btn"
+                            data-id="{{ item.index | plus: 1 }}"
+                          >
+                            <span class="svg-wrapper" style="pointer-events: none;">
+                              {{- 'icon-cart-editor.svg' | inline_asset_content -}}
+                            </span>
+                          </button>
+                        </product-note-toggle>
                       </td>
+                      <tr class="cart-items__product__note cart-items__product__note-{{ item.index | plus: 1 }} hidden">
+                        <td colspan="6" style="text-align: end;vertical-align:middle;padding-top:0">
+                          <textarea rows="4" name="product_note"></textarea>
+                          <button
+                            type="button"
+                            class="product-note-save__btn button-primary"
+                            data-id="{{ item.index | plus: 1 }}"
+                          >
+                            Save
+                          </button>
+                        </td>
+                      </tr>
                     </tr>
                   {%- endfor -%}
                 </tbody>

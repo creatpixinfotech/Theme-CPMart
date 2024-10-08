@@ -226,3 +226,7 @@ cart-items {
     gap: 1rem;
   }
 }
+.product__note {
+  display: flex;
+  justify-content: flex-end;
+}

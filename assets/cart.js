@@ -23,6 +23,7 @@ class CartItems extends HTMLElement {
     }, ON_CHANGE_DEBOUNCE_TIMER);
 
     this.addEventListener('change', debouncedOnChange.bind(this));
+    this.saveNote();
   }
 
   cartUpdateUnsubscriber = undefined;
@@ -41,10 +42,46 @@ class CartItems extends HTMLElement {
       this.cartUpdateUnsubscriber();
     }
   }
+  saveNote() {
+    this.querySelectorAll('.product-note-save__btn').forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        const line = event.target.dataset.id;
+        const note = event.target.previousElementSibling.value;
+
+        fetch('/cart/change.js', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'xmlhttprequest',
+          },
+          body: JSON.stringify({
+            line: line,
+            properties: {
+              note: note,
+            },
+          }),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log('Cart updated successfully:', data);
+          })
+          .catch((error) => {
+            console.error('Error updating cart:', error);
+          });
+        this.querySelector(`.cart-item-${line} .cart-item__details .product-note`).textContent = note;
+      });
+    });
+  }
 
   resetQuantityInput(id) {
     const input = this.querySelector(`#Quantity-${id}`);
-    input.value = input.getAttribute('value');
+    input.value = input?.getAttribute('value');
     this.isEnterPressed = false;
   }
 
@@ -285,18 +322,31 @@ if (!customElements.get('cart-note')) {
   );
 }
 
-document.querySelector('.clear_cart').addEventListener('click', function() {
+document.querySelector('.clear_cart').addEventListener('click', function () {
   fetch('/cart/clear.js', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
-    }
+      'Content-Type': 'application/json',
+    },
   })
-  .then(response => response.json())
-  .then(data => {
-    window.location.reload(); 
-  })
-  .catch(error => {
-    console.error('Error clearing cart:', error);
-  });
+    .then((response) => response.json())
+    .then((data) => {
+      window.location.reload();
+    })
+    .catch((error) => {
+      console.error('Error clearing cart:', error);
+    });
 });
+
+class ProductNoteToggle extends HTMLElement {
+  constructor() {
+    super();
+    this.addEventListener('click', this.productNoteToggle.bind(this));
+  }
+  productNoteToggle(event) {
+    const line = event.target.dataset.id;
+    document.querySelector(`.cart-items__product__note-${line}`).classList.toggle('hidden');
+  }
+}
+
+customElements.define('product-note-toggle', ProductNoteToggle);
