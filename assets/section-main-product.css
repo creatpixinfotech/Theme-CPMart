@@ -18,9 +18,11 @@ product-info {
 .product__media-wrapper {
   padding-left: 0;
 }
-.product .button__icon path{
+
+.product .button__icon path {
   fill: white;
 }
+
 @media screen and (min-width: 750px) {
   .product__column-sticky {
     display: block;
@@ -1033,8 +1035,8 @@ a.product__text {
 }
 
 .thumbnail[aria-current] {
-  box-shadow: 0 0 0rem 0.1rem rgb(var(--color-foreground));
-  border-color: rgb(var(--color-foreground));
+  border: 1px solid rgb(var(--color-foreground));
+  border-radius: 1.2rem;
 }
 
 .image-magnify-full-size {
@@ -1512,6 +1514,7 @@ a.product__text {
   border: 1px solid #DEE2E6;
   border-radius: 1.2rem;
   box-sizing: border-box;
+  background: #F8F9FF;
 }
 
 .product__column-sticky .slider-mobile-gutter .product__media-list .product__media-item.grid__item .product__media img {

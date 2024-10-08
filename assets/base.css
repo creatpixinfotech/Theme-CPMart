@@ -80,7 +80,7 @@
   align-items: center;
   justify-content: space-between;
   color: white;
-  background-color:#3BB77E;
+  background-color: #3BB77E;
   padding: 1.1rem 1.5rem;
   border-radius: .6rem;
   font-family: 'jost';
@@ -443,42 +443,42 @@ h6,
   font-family: 'jost';
 }
 
-@media screen and (max-width: 749px)  {
+@media screen and (max-width: 749px) {
   .heading-xl {
     font-size: 3.2rem;
     line-height: 3.514rem;
   }
-  
+
   .heading-l {
     font-size: 2.2rem;
     line-height: 3.179rem;
   }
-  
+
   .heading-m {
     font-size: 2rem;
-    line-height:  2.89rem;
+    line-height: 2.89rem;
   }
-  
+
   .heading-s {
     font-size: 1.8rem;
     line-height: 2.601rem;
   }
-  
+
   .text-xl {
     font-size: 1.6rem;
     line-height: 1.445;
   }
-  
+
   .text-l {
     font-size: 1.4rem;
     line-height: 2.023rem;
   }
-  
+
   .text-m {
     font-size: 1.2rem;
     line-height: 1.8rem;
   }
-  
+
   .text-s {
     font-size: 1rem;
     line-height: 1.4rem;
@@ -567,9 +567,11 @@ table:not([class]) th {
   .facets-vertical .medium-hide {
     display: flex !important;
   }
-  .facets-vertical .small-hide{
+
+  .facets-vertical .small-hide {
     display: none;
   }
+
   .medium-hide {
     display: none !important;
   }
@@ -808,7 +810,7 @@ h3 .icon-arrow,
   }
 }
 
-.svg-wrapper .header-inline-menu-name  {
+.svg-wrapper .header-inline-menu-name {
   letter-spacing: normal;
 }
 
@@ -1593,7 +1595,7 @@ button.shopify-payment-button__button--unbranded {
   width: 100%;
 }
 
-.button--full-width:after{
+.button--full-width:after {
   box-shadow: none;
 }
 
@@ -2043,7 +2045,7 @@ details[open]>.share-button__fallback {
 .header__search .search__button {
   max-width: 6rem;
   width: 100%;
-  max-height: 5.9rem;
+  max-height: 5.8rem;
   padding-inline: 1.8rem;
   height: 100%;
   border-top-right-radius: .6rem;
@@ -2646,6 +2648,7 @@ input[type='checkbox'] {
   .header--has-app {
     grid-template-columns: auto 1fr auto;
   }
+
   .cart-count-bubble {
     top: 0;
   }
@@ -2802,6 +2805,7 @@ input[type='checkbox'] {
 }
 
 @media screen and (min-width: 990px) {
+
   .header__heading,
   .header__heading-link {
     justify-self: start;
@@ -3996,34 +4000,35 @@ details-disclosure>details {
     padding: 2rem 0;
   }
 }
-.rich-text__heading{
+
+.rich-text__heading {
   text-align: left;
   color: #2b2b2d;
   text-transform: capitalize;
 }
 
-.shopify-policy__container{
+.shopify-policy__container {
   max-width: 100%;
   padding: 0;
 }
 
-.shopify-policy__container .rte{
+.shopify-policy__container .rte {
   max-width: 139rem;
   padding: 0 5rem;
   margin: 0 auto;
 }
 
-.shopify-policy__container .shopify-policy__title{
+.shopify-policy__container .shopify-policy__title {
   background-color: #F8F9FF;
 }
 
-.shopify-policy__container .shopify-policy__title h1{
+.shopify-policy__container .shopify-policy__title h1 {
   font-family: 'Jost';
   font-size: 3.2rem;
   font-weight: 700;
   line-height: 1.445;
   text-align: left;
-  color:#2B2B2D;
+  color: #2B2B2D;
   text-transform: capitalize;
   margin: 0;
   max-width: 139rem;
@@ -4031,7 +4036,7 @@ details-disclosure>details {
   padding: 2rem 5rem;
 }
 
-.shopify-policy__container .shopify-policy__body p{
+.shopify-policy__container .shopify-policy__body p {
   font-family: 'Jost';
   font-size: 1.6rem;
   font-weight: 400;
@@ -4043,7 +4048,7 @@ details-disclosure>details {
   margin-bottom: 1.5rem;
 }
 
-.shopify-policy__container .shopify-policy__body strong{
+.shopify-policy__container .shopify-policy__body strong {
   font-family: 'Jost';
   font-size: 2.4rem;
   font-weight: 600;
@@ -4054,16 +4059,16 @@ details-disclosure>details {
   letter-spacing: 0;
 }
 
-  .shopify-policy__container .shopify-policy__body ul{
-    margin: 0;
-    padding-left: 1rem;
-    margin-bottom: 1rem;
-    margin-top: 3rem;
-  }
+.shopify-policy__container .shopify-policy__body ul {
+  margin: 0;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+}
 
-  .shopify-policy__container .shopify-policy__body .text{
-    padding-left: 2rem;
-  }
+.shopify-policy__container .shopify-policy__body .text {
+  padding-left: 2rem;
+}
 
 .shopify-policy__container .shopify-policy__body .rte p:first-child {
   margin-bottom: 1rem;
@@ -4073,42 +4078,42 @@ details-disclosure>details {
   padding-block: 4rem 8rem;
 }
 
-@media screen and (max-width:749px){
+@media screen and (max-width:749px) {
 
-  .shopify-policy__container .shopify-policy__title h1{
+  .shopify-policy__container .shopify-policy__title h1 {
     font-size: 2.8rem;
     padding: 0 2rem;
   }
 
-  .shopify-policy__container .shopify-policy__body .rte{
+  .shopify-policy__container .shopify-policy__body .rte {
     padding-block: 2rem 4rem;
   }
 
-  .shopify-policy__container .rte{
+  .shopify-policy__container .rte {
     padding: 0 2rem;
   }
 
-  .shopify-policy__container .shopify-policy__body p{
+  .shopify-policy__container .shopify-policy__body p {
     margin-bottom: 1rem;
   }
 
-  .shopify-policy__container .shopify-policy__body p{
+  .shopify-policy__container .shopify-policy__body p {
     font-size: 1.4rem;
   }
-  
-  .shopify-policy__container .shopify-policy__body strong{
+
+  .shopify-policy__container .shopify-policy__body strong {
     font-size: 2rem;
   }
 
-  .shopify-policy__container .shopify-policy__body .text{
+  .shopify-policy__container .shopify-policy__body .text {
     padding-left: 1rem;
   }
 
-  .shopify-policy__container .shopify-policy__body ul{
+  .shopify-policy__container .shopify-policy__body ul {
     padding-left: .5rem;
   }
 
-  .shopify-policy__container .shopify-policy__body ul{
-  margin-top: 2rem;
+  .shopify-policy__container .shopify-policy__body ul {
+    margin-top: 2rem;
   }
 }
