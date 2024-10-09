@@ -2,7 +2,7 @@
 <script src="{{ 'product-details.js' | asset_url }}" defer="defer"></script>
 {% assign productDetails = product.metafields.custom.product_detail.value %}
 
-<div class="product-details" style="background-color: {{ section.settings.background_color }};">
+<div class="product-details {% if productDetails == blank %} hidden {% endif %}" style="background-color: {{ section.settings.background_color }};">
   <div class="page-width">
     <div class="product-details_title">
       {% for obj in productDetails %}

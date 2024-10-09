@@ -195,7 +195,7 @@
         "card_layout": "layout-1",
         "quick_add": "standard",
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -567,7 +567,7 @@
         "card_layout": "layout-2",
         "quick_add": "standard",
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 28,
         "padding_bottom": 36
       }
