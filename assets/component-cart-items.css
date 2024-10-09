@@ -531,6 +531,10 @@ cart-items .cart_details{
   gap: 3rem;
 }
 
+cart-items.is-empty .cart_details {
+  display: none ;
+}
+
 .cart_details .cart-right {
   display: flex;
   flex-direction: column;

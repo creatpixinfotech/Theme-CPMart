@@ -8,6 +8,7 @@
         "footer-2": {
           "type": "text",
           "settings": {
+            "logo": "shopify:\/\/shop_images\/output-onlinepngtools_2.png",
             "heading": "Our mission",
             "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
           }

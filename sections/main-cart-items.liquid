@@ -492,7 +492,7 @@
           <div class="clear_cart button--secondary__green-lite">Clear Cart</div>
         </div>
       </form>
-      <div class="cart-right">
+      <div class="cart-right" id="cart-right" data-id="{{ section.id }}">
         <div class="discount">
           <div class="order">Have a Coupon?</div>
           <div class="discount_input">
@@ -541,7 +541,7 @@
           <div class="final-price">
             <span class="total">Total Amount</span>
             <span class="price price--end" id="cart-total">
-              {{ cart.original_total_price | money_with_currency }}
+              {{ cart.total_price | money_with_currency }}
             </span>
           </div>
           <div class="cart__ctas " {{ block.shopify_attributes }}>

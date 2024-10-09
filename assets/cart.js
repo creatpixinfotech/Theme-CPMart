@@ -173,8 +173,13 @@ class CartItems extends HTMLElement {
         selector: '.shopify-section',
       },
       {
+        id: 'cart-right',
+        section: document.getElementById('cart-right')?.dataset.id,
+        selector: '.total-amount',
+      },
+      {
         id: 'main-cart-footer',
-        section: document.getElementById('main-cart-footer').dataset.id,
+        section: document.getElementById('main-cart-footer')?.dataset.id,
         selector: '.js-contents',
       },
     ];
