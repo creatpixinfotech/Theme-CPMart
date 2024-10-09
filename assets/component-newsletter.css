@@ -141,6 +141,7 @@
   top: 50%;
   transform: translatey(-50%);
   margin-right: 2rem;
+  border: none;
 }
 
 .newsletter .newsletter__wrapper .button-primary:hover {

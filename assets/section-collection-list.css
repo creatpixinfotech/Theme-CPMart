@@ -20,28 +20,36 @@
 .section-collection-list .collection-list .collection-list__item{
   max-width: 100%;
   width: 100%;
+}
+
+.section-collection-list .collection-list .collection-list__item.aspect_ratio {
   aspect-ratio: 1;
+}   
+
+.section-collection-list .collection-list .collection-list__item.aspect_ratio .card__information {
+  padding: 0;
 }
 
 .section-collection-list .collection-list .collection-list__item:hover {
-  .card-wrapper {
-    border: 1px solid #3BB77E;
-  }
   .full-unstyled-link {
     color: #3BB77E;
   }
+  .bgcolor.card-wrapper {
+    border: 1px solid #3BB77E;
+  }
+}
+.bgcolor.card-wrapper {
+  border: 1px solid transparent;
 }
 
 .section-collection-list .collection-list .collection-list__item .card-wrapper{
   border-radius: 0.6rem;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .section-collection-list .collection-list .collection-list__item .card-wrapper .card{
-  position: absolute;
-  top: 50%;
-  left: 50%;
   height: fit-content;
-  transform: translate(-50%, -50%);
   width: 100%;
 }
 @media screen and (max-width: 749px) {

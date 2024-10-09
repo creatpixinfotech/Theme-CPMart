@@ -93,6 +93,7 @@
   gap: 3rem;
   display: flex;
   flex-direction: column;
+  height: auto;
 }
 
 .image-content .collection-list__heading {
