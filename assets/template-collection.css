@@ -124,6 +124,8 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 0;
+  gap: 2rem;
+  flex-wrap:wrap;
 }
 
 .collection .collection__title .title {
@@ -138,6 +140,7 @@
 .collection .collections-name {
   display: flex;
   gap: 2rem;
+  z-index: 5;
 }
 
 .collection .collections-name span {
@@ -222,6 +225,7 @@
 
   .collection .collections-name span {
     font-size: 1.4rem;
+    text-wrap:nowrap
   }
 }
 
@@ -239,7 +243,9 @@
   }
 
   .collection .collection-header {
-    justify-content: center;
+    overflow-x: auto;
+    width: 100%;
+    scrollbar-width: none;
   }
 }
 
