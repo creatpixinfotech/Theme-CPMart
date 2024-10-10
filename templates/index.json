@@ -170,6 +170,45 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "blocks": {
+        "collection_TydwGa": {
+          "type": "collection",
+          "settings": {
+            "collection": "clothes"
+          }
+        },
+        "collection_PRY3AH": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "collection_8wCqnR": {
+          "type": "collection",
+          "settings": {
+            "collection": "juice"
+          }
+        },
+        "collection_najJDQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "vegetable"
+          }
+        },
+        "collection_bDhJiT": {
+          "type": "collection",
+          "settings": {
+            "collection": "cake-milk"
+          }
+        }
+      },
+      "block_order": [
+        "collection_TydwGa",
+        "collection_PRY3AH",
+        "collection_8wCqnR",
+        "collection_najJDQ",
+        "collection_bDhJiT"
+      ],
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
@@ -177,16 +216,16 @@
         "heading_alignment": "left",
         "show_description": false,
         "description_style": "body",
-        "show_collection_with_title": false,
+        "show_collection_with_title": true,
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": false,
         "view_all_style": "solid",
-        "enable_image_background_color": false,
+        "enable_image_background_color": true,
         "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-17c536a9-1a44-4148-a1f8-8b3b0079c2dd",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -556,9 +595,9 @@
         "full_width": false,
         "show_view_all": false,
         "view_all_style": "solid",
-        "enable_image_background_color": false,
+        "enable_image_background_color": true,
         "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-17c536a9-1a44-4148-a1f8-8b3b0079c2dd",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,

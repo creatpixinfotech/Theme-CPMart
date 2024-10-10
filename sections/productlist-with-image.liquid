@@ -72,7 +72,8 @@
           {% render 'card-product',
             card_product: product,
             quick_add: section.settings.quick_add,
-            card_layout: section.settings.card_layout
+            card_layout: section.settings.card_layout,
+            card_color: product.metafields.custom.card_color
           %}
         </div>
       {% endfor %}
@@ -155,6 +156,11 @@
       "type": "color",
       "label": "t:sections.productlist-with-image.settings.background_color.label",
       "id": "bg_color"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image_background_color",
+      "label": "t:sections.featured-collection.settings.enable_image_background_color.label"
     },
     {
       "type": "richtext",
