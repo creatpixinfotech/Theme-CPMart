@@ -237,6 +237,10 @@
   }
 }
 
+.footer-block__newsletter .newsletter-form__field-wrapper .field {
+  border-radius: 0;
+}
+
 @media screen and (min-width: 750px) {
   /* Pushes other components to the right of the flexbox */
   .footer-block__newsletter:not(:only-child) {

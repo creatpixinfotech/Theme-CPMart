@@ -138,7 +138,7 @@
 
 .deal-of-the-day .card__content-info {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .deal-of-the-day .product-deal .products:last-child {
@@ -150,6 +150,7 @@
   max-width: 19.3rem;
   width: 100%;
   aspect-ratio: 1;
+  border-radius: 0;
 }
 
 .deal-of-the-day .product-deal .products:last-child .card {
@@ -172,7 +173,7 @@
 .deal-of-the-day .product-deal .products:last-child .card__content-info .card__content {
   padding: 1.75rem 0 1.85rem 3rem;
   border-left: 1px solid #253D4E;
-  max-width: 24rem;
+  max-width: 25.3rem;
 }
 
 .deal-of-the-day .product-deal .products:last-child .card__inner {

@@ -22,6 +22,7 @@
 .newsletter-form__field-wrapper .field {
   z-index: 0;
   background-color: #fff;
+  border-radius: 1.2rem;
 }
 
 .newsletter-form__message {

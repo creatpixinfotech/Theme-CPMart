@@ -210,10 +210,6 @@
   background-color: var(--gradient-background);
 }
 
-.card-wrapper.layout-2 .card__content-info .card__content {
-  max-width: 23rem;
-}
-
 .card-wrapper.layout-2 .card {
   border-radius: 1.2rem;
   background-color: #fff;

@@ -164,7 +164,8 @@
           </div>
         </div>
       </div>
-      <div class="card__content-info {% if  card_layout == 'layout-2' %}color-{{ settings.card_color_scheme }} {% endif %}">
+      <div class="card__content-info {% if  card_layout == 'layout-2' %}color-{{ settings.card_color_scheme }} {% endif %}" 
+        style="{% if  card_layout == 'layout-2' %} background-color: {{ card_color }};{% endif %}">
         <div class="card__content card__content--data">
         <div class="product_type text-semibold text-s">
         {{ card_product.type }}

@@ -6,9 +6,159 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "about_image_description_y6VfiR": {
+      "type": "about-image-description",
+      "blocks": {
+        "image_kFFzc4": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group.png"
+          }
+        },
+        "insights_eFpddP": {
+          "type": "Insights",
+          "settings": {
+            "insight_count": "1.8",
+            "insights_label": "Vendors"
+          }
+        },
+        "insights_KmqwHr": {
+          "type": "Insights",
+          "settings": {
+            "insight_count": "499",
+            "insights_label": "Customers"
+          }
+        },
+        "insights_mQgiUr": {
+          "type": "Insights",
+          "settings": {
+            "insight_count": "50",
+            "insights_label": "Products"
+          }
+        }
+      },
+      "block_order": [
+        "image_kFFzc4",
+        "insights_eFpddP",
+        "insights_KmqwHr",
+        "insights_mQgiUr"
+      ],
+      "settings": {
+        "title": "About The Lorem",
+        "description": "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, recusandae necessitatibus quasi incidunt alias adipisci pariatur earum iure beatae assumenda rerum quod. Tempora magni autem a voluptatibus neque.<\/p><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, recusandae necessitatibus quasi incidunt alias adipisci.<\/p><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, recusandae necessitatibus quasi incidunt alias adipisci pariatur earum iure beatae assumenda rerum quod. Tempora magni autem a voluptatibus neque.<\/p><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, recusandae necessitatibus quasi incidunt alias adipisci.<\/p>",
+        "layout": "img_right"
+      }
+    },
+    "about_image_description_KPcgiK": {
+      "type": "about-image-description",
+      "blocks": {
+        "image_PWVcfg": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_64_247a8cce-aeaa-43f8-a7d4-e73c10dc39d8.png"
+          }
+        },
+        "image_PdACQH": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_62_ccf03cf1-de88-4f87-8611-d56b94ce1a48.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_PWVcfg",
+        "image_PdACQH"
+      ],
+      "settings": {
+        "title": "Know More About Us?",
+        "description": "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, recusandae necessitatibus quasi incidunt alias adipisci pariatur earum iure beatae assumenda rerum quod. Tempora magni autem a voluptatibus neque.<\/p><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, recusandae necessitatibus quasi incidunt alias adipisci.<\/p><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, recusandae necessitatibus quasi incidunt alias adipisci pariatur earum iure beatae assumenda rerum quod. Tempora magni autem a voluptatibus neque.<\/p><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, recusandae necessitatibus quasi incidunt alias adipisci.<\/p><ul><li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, recusandae<\/li><\/ul>",
+        "layout": "img_left"
+      }
+    },
+    "multicolumn_fN4Qft": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_eCgb6n": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-1_1.png",
+            "title": "Best prices & offers",
+            "text": "<p>Best prices & offers<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_JHXwEr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-2_1.png",
+            "title": "Fast delivery",
+            "text": "<p>24\/7 amazing services<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rqdCCF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-3_1.png",
+            "title": "Great daily deal",
+            "text": "<p>When you sign up<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_6gUqEN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-4_1.png",
+            "title": "Wide assortment",
+            "text": "<p>Mega Discounts<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_jmUWJ7": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-5_1.png",
+            "title": "Easy returns",
+            "text": "<p>Within 30 days<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_eCgb6n",
+        "column_JHXwEr",
+        "column_rqdCCF",
+        "column_6gUqEN",
+        "column_jmUWJ7"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "about_image_description_y6VfiR",
+    "about_image_description_KPcgiK",
+    "multicolumn_fN4Qft"
   ]
 }

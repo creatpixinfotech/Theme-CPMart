@@ -47,6 +47,7 @@
   .list-menu--inline {
     display: inline-flex;
     flex-wrap: wrap;
+    gap:1.8rem;
   }
 
   summary.list-menu__item {
@@ -272,7 +273,7 @@
         {%- endcase -%}
       {%- endfor -%}
 
-      <a href="/pages/wishlist" class="header__icon header__icon--wishlist link focus-inset">
+      <a href="#" class="header__icon header__icon--wishlist link focus-inset">
         <span class="svg-wrapper">{%  render 'icon-wishlist' %}<span class="header-inline-menu-name text-bold text-l">{{ 'templates.wishlist.wishlist' | t }}</span></span>
         <span class="visually-hidden">{{ 'templates.wishlist.wishlist' | t }}</span>
       </a>

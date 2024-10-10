@@ -179,6 +179,7 @@
         },
         "collection_PRY3AH": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "frontpage"
           }
@@ -197,6 +198,7 @@
         },
         "collection_bDhJiT": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "cake-milk"
           }
@@ -258,6 +260,7 @@
       ],
       "settings": {
         "bg_color": "",
+        "enable_image_background_color": false,
         "title": "<p>Daily Best Sells<\/p>",
         "subheading": "<p>Daily Best Sells item<\/p>",
         "description": "<p>Lorem Ipsum is simply dummy text of the.<\/p>",
@@ -291,6 +294,7 @@
       ],
       "settings": {
         "bg_color": "#f8f9ff",
+        "enable_image_background_color": false,
         "title": "<p>Daily Used Food<\/p>",
         "subheading": "<p>Daily Best Sells item<\/p>",
         "description": "<p>Lorem Ipsum is simply dummy text of the.<\/p>",
@@ -311,7 +315,7 @@
         "t_sections_productlist_with_image_blocks_type_E73gM3": {
           "type": "t:sections.productlist-with-image.blocks.type",
           "settings": {
-            "image": "shopify:\/\/shop_images\/square-background-natural-green-leaves_4.png",
+            "image": "shopify:\/\/shop_images\/square-background-natural-green-leaves_3.png",
             "image_start_position": 1,
             "image_end_position": 2,
             "image_start_row": 1,
@@ -324,6 +328,7 @@
       ],
       "settings": {
         "bg_color": "",
+        "enable_image_background_color": false,
         "title": "<p>Healthy Food<\/p>",
         "subheading": "<p>Healthy Food item<\/p>",
         "description": "<p>Lorem Ipsum is simply dummy text of the.<\/p>",
@@ -919,7 +924,7 @@
             "product_list": [
               "lorem-ipsum-is-dummy-text-of-the",
               "lorem-ipsum-is-simply-dummy-text-of-the-copy",
-              "lorem-ipsum-is-simply-dummy-text-of-the"
+              "lorem-ipsum-is-simply-dummy-text-of-the-copy-1"
             ]
           }
         }
@@ -930,6 +935,7 @@
       ],
       "settings": {
         "background-color": "",
+        "enable_image_background_color": true,
         "title": "Deal On This Month",
         "sub_title": "Tranding Deal",
         "card_layout": "layout-2",
