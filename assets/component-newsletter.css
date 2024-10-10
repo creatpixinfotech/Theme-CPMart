@@ -21,6 +21,7 @@
 
 .newsletter-form__field-wrapper .field {
   z-index: 0;
+  background-color: #fff;
 }
 
 .newsletter-form__message {
@@ -95,7 +96,7 @@
   padding: 2.85rem 2rem;
   max-height: 8rem;
   height: 100%;
-  padding-right: 15rem;
+  padding-right: 16rem;
   max-width: 48rem;
   width: 100%;
   border-radius: 1.2rem;
