@@ -1,0 +1,13 @@
+.section-bundle-product {
+  padding-block: 3rem;
+}
+
+.section-bundle-product .section-title {
+  margin: 0;
+  margin-bottom: 2.6rem;
+}
+
+.section-bundle-product .bundle-product-section {
+  display: flex;
+  gap: 2.3rem;
+}

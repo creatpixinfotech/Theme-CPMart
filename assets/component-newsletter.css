@@ -88,9 +88,13 @@
 }
 
 .newsletter .newsletter__wrapper .newsletter__subheading {
-  color: #fff;
+  color: #fff !important;
   margin: 0;
   letter-spacing: 0;
+}
+
+.newsletter .newsletter__wrapper .newsletter__subheading a {
+  color: #fff !important;
 }
 
 .newsletter .newsletter-form__field-wrapper .field__input {

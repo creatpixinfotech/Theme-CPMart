@@ -252,6 +252,22 @@
                     </h3>
                   {%- endif -%}
                 {%- endform -%}
+
+                <div class="footer__column footer__column--info footer__column-payment">
+                  {%- if section.settings.payment_enable -%}
+                    <div class="footer__payment">
+                      <div class="payment_title">Easy Payment  Method</div>
+                      <ul class="list list-payment" role="list">
+                        {% assign enabled_payment_types = 'master,visa,paypal' | remove: ' ' | split: ',' %}
+                          {% for type in enabled_payment_types %}
+                          <li class="list-payment__item">
+                            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    </div>
+                  {%- endif -%}
+                </div>
               </div>
             {%- endif -%}
           </div>
@@ -287,20 +303,6 @@
               </div>
             {%- endform -%}
           </localization-form>
-        {%- endif -%}
-      </div>
-      <div class="footer__column footer__column--info">
-        {%- if section.settings.payment_enable -%}
-          <div class="footer__payment">
-            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
-            <ul class="list list-payment" role="list">
-              {%- for type in shop.enabled_payment_types -%}
-                <li class="list-payment__item">
-                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                </li>
-              {%- endfor -%}
-            </ul>
-          </div>
         {%- endif -%}
       </div>
     </div>

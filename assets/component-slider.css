@@ -317,6 +317,14 @@ slider-component.slider-component-full-width {
   justify-content: center;
 }
 
+.slider-buttons .slider-button--prev {
+  justify-content: end;
+}
+
+.slider-buttons .slider-button--next {
+  justify-content: start;
+}
+
 @media screen and (min-width: 990px) {
   .slider:not(.slider--everywhere):not(.slider--desktop) + .slider-buttons {
     display: none;
@@ -345,6 +353,7 @@ slider-component.slider-component-full-width {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 
 .slider-button:not([disabled]):hover {
