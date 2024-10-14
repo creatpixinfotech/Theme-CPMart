@@ -35,6 +35,7 @@
   align-items: center;
   letter-spacing: normal;
   color: #253D4E;
+  text-decoration: none;
 }
 .header__inline-menu .nav__contact-svg {
   display: flex;
