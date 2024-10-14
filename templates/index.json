@@ -179,7 +179,6 @@
         },
         "collection_PRY3AH": {
           "type": "collection",
-          "disabled": true,
           "settings": {
             "collection": "frontpage"
           }
@@ -198,7 +197,6 @@
         },
         "collection_bDhJiT": {
           "type": "collection",
-          "disabled": true,
           "settings": {
             "collection": "cake-milk"
           }
@@ -212,7 +210,7 @@
         "collection_bDhJiT"
       ],
       "settings": {
-        "title": "Featured products",
+        "title": "Popular Product",
         "heading_size": "h2",
         "description": "",
         "heading_alignment": "left",
@@ -686,9 +684,9 @@
         "t_sections_title_with_links_blocks_type_nR74NM"
       ],
       "settings": {
-        "bg_color": "",
-        "padding_top": 16,
-        "padding_bottom": 16
+        "bg_color": "#f8f9ff",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "collection_with_image_swiper_zF9D34": {
