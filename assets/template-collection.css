@@ -11,6 +11,10 @@
   }
 }
 
+.collection {
+  overflow: hidden;
+}
+
 .collection .loading-overlay {
   position: absolute;
   z-index: 1;
