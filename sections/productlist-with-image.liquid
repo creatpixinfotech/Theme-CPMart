@@ -24,10 +24,14 @@
             >
               <div class="collection-list__content-wrapper">
                 {% if section.settings.subheading %}
-                  <div class="collection-list__sub-heading font-jost text-bolder heading-l">{{ section.settings.subheading }}</div>
+                  <div class="collection-list__sub-heading font-jost text-bolder heading-l">
+                    {{ section.settings.subheading }}
+                  </div>
                 {% endif %}
                 {% if section.settings.subheading %}
-                  <div class="collection-list__description font-jost text-bold text-l">{{ section.settings.description }}</div>
+                  <div class="collection-list__description font-jost text-bold text-l">
+                    {{ section.settings.description }}
+                  </div>
                 {% endif %}
                 {% if section.settings.btn_link %}
                   <a href="{{ section.settings.btn_link }}" class="button-primary">
@@ -232,6 +236,10 @@
           "label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_3"
         }
       ]
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
     },
     {
       "type": "range",

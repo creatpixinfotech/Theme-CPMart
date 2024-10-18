@@ -40,14 +40,24 @@
         </div>
         {% else %}
         <div class="image-card">
-        {{
-          block.settings.images 
-          | image_url: width: 100, height: 100
-          | image_tag:
-            alt: 'image',
-            class: 'images',
-            id: block.settings.images.id
-        }}
+        <figure>
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="{{ block.settings.images | image_url : width: 1024 }} 1x, {{ block.settings.images | image_url : width: 2048 }} 2x">
+            {{
+              block.settings.images
+              | image_url: width: 3840
+              | image_tag:
+              class: 'images',
+              alt: 'image',
+              widths: '800, 1066, 1600, 2400, 3200',
+              fetchpriority: 'low',
+              loading:'lazy',
+              id: block.settings.images.id
+            }}
+          </picture>
+        </figure>
         </div>
         {% endif %}
       {% endfor %}

@@ -86,7 +86,7 @@
   margin: 0;
 }
 
-.image-collage .right-content figure {
+.image-collage .right-content figure,.left-content figure {
   margin: 0;
 }
 
