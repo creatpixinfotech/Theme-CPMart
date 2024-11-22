@@ -16,32 +16,44 @@
               <div class="collections__title font-jost text-bold heading-m">{{ block.settings.title }}</div>
             {% endif %}
             {% if block.settings.description != blank %}
-              <div class="collections__description font-jost text-bold heading-m" style="color:{{ block.settings.description_color  }};">
+              <div
+                class="collections__description font-jost text-bold heading-m"
+                style="color:{{ block.settings.description_color  }};"
+              >
                 {{ block.settings.description }}
               </div>
             {% endif %}
             <div class="collections__button-container button-primary">
-              <a href="{{block.settings.button_url}}" class="collections__shop-btn font-Jost">
+              <a
+                href="{% if block.settings.collection != blank %} {{block.settings.collection.url}} {% else %} /collections/all {% endif %}"
+                class="collections__shop-btn font-Jost"
+              >
                 {{- block.settings.button_text -}}
               </a>
               {% render 'icon-white-arrow' %}
             </div>
-        </div>
-        {% if section.settings.show_collection_image %}
-        <figure class="collections__fig">
-          <picture>
-            <source srcset="{{ block.settings.collection.featured_image | image_url: width: 200, height: 200 }}">
-            <img
-              src="{{ block.settings.collection.featured_image | image_url: width: 200, height: 200 }}"
-              class="lazyloaded"
-              alt="{{ block.settings.collection.featured_image.alt }}"
-              width=""
-              height=""
-              loading="eager"
-            >
-          </picture>
-        </figure>
-      {% endif %}
+          </div>
+          {% if section.settings.show_collection_image %}
+            {% if block.settings.collection.featured_image == blank %}
+              <div class="collections__fig">
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {%- else -%}
+              <figure class="collections__fig">
+                <picture>
+                  <source srcset="{{ block.settings.collection.featured_image | image_url: width: 200, height: 200 }}">
+                  <img
+                    src="{{ block.settings.collection.featured_image | image_url: width: 200, height: 200 }}"
+                    class="lazyloaded"
+                    alt="{{ block.settings.collection.featured_image.alt }}"
+                    width=""
+                    height=""
+                    loading="eager"
+                  >
+                </picture>
+              </figure>
+            {% endif %}
+          {% endif %}
         </div>
       {% endfor %}
     </div>
@@ -99,11 +111,6 @@
           "type": "text",
           "id": "button_text",
           "label": "t:sections.collections-with-image.blocks.settings.buttons.label"
-        },
-        {
-          "type": "url",
-          "id": "button_url",
-          "label": "t:sections.collections-with-image.blocks.settings.buttons.url"
         },
         {
           "type": "collection",

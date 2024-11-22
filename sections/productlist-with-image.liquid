@@ -23,14 +23,14 @@
               "
             >
               <div class="collection-list__content-wrapper">
-                {% if section.settings.subheading %}
+                {% if block.settings.heading != blank %}
                   <div class="collection-list__sub-heading font-jost text-bolder heading-l">
-                    {{ section.settings.subheading }}
+                    {{ block.settings.heading }}
                   </div>
                 {% endif %}
-                {% if section.settings.subheading %}
+                {% if block.settings.description != blank %}
                   <div class="collection-list__description font-jost text-bold text-l">
-                    {{ section.settings.description }}
+                    {{ block.settings.description }}
                   </div>
                 {% endif %}
                 {% if section.settings.btn_link %}
@@ -40,34 +40,35 @@
                   </a>
                 {% endif %}
               </div>
-
-              <figure
-                class="collection-list__banner"
-              >
-                <picture class="collection-list__banner-image">
-                  <source
-                    srcset="{{ block.settings.image | image_url : width: 1000, height: 1500 }}"
-                    media="(max-width: 640px)"
-                  >
-                  <source
-                    srcset="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
-                    media="(max-width: 768px)"
-                  >
-                  <source
-                    srcset="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
-                    media="(max-width: 1024px)"
-                  >
-                  <img
-                    src="{{ block.settings.image | image_url : width: 300 }}"
-                    data-src="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
-                    class="hero__media lazyload"
-                    alt="{{ block.settings.image.alt }}"
-                    width="{{ block.settings.image.width }}"
-                    height="{{ block.settings.image.height }}"
-                    loading="eager"
-                  >
-                </picture>
-              </figure>
+              {% if block.settings.image != blank %}
+                <figure
+                  class="collection-list__banner"
+                >
+                  <picture class="collection-list__banner-image">
+                    <source
+                      srcset="{{ block.settings.image | image_url : width: 1000, height: 1500 }}"
+                      media="(max-width: 640px)"
+                    >
+                    <source
+                      srcset="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
+                      media="(max-width: 768px)"
+                    >
+                    <source
+                      srcset="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
+                      media="(max-width: 1024px)"
+                    >
+                    <img
+                      src="{{ block.settings.image | image_url : width: 300 }}"
+                      data-src="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
+                      class="hero__media lazyload"
+                      alt="{{ block.settings.image.alt }}"
+                      width="{{ block.settings.image.width }}"
+                      height="{{ block.settings.image.height }}"
+                      loading="eager"
+                    >
+                  </picture>
+                </figure>
+              {% endif %}
             </div>
           {% endif %}
         {% endfor %}
@@ -91,11 +92,11 @@
             "
           >
             <div class="collection-list__content-wrapper">
-              {% if section.settings.subheading %}
-                <div class="collection-list__sub-heading">{{ section.settings.subheading }}</div>
+              {% if block.settings.heading %}
+                <div class="collection-list__sub-heading">{{ block.settings.heading }}</div>
               {% endif %}
-              {% if section.settings.subheading %}
-                <div class="collection-list__description">{{ section.settings.description }}</div>
+              {% if block.settings.description %}
+                <div class="collection-list__description">{{ block.settings.description }}</div>
               {% endif %}
               {% if section.settings.btn_link %}
                 <a href="{{ section.settings.btn_link }}" class="button-primary">
@@ -104,31 +105,33 @@
                 </a>
               {% endif %}
             </div>
-            <figure class="collection-list__banner">
-              <picture class="collection-list__banner-image">
-                <source
-                  srcset="{{ block.settings.image | image_url : width: 1000, height: 1500 }}"
-                  media="(max-width: 640px)"
-                >
-                <source
-                  srcset="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
-                  media="(max-width: 768px)"
-                >
-                <source
-                  srcset="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
-                  media="(max-width: 1024px)"
-                >
-                <img
-                  src="{{ block.settings.image | image_url : width: 300 }}"
-                  data-src="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
-                  class="hero__media"
-                  alt="{{ block.settings.image.alt }}"
-                  width="{{ block.settings.image.width }}"
-                  height="{{ block.settings.image.height }}"
-                  loading="eager"
-                >
-              </picture>
-            </figure>
+            {% if block.settings.image != blank %}
+              <figure class="collection-list__banner">
+                <picture class="collection-list__banner-image">
+                  <source
+                    srcset="{{ block.settings.image | image_url : width: 1000, height: 1500 }}"
+                    media="(max-width: 640px)"
+                  >
+                  <source
+                    srcset="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
+                    media="(max-width: 768px)"
+                  >
+                  <source
+                    srcset="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
+                    media="(max-width: 1024px)"
+                  >
+                  <img
+                    src="{{ block.settings.image | image_url : width: 300 }}"
+                    data-src="{{ block.settings.image | image_url : width: 3000, height: 1666 }}"
+                    class="hero__media"
+                    alt="{{ block.settings.image.alt }}"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.height }}"
+                    loading="eager"
+                  >
+                </picture>
+              </figure>
+            {% endif %}
           </div>
         {% endif %}
       {% endfor %}
@@ -170,16 +173,6 @@
       "type": "richtext",
       "label": "t:sections.productlist-with-image.settings.heading.label",
       "id": "title"
-    },
-    {
-      "type": "richtext",
-      "label": "t:sections.productlist-with-image.settings.subheading.label",
-      "id": "subheading"
-    },
-    {
-      "type": "richtext",
-      "label": "t:sections.productlist-with-image.settings.description.label",
-      "id": "description"
     },
     {
       "type": "url",
@@ -283,6 +276,16 @@
       "name": "t:sections.productlist-with-image.blocks.name",
       "type": "t:sections.productlist-with-image.blocks.type",
       "settings": [
+        {
+          "type": "richtext",
+          "label": "t:sections.productlist-with-image.settings.heading.label",
+          "id": "heading"
+        },
+        {
+          "type": "richtext",
+          "label": "t:sections.productlist-with-image.settings.description.label",
+          "id": "description"
+        },
         {
           "type": "image_picker",
           "label": "t:sections.productlist-with-image.blocks.settings.image.label",

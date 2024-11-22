@@ -3,11 +3,6 @@
   margin-bottom: 0;
 }
 
-.collection-list-background {
-  position: absolute;
-  top: -6rem;
-  left: -6.6rem;
-}
 
 .collection-list-title {
   margin: 0;
@@ -104,10 +99,6 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     column-gap: 4rem;
-  }
-
-  .collection-list-background {
-    display: none;
   }
 }
 

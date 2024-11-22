@@ -1254,7 +1254,7 @@
       }
     },
     "collection_with_image_swiper": {
-      "name": "Collection with image swiper",
+      "name": "Collection image swiper",
       "settings": {
         "background_color": {
           "label": "Background color"

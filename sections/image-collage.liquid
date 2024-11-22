@@ -6,47 +6,60 @@
       <div class="sub-title font-jost text-bold text-l">{{ section.settings['sub-title'] }}</div>
       <div class="title font-jost text-bolder heading-l">{{ section.settings.title }}</div>
     </div>
-    <div class="image-section">
-      <figure>
-        <picture>
-          <source
-            media="(max-width: 768px)"
-            srcset="{{ section.settings.image | image_url : width: 1024 }} 1x, {{ section.settings.image | image_url : width: 2048 }} 2x">
-          {{
-            section.settings.image
-            | image_url: width: 3840
-            | image_tag:
-
-              alt: section.settings.image.alt,
-              widths: '800, 1066, 1600, 2400, 3200',
-              fetchpriority: 'low',
-              loading:'lazy'
-          }}
-        </picture>
-      </figure>
-    </div>
+    {% if section.settings.image == blank %}
+      <div class="image-section">
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {% else %}
+      <div class="image-section">
+        <figure>
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="{{ section.settings.image | image_url : width: 1024 }} 1x, {{ section.settings.image | image_url : width: 2048 }} 2x"
+            >
+            {{
+              section.settings.image
+              | image_url: width: 3840
+              | image_tag:
+                alt: section.settings.image.alt,
+                widths: '800, 1066, 1600, 2400, 3200',
+                fetchpriority: 'low',
+                loading: 'lazy'
+            }}
+          </picture>
+        </figure>
+      </div>
+    {% endif %}
   </div>
   <div class="right-content">
     <div class="image-block">
       {% for block in section.blocks %}
-        <figure>
-          <picture class="md:block h-full">
-            <source
-              media="(max-width: 768px)"
-              srcset="{{ block.settings.image | image_url : width: 1024 }} 1x, {{ block.settings.image | image_url : width: 2048 }} 2x">
-            {{
-              block.settings.image
-              | image_url: width: 3840
-              | image_tag:
-                width: block.settings.image.width,
-                height: block.settings.image.height,
-                alt:block.settings.image.alt,
-                widths: '800, 1066, 1600, 2400, 3200',
-                fetchpriority: 'low',
-                loading:'lazy'
-            }}
-          </picture>
-        </figure>
+        {% if block.settings.image == blank %}
+          <div>
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% else %}
+          <figure>
+            <picture class="md:block h-full">
+              <source
+                media="(max-width: 768px)"
+                srcset="{{ block.settings.image | image_url : width: 1024 }} 1x, {{ block.settings.image | image_url : width: 2048 }} 2x"
+              >
+              {{
+                block.settings.image
+                | image_url: width: 3840
+                | image_tag:
+                  width: block.settings.image.width,
+                  height: block.settings.image.height,
+                  alt: block.settings.image.alt,
+                  widths: '800, 1066, 1600, 2400, 3200',
+                  fetchpriority: 'low',
+                  loading: 'lazy'
+              }}
+            </picture>
+          </figure>
+        {% endif %}
       {% endfor %}
     </div>
     <div class="description font-jost text-semibold text-l">{{ section.settings.description }}</div>

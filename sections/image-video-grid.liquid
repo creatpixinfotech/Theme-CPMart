@@ -21,55 +21,63 @@
       style="grid-template-columns: repeat({% if section.blocks.size > 3 %} 3 {% else %} {{ section.blocks.size }} {% endif %}, 1fr);"
     >
       {% for block in section.blocks %}
-      {% if block.settings.choose_media == "video" %}
-        <div class="videos-card">
-          <div class="video-overlay"></div>
-          <span  class="image-play-button" onclick="videoToggle('{{ block.settings.videos.id }}')">{% render 'icon-play_button' %}</span>
-          {{
-            block.settings.videos
-            | video_tag:
-              autoplay: true,
-              loop: 'loop',
-              muted: true,
-              alt: 'video',
-              playsinline: true,
-              image_size: '1600x',
-              class: 'videos',
-              id: block.settings.videos.id
-          }}
-        </div>
-        {% else %}
-        <div class="image-card">
-        <figure>
-          <picture>
-            <source
-              media="(max-width: 768px)"
-              srcset="{{ block.settings.images | image_url : width: 1024 }} 1x, {{ block.settings.images | image_url : width: 2048 }} 2x">
+        {% if block.settings.choose_media == 'video' %}
+          <div class="videos-card">
+            <div class="video-overlay"></div>
+            <span class="image-play-button" onclick="videoToggle('{{ block.settings.videos.id }}')">
+              {%- render 'icon-play_button' -%}
+            </span>
             {{
-              block.settings.images
-              | image_url: width: 3840
-              | image_tag:
-              class: 'images',
-              alt: 'image',
-              widths: '800, 1066, 1600, 2400, 3200',
-              fetchpriority: 'low',
-              loading:'lazy',
-              id: block.settings.images.id
+              block.settings.videos
+              | video_tag:
+                autoplay: true,
+                loop: 'loop',
+                muted: true,
+                alt: 'video',
+                playsinline: true,
+                image_size: '1600x',
+                class: 'videos',
+                id: block.settings.videos.id
             }}
-          </picture>
-        </figure>
-        </div>
+          </div>
+        {% else %}
+          <div class="image-card">
+            {% if block.settings.images == blank %}
+              <div>
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {% else %}
+              <figure>
+                <picture>
+                  <source
+                    media="(max-width: 768px)"
+                    srcset="{{ block.settings.images | image_url : width: 1024 }} 1x, {{ block.settings.images | image_url : width: 2048 }} 2x"
+                  >
+                  {{
+                    block.settings.images
+                    | image_url: width: 3840
+                    | image_tag:
+                      class: 'images',
+                      alt: 'image',
+                      widths: '800, 1066, 1600, 2400, 3200',
+                      fetchpriority: 'low',
+                      loading: 'lazy',
+                      id: block.settings.images.id
+                  }}
+                </picture>
+              </figure>
+            {% endif %}
+          </div>
         {% endif %}
       {% endfor %}
     </div>
   </div>
 
-
   <div class="video-fullscreen" id="video-fullscreen">
-  <div class="video-contener">
-  <video id="fullscreen-video" controls controlsList="nodownload"></video>
-  <span class="fullscreen-close" onclick="closeFullscreen()"> {{- 'icon-close.svg' | inline_asset_content -}}</span>
-  </div>
+    <div class="video-contener">
+      <video id="fullscreen-video" controls controlsList="nodownload"></video>
+      <span class="fullscreen-close" onclick="closeFullscreen()">{{- 'icon-close.svg' | inline_asset_content -}}</span>
+    </div>
   </div>
 </section>
 
