@@ -37,7 +37,7 @@
       {% for block in section.blocks %}
         {% if block.settings.image == blank %}
           <div>
-            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {{ 'image' | placeholder_svg_tag }}
           </div>
         {% else %}
           <figure>
@@ -63,10 +63,12 @@
       {% endfor %}
     </div>
     <div class="description font-jost text-semibold text-l">{{ section.settings.description }}</div>
-    <a href="{{ section.settings.link }}" class="button-primary">
-      {{ section.settings.button_text }}
-      {{- 'icon-arrow.svg' | inline_asset_content -}}
-    </a>
+    {% if section.settings.link %}
+      <a href="{{ section.settings.link }}" class="button-primary">
+        {{ section.settings.button_text }}
+        {{- 'icon-arrow.svg' | inline_asset_content -}}
+      </a>
+    {% endif %}
   </div>
 </div>
 
@@ -125,7 +127,21 @@
   ],
   "presets": [
     {
-      "name": "t:sections.image_collage.presets.name"
+      "name": "t:sections.image_collage.presets.name",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
     }
   ]
 }

@@ -14,6 +14,11 @@
         {% case block.type %}
           {% when 'Image' %}
             {% if section.blocks.size < 2 %}
+              {% if block.settings.image == blank %}
+                <div>
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+            {% else %}
               <figure>
                 <picture>
                   <source srcset="{{ block.settings.image | image_url }}" media="(max-width: 750px)">
@@ -25,8 +30,14 @@
                   >
                 </picture>
               </figure>
+            {% endif %}
             {% else %}
               <div class="image-grid__block image-grid__block-{{ forloop.index }}">
+                  {% if block.settings.image == blank %}
+                    <div>
+                      {{ 'image' | placeholder_svg_tag }}
+                    </div>
+                {% else %}
                 <figure class="image-grid__block-fig-item">
                   <picture>
                     <source srcset="{{ block.settings.image | image_url }}" media="(max-width: 750px)">
@@ -38,6 +49,7 @@
                     >
                   </picture>
                 </figure>
+                {% endif %}
               </div>
             {% endif %}
         {% endcase %}
@@ -133,7 +145,7 @@
         {
           "type": "text",
           "id": "insight_count",
-          "label": "t:sections.about-image-description.blocks.settings.insights_count"
+          "label": "t:sections.about-image-description.blocks.settings.insights_count",
         },
         {
           "type": "text",
@@ -145,7 +157,15 @@
   ],
   "presets": [
     {
-      "name": "t:sections.about-image-description.presets.name"
+      "name": "t:sections.about-image-description.presets.name",
+      "blocks": [
+        {
+          "type": "Image"
+        },
+        {
+          "type": "Image"
+        }
+      ]
     }
   ]
 }

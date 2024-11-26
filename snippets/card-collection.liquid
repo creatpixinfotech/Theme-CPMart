@@ -81,7 +81,7 @@
       {%- endif -%}
       {%- if card_collection == blank -%}
         <div class="card__media">
-          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {{ placeholder_image | placeholder_svg_tag }}
         </div>
       {%- else -%}
         <div class="card__content">

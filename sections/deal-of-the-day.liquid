@@ -8,7 +8,9 @@
         <span>{{ section.settings.sub_title }}</span>
         {% render '_icon-line' %}
       </div>
-      <h2 class="header-{{ section.settings.title_position }} font-jost text-bolder heading-l">{{ section.settings.title }}</h2>
+      <h2 class="header-{{ section.settings.title_position }} font-jost text-bolder heading-l">
+        {{ section.settings.title }}
+      </h2>
     </div>
     <div class="section-content section-content-{{ section.settings.collection-position }}">
       {% for block in section.blocks %}
@@ -16,29 +18,40 @@
           {% when 'collection' %}
             <div class="collection-deal" style="background-color: {{ block.settings.background-color }};">
               <div class="collection-image">
-                <img
-                  srcset="
-                    {%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
-                    {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
-                    {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
-                    {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
-                    {%- if block.settings.image.width >= 940 -%}{{ block.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
-                    {%- if block.settings.image.width >= 1066 -%}{{ block.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
-                    {{ block.settings.image | image_url }} {{ block.settings.image.width }}w
-                  "
-                  src="{{ block.settings.image | image_url: width: 533 }}"
-                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                  alt="{{ block.settings.image.alt | escape }}"
-                  class="motion-reduce"
-                  width="{{  block.settings.image.width }}"
-                  height="{{  block.settings.image.height }}"
-                >
+                {% if block.settings.image == blank %}
+                  <div class="collection-image">
+                    {{ 'image' | placeholder_svg_tag }}
+                  </div>
+                {% else %}
+                  <img
+                    srcset="
+                      {%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                      {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                      {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+                      {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                      {%- if block.settings.image.width >= 940 -%}{{ block.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1066 -%}{{ block.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                      {{ block.settings.image | image_url }} {{ block.settings.image.width }}w
+                    "
+                    src="{{ block.settings.image | image_url: width: 533 }}"
+                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                    alt="{{ block.settings.image.alt | escape }}"
+                    class="motion-reduce"
+                    width="{{  block.settings.image.width }}"
+                    height="{{  block.settings.image.height }}"
+                  >
+                {% endif %}
               </div>
               <div class="collection-content">
-                <a href="{{ block.settings.collection.url }}" class="collection-deal__title font-jost text-bolder heading-l">
+                <a
+                  href="{{ block.settings.collection.url }}"
+                  class="collection-deal__title font-jost text-bolder heading-l"
+                >
                   {{- block.settings.title -}}
                 </a>
-                <div class="collection-deal__discription font-jost text-bold text-l">{{ block.settings.subtitle }}</div>
+                <div class="collection-deal__discription font-jost text-bold text-l">
+                  {{ block.settings.subtitle }}
+                </div>
               </div>
               <div class="collection-timer font-jost text-bolder heading-l">
                 <div class="collection-time">
@@ -263,7 +276,12 @@
   ],
   "presets": [
     {
-      "name": "t:sections.deal-of-the-day.presets.name"
+      "name": "t:sections.deal-of-the-day.presets.name",
+      "blocks": [
+        {
+          "type": "collection"
+        }
+      ]
     }
   ]
 }

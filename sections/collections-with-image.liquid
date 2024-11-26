@@ -23,15 +23,17 @@
                 {{ block.settings.description }}
               </div>
             {% endif %}
-            <div class="collections__button-container button-primary">
-              <a
-                href="{% if block.settings.collection != blank %} {{block.settings.collection.url}} {% else %} /collections/all {% endif %}"
-                class="collections__shop-btn font-Jost"
-              >
-                {{- block.settings.button_text -}}
-              </a>
-              {% render 'icon-white-arrow' %}
-            </div>
+            {% if block.settings.button_text != blank %}
+              <div class="collections__button-container button-primary">
+                <a
+                  href="{% if block.settings.collection != blank %} {{block.settings.collection.url}} {% else %} /collections/all {% endif %}"
+                  class="collections__shop-btn font-Jost"
+                >
+                  {{- block.settings.button_text -}}
+                </a>
+                {% render 'icon-white-arrow' %}
+              </div>
+            {% endif %}
           </div>
           {% if section.settings.show_collection_image %}
             {% if block.settings.collection.featured_image == blank %}
@@ -67,12 +69,13 @@
     {
       "type": "checkbox",
       "id": "show_collection_image",
-      "label": "t:sections.collections-with-image.settings.show_image.label"
+      "label": "t:sections.collections-with-image.settings.show_image.label",
+      "default": true
     }
   ],
   "blocks": [
     {
-      "type": "t:sections.collections-with-image.blocks.type",
+      "type": "collection",
       "name": "t:sections.collections-with-image.blocks.name",
       "limit": 3,
       "settings": [
@@ -149,7 +152,18 @@
   ],
   "presets": [
     {
-      "name": "t:sections.collections-with-image.presets.name"
+      "name": "t:sections.collections-with-image.presets.name",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
     }
   ]
 }

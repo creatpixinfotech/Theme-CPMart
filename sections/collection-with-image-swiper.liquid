@@ -31,6 +31,10 @@
                   width="450"
                   height="587"
                 >
+              {% else %}
+                <div>
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
               {% endif %}
 
               <div class="image-content">
@@ -183,7 +187,27 @@
   ],
   "presets": [
     {
-      "name": "t:sections.collection_with_image_swiper.presets.name"
+      "name": "t:sections.collection_with_image_swiper.presets.name",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
     }
   ]
 }
