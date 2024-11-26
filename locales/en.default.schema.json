@@ -1285,7 +1285,7 @@
           "name": "Collections",
           "settings": {
             "heading": {
-              "label": "Collection Heading"
+              "label": "Collection heading"
             },
             "collection": {
               "label": "Collection"
@@ -3084,6 +3084,10 @@
     "newsletter": {
       "name": "Email signup",
       "settings": {
+        "image":"Background image",
+        "color": {
+          "text_color": "Text color"
+        },
         "full_width": {
           "label": "Make section full width"
         },
