@@ -466,7 +466,7 @@
         "default": "flex-start"
       },
       "card_layout": {
-        "label": "Select card layout",
+        "label": "Select Card Layout",
         "options__1": {
           "label": "Layout 1"
         },
@@ -684,7 +684,7 @@
         "swipe_on_mobile": {
           "label": "Enable swipe on mobile"
         },
-        "show_item": "Show item count",
+        "show_item": "Show Item Count",
         "background_color": {
           "label": "Background Color"
         },
@@ -707,10 +707,10 @@
       }
     },
     "productlist-with-image": {
-      "name": "ProductList with image",
+      "name": "ProductList with Image",
       "settings": {
         "background_color": {
-          "label": "Background color"
+          "label": "Background Color"
         },
         "heading": {
           "label": "Heading"
@@ -722,8 +722,8 @@
           "label": "Description"
         },
         "button": {
-          "label": "Button label",
-          "link": "Button link"
+          "label": "Button Label",
+          "link": "Button Link"
         },
         "collection": {
           "label": "Collection"
@@ -735,10 +735,10 @@
         "settings": {
           "image": {
             "label": "Image",
-            "image_col_start_position": "Image column start position",
-            "image_col_end_position": "Image column end position",
-            "image_row_start_position": "Image row start position",
-            "image_row_end_position": "Image row end position"
+            "image_col_start_position": "Image Column Start Position",
+            "image_col_end_position": "Image Column End Position",
+            "image_row_start_position": "Image Row Start Position",
+            "image_row_end_position": "Image Row End Position"
           }
         }
       },
@@ -750,7 +750,7 @@
       "name": "Collections With Image",
       "settings": {
         "show_image": {
-          "label": "Show featured image"
+          "label": "Show Featured Image"
         }
       },
       "blocks": {
@@ -762,21 +762,21 @@
           },
           "description": {
             "label": "Description",
-            "color": "Description color"
+            "color": "Description Color"
           },
           "buttons": {
-            "label": "Button label",
-            "url": "Button link"
+            "label": "Button Label",
+            "url": "Button Link"
           },
           "collection": {
             "label": "Collection"
           },
           "background_image": {
-            "label": "Background image"
+            "label": "Background Image"
           },
           "color": {
             "background": {
-              "label": "Background color"
+              "label": "Background Color"
             }
           },
           "alignmemnt": {
@@ -941,8 +941,8 @@
             "label": "Solid button"
           }
         },
-        "enable_image_background_color" :{
-          "label":"Use metafeild image background and badge color"
+        "enable_image_background_color": {
+          "label": "use metafeild image background and badge color"
         },
         "enable_desktop_slider": {
           "label": "Enable carousel on desktop"
@@ -1032,7 +1032,7 @@
           "default": {
             "label": "left"
           }
-        },
+        }
       },
       "blocks": {
         "collection": {
@@ -1254,7 +1254,7 @@
       }
     },
     "collection_with_image_swiper": {
-      "name": "Collection image swiper",
+      "name": "Collection with image swiper",
       "settings": {
         "background_color": {
           "label": "Background color"
@@ -1285,7 +1285,7 @@
           "name": "Collections",
           "settings": {
             "heading": {
-              "label": "Collection heading"
+              "label": "Collection Heading"
             },
             "collection": {
               "label": "Collection"
@@ -2199,13 +2199,13 @@
         "type": "Block",
         "name": "Block",
         "settings": {
-          "bg_image": "Background image",
+          "bg_image": "Background Image",
           "title": "Title",
           "link": {
-            "button_link": "Button link"
+            "button_link": "Button Link"
           },
           "label": {
-            "button_label": "Button label"
+            "button_label": "Button Label"
           }
         }
       },
@@ -3063,18 +3063,18 @@
     "about-image-description": {
       "name": "About Image Description",
       "settings": {
-        "title":"Title",
-        "description":"Description"
+        "title": "Title",
+        "description": "Description"
       },
       "blocks": {
-        "type":{
-          "image":"Image",
-          "insights":"Insights"
+        "type": {
+          "image": "Image",
+          "insights": "Insights"
         },
-        "settings":{
-          "image":"Image",
-          "insights_count":"Insights Count",
-          "insights_label":"Insights Label"
+        "settings": {
+          "image": "Image",
+          "insights_count": "Insights Count",
+          "insights_label": "Insights Label"
         }
       },
       "presets": {
@@ -3084,10 +3084,6 @@
     "newsletter": {
       "name": "Email signup",
       "settings": {
-        "image":"Background image",
-        "color": {
-          "text_color": "Text color"
-        },
         "full_width": {
           "label": "Make section full width"
         },
