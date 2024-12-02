@@ -724,9 +724,6 @@ cart-items .page-width .cart_details .cart-right .total-amount span{
   box-shadow: none;
 }
 
-cart-items .underlined-link{
-  text-decoration: none;
-}
 cart-items .cart-buttons{
   display: flex;
   justify-content: space-between;

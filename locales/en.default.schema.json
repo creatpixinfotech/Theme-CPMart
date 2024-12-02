@@ -738,7 +738,8 @@
             "image_col_start_position": "Image Column Start Position",
             "image_col_end_position": "Image Column End Position",
             "image_row_start_position": "Image Row Start Position",
-            "image_row_end_position": "Image Row End Position"
+            "image_row_end_position": "Image Row End Position",
+            "info": "Image Show When Collection Added"
           }
         }
       },
@@ -758,7 +759,8 @@
         "name": "Collection",
         "settings": {
           "title": {
-            "label": "Title"
+            "label": "Title",
+            "default": "Collection title"
           },
           "description": {
             "label": "Description",
@@ -766,7 +768,11 @@
           },
           "buttons": {
             "label": "Button Label",
-            "url": "Button Link"
+            "default": "Shop",
+            "button_url": {
+              "url": "Button Link",
+              "default": "/collections/all"
+            }
           },
           "collection": {
             "label": "Collection"
@@ -1268,7 +1274,8 @@
               "label": "Image"
             },
             "heading": {
-              "label": "Heading"
+              "label": "Heading",
+              "default": "Collection"
             },
             "description": {
               "label": "Description"
@@ -2182,17 +2189,6 @@
         }
       }
     },
-    "main-cart-footer": {
-      "name": "Subtotal",
-      "blocks": {
-        "subtotal": {
-          "name": "Subtotal price"
-        },
-        "buttons": {
-          "name": "Checkout button"
-        }
-      }
-    },
     "title-with-links": {
       "name": "Title with Links",
       "blocks": {
@@ -3089,6 +3085,15 @@
         },
         "paragraph": {
           "content": "Each email subscription creates a customer account. [Learn more](https:\/\/help.shopify.com\/manual\/customers)"
+        },
+        "color": {
+          "text_color": "Text color",
+        },
+        "image": {
+          "label": "Background Image"
+        },
+        "button": {
+          "label": "Button Label"
         }
       },
       "blocks": {

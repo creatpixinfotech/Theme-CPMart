@@ -68,6 +68,10 @@
                     >
                   </picture>
                 </figure>
+                {% else %}
+                <div>
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
               {% endif %}
             </div>
           {% endif %}
@@ -289,7 +293,8 @@
         {
           "type": "image_picker",
           "label": "t:sections.productlist-with-image.blocks.settings.image.label",
-          "id": "image"
+          "id": "image",
+          "info": "t:sections.productlist-with-image.blocks.settings.image.info"
         },
         {
           "type": "range",

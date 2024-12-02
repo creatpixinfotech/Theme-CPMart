@@ -1542,6 +1542,7 @@ button.shopify-payment-button__button--unbranded {
   text-transform: capitalize;
   transition: all .5s ease-in-out;
   letter-spacing: normal;
+  text-decoration: none;
 }
 
 .button--secondary__green:hover {

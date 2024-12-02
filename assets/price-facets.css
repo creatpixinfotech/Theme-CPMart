@@ -12,11 +12,6 @@
 .field:before {
   content: none;
 }
-.field__input:not(:placeholder-shown) {
-  padding: 0;
-  height: unset;
-  min-height: unset;
-}
 .facets-vertical .facets__price .field:last-of-type {
   margin: 0;
 }

@@ -22,6 +22,9 @@
     class="newsletter__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding"
     style="background-image:url('{{ section.settings.bg_img |  image_url  }}')"
   >
+  {% if section.settings.bg_img == blank %}
+    {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+  {% endif %}
     <div class="newsletter-data">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -147,7 +150,7 @@
     {
       "type": "image_picker",
       "id": "bg_img",
-      "label": "t:sections.newsletter.settings.image"
+      "label": "t:sections.newsletter.settings.image.label"
     },
     {
       "type": "checkbox",
@@ -166,7 +169,8 @@
     {
       "type": "text",
       "id": "btn_label",
-      "label": "t:sections.newsletter.settings.button.label"
+      "label": "t:sections.newsletter.settings.button.label",
+      "default": "Subscribe"
     },
     {
       "type": "range",
